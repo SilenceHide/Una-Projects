@@ -8,13 +8,17 @@ const config: Config = {
   ],
   theme: {
     screens: {
-      "2xs": "440px",
-      xs: "540px",
+      "2xs": "375px",
+      xs: "440px",
       sm: "640px",
       md: "768px",
       lg: "1024px",
       xl: "1280px",
-      "2xl": "1536px",
+      "2xl": "1640px",
+    },
+    container: {
+      center: true,
+      padding: "1rem",
     },
     extend: {
       fontFamily: {
