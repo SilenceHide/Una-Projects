@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head />
-      <body className="font-Prompt">
+      <body className="font-Prompt text-main-text-color">
         <Main />
         <NextScript />
       </body>

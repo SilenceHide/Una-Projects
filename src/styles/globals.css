@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .basket-active {
+    border-color: #dba514;
+  }
+
+  .active-tab {
+    border-color: #dba514;
+    color: #32324d;
+  }
+}
