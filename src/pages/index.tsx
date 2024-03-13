@@ -1,13 +1,28 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [navOpen, isNavOpen] = useState(false);
+
+  useEffect(() => {
+    const menu: HTMLElement | null = document.querySelector(".menu")!;
+    if (window.innerWidth >= 1024) {
+      isNavOpen(true);
+      menu.classList.remove("shadow-[inset_0px_60px_30px_-40px_rgba(0,0,0,0.1)]");
+      menu.classList.add("shadow-none");
+    }
+  }, [navOpen]);
+
   return (
     <>
       <header className="header md:py-3 ">
-        <div className="container">
-          <div className="header-wrapper flex items-center justify-between">
+        <div className="container ">
+          <div className="header-wrapper flex items-center justify-between ">
             <div className="left-header flex items-center lg:gap-8 gap-4">
-              <div className="menu_button-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden">
+              <div
+                className="menu_button p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden "
+                onClick={() => isNavOpen(!navOpen)}
+              >
                 <Image
                   src={"/icons/Icon name=burger menu.svg"}
                   alt={"logo-default"}
@@ -16,8 +31,14 @@ export default function Home() {
                 />
               </div>
               <Image src={"/logo/logo-default.svg"} alt={"logo-default"} width={82} height={82} />
-              <nav className="menu text-secondary-text-color fixed lg:static left-0 top-[85px] bottom-0 p-4 lg:p-0">
-                <ul className="menu-list flex gap-5 flex-col lg:flex-row">
+              <nav
+                className={`menu text-secondary-text-color fixed lg:static left-0 right-0 top-[85px] bottom-0 lg:p-0 overflow-hidden transition-all ${
+                  navOpen
+                    ? "h-fit px-4 py-10 shadow-[inset_0px_60px_30px_-40px_rgba(0,0,0,0.1)]"
+                    : "h-0 p-0 shadow-none"
+                }`}
+              >
+                <ul className="menu-list flex lg:gap-5 gap-8 flex-col lg:flex-row ">
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
                     <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
                       NEW IN
