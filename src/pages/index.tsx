@@ -1,46 +1,51 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [navOpen, isNavOpen] = useState(false);
 
   useEffect(() => {
-    const menu: HTMLElement | null = document.querySelector(".menu")!;
     if (window.innerWidth >= 1024) {
       isNavOpen(true);
-      menu.classList.remove("shadow-[inset_0px_60px_30px_-40px_rgba(0,0,0,0.1)]");
-      menu.classList.add("shadow-none");
     }
   }, [navOpen]);
 
   return (
     <>
-      <header className="header md:py-3 ">
+      <header className="header md:py-3 relative shadow-main-box-shadow">
         <div className="container ">
           <div className="header-wrapper flex items-center justify-between ">
             <div className="left-header flex items-center lg:gap-8 gap-4">
               <div
-                className="menu_button p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden "
+                className="menu_button p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden transition-all duration-300"
                 onClick={() => isNavOpen(!navOpen)}
               >
-                <Image
-                  src={"/icons/Icon name=burger menu.svg"}
-                  alt={"logo-default"}
-                  width={22}
-                  height={22}
-                />
+                {navOpen ? (
+                  <Image
+                    src={"/icons/Icon name=close.svg"}
+                    alt={"logo-default"}
+                    width={22}
+                    height={22}
+                  />
+                ) : (
+                  <Image
+                    src={"/icons/Icon name=burger menu.svg"}
+                    alt={"logo-default"}
+                    width={22}
+                    height={22}
+                  />
+                )}
               </div>
               <Image src={"/logo/logo-default.svg"} alt={"logo-default"} width={82} height={82} />
               <nav
-                className={`menu text-secondary-text-color fixed lg:static left-0 right-0 top-[85px] bottom-0 lg:p-0 overflow-hidden transition-all ${
-                  navOpen
-                    ? "h-fit px-4 py-10 shadow-[inset_0px_60px_30px_-40px_rgba(0,0,0,0.1)]"
-                    : "h-0 p-0 shadow-none"
+                className={`menu text-secondary-text-color fixed lg:static right-0 top-[85px] bottom-0 lg:p-0 overflow-hidden transition-all duration-300 px-4 py-10 ${
+                  navOpen ? "left-0" : "-left-full "
                 }`}
               >
                 <ul className="menu-list flex lg:gap-5 gap-8 flex-col lg:flex-row ">
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       NEW IN
                     </p>
                     <Image
@@ -48,11 +53,11 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       SOFAS
                     </p>
                     <Image
@@ -60,11 +65,11 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       TABLES
                     </p>
                     <Image
@@ -72,11 +77,11 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       BEDS
                     </p>
                     <Image
@@ -84,11 +89,11 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       LIGHTING
                     </p>
                     <Image
@@ -96,11 +101,11 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 ">
                       KITCHEN
                     </p>
                     <Image
@@ -108,11 +113,116 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
+                    <div className="mega-menu absolute bg-white top-[107px] bottom-0 left-0 right-0 transition-all duration-300 py-[60px] px-[140px] shadow-main-box-shadow h-fit  justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all">
+                      <ul className="mega-menu_left flex gap-[80px] group-hover/menu-item:transition-all">
+                        <li className="mega-item flex flex-col gap-4">
+                          <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                            <a className="mega-subtitle">Dinnerware</a>
+                            <a className="mega-subtitle">Serveware</a>
+                            <a className="mega-subtitle">Cutlery</a>
+                            <a className="mega-subtitle">Glassware</a>
+                            <a className="mega-subtitle">Table Linen</a>
+                          </div>
+                          <div className="mega-link-wrapper">
+                            <a href="#" className="mega-link border-b-2 active-tab">
+                              Go to all
+                            </a>
+                          </div>
+                        </li>
+                        <li className="mega-item flex flex-col gap-4">
+                          <h4 className="mega-title text-main-text-color font-medium">DRINKWARE</h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                            <a className="mega-subtitle">Glassware</a>
+                            <a className="mega-subtitle">Barware</a>
+                            <a className="mega-subtitle">Mugs</a>
+                            <a className="mega-subtitle">Wine Racks</a>
+                            <a className="mega-subtitle">Water Bottles</a>
+                            <a className="mega-subtitle">Travel Cups</a>
+                            <a className="mega-subtitle">Teapots</a>
+                            <a className="mega-subtitle">Jugs & Carafes</a>
+                          </div>
+                          <div className="mega-link-wrapper">
+                            <a href="#" className="mega-link  border-b-2 active-tab">
+                              Go to all
+                            </a>
+                          </div>
+                        </li>
+                        <li className="mega-item flex flex-col gap-4">
+                          <h4 className="mega-title text-main-text-color font-medium">
+                            COOK&BAKE WARE
+                          </h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                            <a className="mega-subtitle">Pots & Pans</a>
+                            <a className="mega-subtitle">Frying Pans</a>
+                            <a className="mega-subtitle">Baking Dishes</a>
+                            <a className="mega-subtitle">Silicone forms</a>
+                          </div>
+                          <div className="mega-link-wrapper">
+                            <a href="#" className="mega-link  border-b-2 active-tab">
+                              Go to all
+                            </a>
+                          </div>
+                        </li>
+                        <li className="mega-item flex flex-col gap-4">
+                          <h4 className="mega-title text-main-text-color font-medium">
+                            KITCHEN ACCESSORIES
+                          </h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                            <a className="mega-subtitle">Utensils</a>
+                            <a className="mega-subtitle">Food Storage</a>
+                            <a className="mega-subtitle">Racks & Shelves</a>
+                            <a className="mega-subtitle">Wine Racks</a>
+                            <a className="mega-subtitle">Bins</a>
+                          </div>
+                          <div className="mega-link-wrapper">
+                            <a href="#" className="mega-link  border-b-2 active-tab">
+                              Go to all
+                            </a>
+                          </div>
+                        </li>
+                      </ul>
+                      <div className="mega-menu_right flex gap-10">
+                        <div className="mega-menu_left-img relative flex flex-col gap-3">
+                          <div className="mega-menu_img bg-disable-text-color w-[240px] h-[240px] border-[10px] border-white "></div>
+                          <p className="mega-menu_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                            POPULAR
+                          </p>
+                          <div className="mega-menu_img-desc flex flex-col items-center gap-3">
+                            <div className="mega-menu_img-rectangle bg-disable-color w-[30px] h-[1px] mb-1"></div>
+                            <p className="mega-menu_img-title text-main-text-color font-medium">
+                              CALEIDO LAMP
+                            </p>
+                            <p className="mega-menu_img-price text-accent-color font-medium">
+                              $355
+                            </p>
+                          </div>
+                        </div>
+                        <div className="mega-menu_right-img relative flex flex-col gap-3">
+                          <div className="mega-menu_img bg-disable-text-color w-[240px] h-[240px] border-[10px] border-white "></div>
+                          <p className="mega-menu_img-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-5 left-5">
+                            HOT
+                          </p>
+                          <div className="mega-menu_img-desc flex flex-col items-center gap-3">
+                            <div className="mega-menu_img-rectangle bg-disable-color w-[30px] h-[1px] mb-1"></div>
+                            <p className="mega-menu_img-title text-main-text-color font-medium">
+                              EBRO BESIDE TABLE
+                            </p>
+                            <div className="mega-menu_img-price_wrapper flex gap-2">
+                              <p className="mega-menu_img-price text-red-hot font-medium">$250</p>
+                              <p className="mega-menu_img-price text-disable-color line-through decoration-[0.5px]">
+                                $310
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all">
+                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                       STORAGE
                     </p>
                     <Image
@@ -120,7 +230,7 @@ export default function Home() {
                       alt={"logo-default"}
                       width={12}
                       height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all"
+                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
                     />
                   </li>
                 </ul>

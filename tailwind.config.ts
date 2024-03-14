@@ -21,6 +21,9 @@ const config: Config = {
       padding: "1rem",
     },
     extend: {
+      boxShadow: {
+        "main-box-shadow": "0 10px 20px 0px rgba(209,188,178,0.25)",
+      },
       fontFamily: {
         Prompt: ["Prompt", "Arial", "sans-serif"],
         PromptMed: ["Prompt Medium", "Arial", "sans-serif"],
