@@ -43,7 +43,11 @@ export default function Home() {
                   navOpen ? "left-0" : "-left-full "
                 }`}
               >
-                <ul className="menu-list flex lg:gap-5 gap-8 flex-col lg:flex-row lg:h-full ">
+                <ul
+                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:flex-row lg:h-full ${
+                    navOpen ? "justify-between" : "justify-start"
+                  }`}
+                >
                   <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
@@ -127,9 +131,9 @@ export default function Home() {
                         className="group-hover/menu-item:rotate-180 transition-all duration-300"
                       />
                     </div>
-                    <div className="mega-menu lg:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all duration-300 lg:py-[60px] lg:px-[140px] py px-4 lg:shadow-main-box-shadow h-fit justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all flex-wrap ">
-                      <ul className="mega-menu_left flex gap-[80px] group-hover/menu-item:transition-all flex-wrap">
-                        <li className="mega-item flex flex-col gap-4 py-10">
+                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 px-5 gap-10 my-10 lg:my-0">
+                      <ul className="mega-menu_left flex 2xl:gap-[80px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
+                        <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
                           <div className="mega-subtitle-wrapper flex flex-col gap-3">
                             <a className="mega-subtitle">Dinnerware</a>
@@ -144,7 +148,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4 py-10">
+                        <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">DRINKWARE</h4>
                           <div className="mega-subtitle-wrapper flex flex-col gap-3">
                             <a className="mega-subtitle">Glassware</a>
@@ -162,7 +166,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4 py-10">
+                        <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">
                             COOK&BAKE WARE
                           </h4>
@@ -178,7 +182,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4 py-10">
+                        <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">
                             KITCHEN ACCESSORIES
                           </h4>
@@ -196,9 +200,9 @@ export default function Home() {
                           </div>
                         </li>
                       </ul>
-                      <div className="mega-menu_right flex gap-10 flex-wrap">
-                        <div className="mega-menu_left-img relative flex flex-col gap-3">
-                          <div className="mega-menu_img bg-disable-text-color w-[240px] h-[240px] border-[10px] border-white "></div>
+                      <div className="mega-menu_right flex 2xl:gap-10 xl:gap-0 lg:gap-10 gap-14 flex-wrap justify-center lg:justify-between xl:justify-center flex-grow xl:flex-grow-0">
+                        <div className="mega-menu_left-img relative flex flex-col lg:gap-3 gap-7">
+                          <div className="mega-menu_img bg-disable-text-color w-[343px] h-[343px] lg:w-[240px] lg:h-[240px] border-[10px] border-white "></div>
                           <p className="mega-menu_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                             POPULAR
                           </p>
@@ -212,8 +216,8 @@ export default function Home() {
                             </p>
                           </div>
                         </div>
-                        <div className="mega-menu_right-img relative flex flex-col gap-3">
-                          <div className="mega-menu_img bg-disable-text-color w-[240px] h-[240px] border-[10px] border-white "></div>
+                        <div className="mega-menu_right-img relative flex flex-col lg:gap-3 gap-7">
+                          <div className="mega-menu_img bg-disable-text-color w-[343px] h-[343px] lg:w-[240px] lg:h-[240px] border-[10px] border-white "></div>
                           <p className="mega-menu_img-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-5 left-5">
                             HOT
                           </p>
