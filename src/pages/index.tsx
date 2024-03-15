@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="header md:py-3 relative shadow-main-box-shadow">
+      <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center">
         <div className="container ">
           <div className="header-wrapper flex items-center justify-between ">
             <div className="left-header flex items-center lg:gap-8 gap-4">
@@ -39,85 +39,97 @@ export default function Home() {
               </div>
               <Image src={"/logo/logo-default.svg"} alt={"logo-default"} width={82} height={82} />
               <nav
-                className={`menu text-secondary-text-color fixed lg:static right-0 top-[85px] bottom-0 lg:p-0 overflow-hidden transition-all duration-300 px-4 py-10 ${
+                className={`menu text-secondary-text-color fixed lg:static right-0 top-[85px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[105px] ${
                   navOpen ? "left-0" : "-left-full "
                 }`}
               >
-                <ul className="menu-list flex lg:gap-5 gap-8 flex-col lg:flex-row ">
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      NEW IN
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                <ul className="menu-list flex lg:gap-5 gap-8 flex-col lg:flex-row lg:h-full ">
+                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        NEW IN
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      SOFAS
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        SOFAS
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      TABLES
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        TABLES
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      BEDS
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        BEDS
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      LIGHTING
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        LIGHTING
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 ">
-                      KITCHEN
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
-                    <div className="mega-menu absolute bg-white top-[107px] bottom-0 left-0 right-0 transition-all duration-300 py-[60px] px-[140px] shadow-main-box-shadow h-fit  justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all">
-                      <ul className="mega-menu_left flex gap-[80px] group-hover/menu-item:transition-all">
-                        <li className="mega-item flex flex-col gap-4">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row ">
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 relative">
+                        KITCHEN
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
+                    <div className="mega-menu lg:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all duration-300 lg:py-[60px] lg:px-[140px] py px-4 lg:shadow-main-box-shadow h-fit justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all flex-wrap ">
+                      <ul className="mega-menu_left flex gap-[80px] group-hover/menu-item:transition-all flex-wrap">
+                        <li className="mega-item flex flex-col gap-4 py-10">
                           <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
                           <div className="mega-subtitle-wrapper flex flex-col gap-3">
                             <a className="mega-subtitle">Dinnerware</a>
@@ -132,7 +144,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4">
+                        <li className="mega-item flex flex-col gap-4 py-10">
                           <h4 className="mega-title text-main-text-color font-medium">DRINKWARE</h4>
                           <div className="mega-subtitle-wrapper flex flex-col gap-3">
                             <a className="mega-subtitle">Glassware</a>
@@ -150,7 +162,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4">
+                        <li className="mega-item flex flex-col gap-4 py-10">
                           <h4 className="mega-title text-main-text-color font-medium">
                             COOK&BAKE WARE
                           </h4>
@@ -166,7 +178,7 @@ export default function Home() {
                             </a>
                           </div>
                         </li>
-                        <li className="mega-item flex flex-col gap-4">
+                        <li className="mega-item flex flex-col gap-4 py-10">
                           <h4 className="mega-title text-main-text-color font-medium">
                             KITCHEN ACCESSORIES
                           </h4>
@@ -184,7 +196,7 @@ export default function Home() {
                           </div>
                         </li>
                       </ul>
-                      <div className="mega-menu_right flex gap-10">
+                      <div className="mega-menu_right flex gap-10 flex-wrap">
                         <div className="mega-menu_left-img relative flex flex-col gap-3">
                           <div className="mega-menu_img bg-disable-text-color w-[240px] h-[240px] border-[10px] border-white "></div>
                           <p className="mega-menu_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
@@ -222,16 +234,18 @@ export default function Home() {
                     </div>
                   </li>
                   <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
-                    <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
-                      STORAGE
-                    </p>
-                    <Image
-                      src={"/icons/Icon name=chevron_down.svg"}
-                      alt={"logo-default"}
-                      width={12}
-                      height={7}
-                      className="group-hover/menu-item:rotate-180 transition-all duration-300"
-                    />
+                    <div className="menu-item_wrapper flex items-center gap-1">
+                      <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
+                        STORAGE
+                      </p>
+                      <Image
+                        src={"/icons/Icon name=chevron_down.svg"}
+                        alt={"logo-default"}
+                        width={12}
+                        height={7}
+                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                      />
+                    </div>
                   </li>
                 </ul>
               </nav>
