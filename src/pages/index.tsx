@@ -37,7 +37,14 @@ export default function Home() {
                   />
                 )}
               </div>
-              <Image src={"/logo/logo-default.svg"} alt={"logo-default"} width={82} height={82} />
+              <Image
+                src={"/logo/logo-default.svg"}
+                alt={"logo-default"}
+                width={82}
+                height={81}
+                priority
+                className="header_logo"
+              />
               <nav
                 className={`menu text-secondary-text-color fixed lg:static right-0 top-[85px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[105px] ${
                   navOpen ? "left-0" : "-left-full "
@@ -57,8 +64,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
@@ -71,8 +79,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
@@ -85,8 +94,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
@@ -99,8 +109,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
@@ -113,8 +124,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
@@ -127,11 +139,12 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 px-5 gap-10 my-10 lg:my-0">
+                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 px-5 gap-10 my-10 lg:my-0 z-50">
                       <ul className="mega-menu_left flex 2xl:gap-[80px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
@@ -246,8 +259,9 @@ export default function Home() {
                         src={"/icons/Icon name=chevron_down.svg"}
                         alt={"logo-default"}
                         width={12}
-                        height={7}
-                        className="group-hover/menu-item:rotate-180 transition-all duration-300"
+                        height={12}
+                        className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                        priority
                       />
                     </div>
                   </li>
