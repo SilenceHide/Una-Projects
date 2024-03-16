@@ -24,6 +24,8 @@ const config: Config = {
     extend: {
       boxShadow: {
         "main-box-shadow": "0 10px 20px 0px rgba(209,188,178,0.25)",
+        "white-box-shadow": "-10px 4px 0px 0px #fff",
+        "white-box-shadow-plus": "0px 10px 0px 0px #fff",
       },
       fontFamily: {
         Prompt: ["Prompt", "Arial", "sans-serif"],

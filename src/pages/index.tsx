@@ -24,14 +24,14 @@ export default function Home() {
                 {navOpen ? (
                   <Image
                     src={"/icons/Icon name=close.svg"}
-                    alt={"logo-default"}
+                    alt={"menu-close-btn"}
                     width={22}
                     height={22}
                   />
                 ) : (
                   <Image
                     src={"/icons/Icon name=burger menu.svg"}
-                    alt={"logo-default"}
+                    alt={"menu-burger-btn"}
                     width={22}
                     height={22}
                   />
@@ -62,7 +62,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -77,7 +77,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -92,7 +92,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -107,7 +107,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -122,7 +122,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -137,14 +137,14 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 px-5 gap-10 my-10 lg:my-0 z-50">
+                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 lg:my-0 z-50">
                       <ul className="mega-menu_left flex 2xl:gap-[80px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
@@ -257,7 +257,7 @@ export default function Home() {
                       </p>
                       <Image
                         src={"/icons/Icon name=chevron_down.svg"}
-                        alt={"logo-default"}
+                        alt={"arrow-down"}
                         width={12}
                         height={12}
                         className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
@@ -279,7 +279,7 @@ export default function Home() {
                 <div className="header_search-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer ">
                   <Image
                     src={"/icons/Icon name=search.svg"}
-                    alt={"logo-default"}
+                    alt={"search-icon"}
                     width={22}
                     height={22}
                   />
@@ -287,7 +287,7 @@ export default function Home() {
                 <div className="header_profile-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer">
                   <Image
                     src={"/icons/Icon name=user.svg"}
-                    alt={"logo-default"}
+                    alt={"user-icon"}
                     width={22}
                     height={22}
                   />
@@ -295,7 +295,7 @@ export default function Home() {
                 <div className="header_basket-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer basket-active relative">
                   <Image
                     src={"/icons/Icon name=cart.svg"}
-                    alt={"logo-default"}
+                    alt={"cart-icon"}
                     width={22}
                     height={22}
                   />
@@ -308,7 +308,55 @@ export default function Home() {
           </div>
         </div>
       </header>
-      {/* <main className={`flex min-h-screen flex-col items-center justify-between p-24 `}></main> */}
+      <main className="main">
+        <section className="banner-section flex gap-1 relative">
+          <div className="banner_heading-wrapper min-w-[660px] flex flex-col gap-3 shadow-white-box-shadow-plus">
+            <div className="banner_heading bg-main-bg-color px-[140px] py-[130px] ">
+              <div className="banner_divider w-10 h-[2px] bg-accent-color mb-[30px]"></div>
+              <h1 className="banner_title font-medium text-3xl">
+                PROFITABLE OFFERS! DON’T MISS IT
+              </h1>
+              <div className="banner_nav-btn_wrapper flex gap-6 mt-[60px]">
+                <div className="banner_nav-left-btn_wrapper border border-disable-color w-[60px] h-[60px] rounded-full bg-white flex justify-center items-center cursor-pointer">
+                  <Image
+                    src={"/icons/Icon name=prev arrow.svg"}
+                    alt={"prev-icon"}
+                    width={24}
+                    height={16}
+                  />
+                </div>
+                <div className="banner_nav-right-btn_wrapper border border-disable-color w-[60px] h-[60px] rounded-full bg-white flex justify-center items-center cursor-pointer">
+                  <Image
+                    src={"/icons/Icon name=next arrow.svg"}
+                    alt={"next-icon"}
+                    width={24}
+                    height={16}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="banner_product-info bg-main-bg-color px-[140px] py-[130px]">
+              <div className="banner_product-info_wrapper flex flex-col">
+                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px]">
+                  HOT
+                </p>
+                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4">
+                  PENNY PENDANT LAMP SHADE, MUTED GREY
+                </h2>
+                <div className="banner_product-price_wrapper flex gap-3 text-xl">
+                  <p className="banner_product-price text-red-hot font-medium">$300</p>
+                  <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
+                    $390
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="banner_img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-full w-full"></div>
+          <div className="banner_detail-img-wrapper bg-white absolute w-[460px] h-[460px] rounded-full left-[425px] top-[265px] "></div>
+        </section>
+      </main>
     </>
   );
 }
+``;
