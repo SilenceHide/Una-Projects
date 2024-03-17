@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center">
+      <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center lg:static fixed lg:z-0 z-40 w-full lg:w-auto bg-white top-0">
         <div className="container ">
           <div className="header-wrapper flex items-center justify-between ">
             <div className="left-header flex items-center lg:gap-8 gap-4">
@@ -46,8 +46,10 @@ export default function Home() {
                 className="header_logo"
               />
               <nav
-                className={`menu text-secondary-text-color fixed lg:static right-0 top-[85px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[105px] ${
-                  navOpen ? "left-0" : "-left-full "
+                className={`menu text-secondary-text-color fixed lg:static right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
+                  navOpen
+                    ? "left-0 bg-white border-t border-disable-text-color z-50 w-full"
+                    : "-left-full z-0"
                 }`}
               >
                 <ul
@@ -144,7 +146,7 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white top-[102px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 lg:my-0 z-50">
+                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color  top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 lg:my-0 z-50">
                       <ul className="mega-menu_left flex 2xl:gap-[80px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
@@ -308,15 +310,16 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <main className="main">
-        <section className="banner-section flex gap-1 relative">
-          <div className="banner_heading-wrapper min-w-[660px] flex flex-col gap-3 shadow-white-box-shadow-plus">
-            <div className="banner_heading bg-main-bg-color px-[140px] py-[130px] ">
+
+      <main className="main mt-[70px] lg:mt-0">
+        <section className="banner-section flex gap-1 relative justify-center items-center md:items-stretch">
+          <div className="banner_heading-wrapper lg:min-w-[660px] flex flex-col gap-3 shadow-white-box-shadow-plus">
+            <div className="banner_heading bg-main-bg-color lg:px-[140px] px-4 lg:py-[130px] py-[60px] order">
               <div className="banner_divider w-10 h-[2px] bg-accent-color mb-[30px]"></div>
-              <h1 className="banner_title font-medium text-3xl">
+              <h1 className="banner_title font-medium text-3xl w-[290px] sm:w-[450px]">
                 PROFITABLE OFFERS! DON’T MISS IT
               </h1>
-              <div className="banner_nav-btn_wrapper flex gap-6 mt-[60px]">
+              <div className="banner_nav-btn_wrapper flex gap-6 lg:mt-[60px] mt-10">
                 <div className="banner_nav-left-btn_wrapper border border-disable-color w-[60px] h-[60px] rounded-full bg-white flex justify-center items-center cursor-pointer">
                   <Image
                     src={"/icons/Icon name=prev arrow.svg"}
@@ -335,7 +338,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="banner_product-info bg-main-bg-color px-[140px] py-[130px]">
+            <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden"></div>
+            <div className="banner_product-info bg-main-bg-color lg:px-[140px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
               <div className="banner_product-info_wrapper flex flex-col">
                 <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px]">
                   HOT
@@ -352,11 +356,10 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="banner_img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-full w-full"></div>
-          <div className="banner_detail-img-wrapper bg-white absolute w-[460px] h-[460px] rounded-full left-[425px] top-[265px] "></div>
+          <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden"></div>
+          <div className="banner_detail-img-wrapper bg-white absolute lg:w-[460px] md:w-[300px] w-[200px] lg:h-[460px] md:h-[300px] h-[200px] rounded-full lg:left-[425px] md:left-[335px] lg:top-[265px] md:top-[175px] top-[535px] sm:top-[500px]"></div>
         </section>
       </main>
     </>
   );
 }
-``;
