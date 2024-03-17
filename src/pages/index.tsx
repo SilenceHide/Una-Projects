@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -13,7 +12,7 @@ export default function Home() {
 
   return (
     <>
-      <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center lg:static fixed lg:z-0 z-40 w-full lg:w-auto bg-white top-0">
+      <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center lg:static fixed lg:z-0 z-40 w-full bg-white top-0">
         <div className="container ">
           <div className="header-wrapper flex items-center justify-between ">
             <div className="left-header flex items-center lg:gap-8 gap-4">
@@ -48,7 +47,7 @@ export default function Home() {
               <nav
                 className={`menu text-secondary-text-color fixed lg:static right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
-                    ? "left-0 bg-white border-t border-disable-text-color z-50 w-full"
+                    ? "left-0 bg-white border-t border-disable-text-color z-50"
                     : "-left-full z-0"
                 }`}
               >
