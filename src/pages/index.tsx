@@ -48,11 +48,11 @@ export default function Home() {
                 className={`menu text-secondary-text-color fixed lg:static right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50"
-                    : "-left-full z-0"
+                    : "-left-full z-0 h-0"
                 }`}
               >
                 <ul
-                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:flex-row lg:h-full ${
+                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row lg:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px] ${
                     navOpen ? "justify-between" : "justify-start"
                   }`}
                 >
@@ -146,25 +146,29 @@ export default function Home() {
                       />
                     </div>
                     <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color  top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 lg:my-0 z-50">
-                      <ul className="mega-menu_left flex 2xl:gap-[80px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
+                      <ul className="mega-menu_left flex 2xl:gap-[40px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
-                          <h4 className="mega-title text-main-text-color font-medium">TABLEWARE</h4>
-                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                          <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
+                            TABLEWARE
+                          </h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3 tracking-[0px]">
                             <a className="mega-subtitle">Dinnerware</a>
                             <a className="mega-subtitle">Serveware</a>
                             <a className="mega-subtitle">Cutlery</a>
                             <a className="mega-subtitle">Glassware</a>
                             <a className="mega-subtitle">Table Linen</a>
                           </div>
-                          <div className="mega-link-wrapper">
+                          <div className="mega-link-wrapper tracking-[0px]">
                             <a href="#" className="mega-link border-b-2 active-tab">
                               Go to all
                             </a>
                           </div>
                         </li>
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
-                          <h4 className="mega-title text-main-text-color font-medium">DRINKWARE</h4>
-                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                          <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
+                            DRINKWARE
+                          </h4>
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3 tracking-[0px]">
                             <a className="mega-subtitle">Glassware</a>
                             <a className="mega-subtitle">Barware</a>
                             <a className="mega-subtitle">Mugs</a>
@@ -174,40 +178,40 @@ export default function Home() {
                             <a className="mega-subtitle">Teapots</a>
                             <a className="mega-subtitle">Jugs & Carafes</a>
                           </div>
-                          <div className="mega-link-wrapper">
+                          <div className="mega-link-wrapper tracking-[0px]">
                             <a href="#" className="mega-link  border-b-2 active-tab">
                               Go to all
                             </a>
                           </div>
                         </li>
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
-                          <h4 className="mega-title text-main-text-color font-medium">
+                          <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
                             COOK&BAKE WARE
                           </h4>
-                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3 tracking-[0px]">
                             <a className="mega-subtitle">Pots & Pans</a>
                             <a className="mega-subtitle">Frying Pans</a>
                             <a className="mega-subtitle">Baking Dishes</a>
                             <a className="mega-subtitle">Silicone forms</a>
                           </div>
-                          <div className="mega-link-wrapper">
+                          <div className="mega-link-wrapper tracking-[0px]">
                             <a href="#" className="mega-link  border-b-2 active-tab">
                               Go to all
                             </a>
                           </div>
                         </li>
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
-                          <h4 className="mega-title text-main-text-color font-medium">
+                          <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
                             KITCHEN ACCESSORIES
                           </h4>
-                          <div className="mega-subtitle-wrapper flex flex-col gap-3">
+                          <div className="mega-subtitle-wrapper flex flex-col gap-3 tracking-[0px]">
                             <a className="mega-subtitle">Utensils</a>
                             <a className="mega-subtitle">Food Storage</a>
                             <a className="mega-subtitle">Racks & Shelves</a>
                             <a className="mega-subtitle">Wine Racks</a>
                             <a className="mega-subtitle">Bins</a>
                           </div>
-                          <div className="mega-link-wrapper">
+                          <div className="mega-link-wrapper tracking-[0px]">
                             <a href="#" className="mega-link  border-b-2 active-tab">
                               Go to all
                             </a>
@@ -312,10 +316,10 @@ export default function Home() {
 
       <main className="main mt-[70px] lg:mt-0">
         <section className="banner-section flex gap-1 relative justify-center items-center md:items-stretch">
-          <div className="banner_heading-wrapper lg:min-w-[660px] flex flex-col gap-3 shadow-white-box-shadow-plus">
-            <div className="banner_heading bg-main-bg-color lg:px-[140px] px-4 lg:py-[130px] py-[60px] order">
+          <div className="banner_heading-wrapper xl:min-w-[660px] lg:min-w-[450px] max-w-[400px] flex flex-col gap-3 shadow-white-box-shadow-plus">
+            <div className="banner_heading bg-main-bg-color xl:px-[140px] lg:px-[70px] px-4 lg:py-[130px] py-[60px] order">
               <div className="banner_divider w-10 h-[2px] bg-accent-color mb-[30px]"></div>
-              <h1 className="banner_title font-medium text-3xl w-[290px] sm:w-[450px]">
+              <h1 className="banner_title font-medium text-3xl w-[290px] sm:w-[400px] md:w-[290px] tracking-[3px]">
                 PROFITABLE OFFERS! DON’T MISS IT
               </h1>
               <div className="banner_nav-btn_wrapper flex gap-6 lg:mt-[60px] mt-10">
@@ -338,12 +342,12 @@ export default function Home() {
               </div>
             </div>
             <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden"></div>
-            <div className="banner_product-info bg-main-bg-color lg:px-[140px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
+            <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
               <div className="banner_product-info_wrapper flex flex-col">
                 <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px]">
                   HOT
                 </p>
-                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4">
+                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
                   PENNY PENDANT LAMP SHADE, MUTED GREY
                 </h2>
                 <div className="banner_product-price_wrapper flex gap-3 text-xl">
@@ -356,8 +360,10 @@ export default function Home() {
             </div>
           </div>
           <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden"></div>
-          <div className="banner_detail-img-wrapper bg-white absolute lg:w-[460px] md:w-[300px] w-[200px] lg:h-[460px] md:h-[300px] h-[200px] rounded-full lg:left-[425px] md:left-[335px] lg:top-[265px] md:top-[175px] top-[535px] sm:top-[500px]"></div>
+          <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px]"></div>
         </section>
+
+        <section></section>
       </main>
     </>
   );
