@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
+import "swiper/css";
+import { Navigation } from "swiper/modules";
 
 export default function Home() {
   const [navOpen, isNavOpen] = useState(false);
@@ -366,7 +367,7 @@ export default function Home() {
           <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px]"></div>
         </section>
 
-        <section className="product-section bg-main-bg-color mt-[10px] pt-[110px] pb-5">
+        <section className="product-section bg-main-bg-color mt-[10px] md:pt-[110px] pt-[80px] pb-5">
           <div className="container">
             <div className="product-section_wrapper">
               <div className="product_tab-wrapper">
@@ -562,30 +563,29 @@ export default function Home() {
                 </a>
                 {/* lg:w-[240px] lg:h-[240px] */}
               </div>
-              <div className="product-section_button-wrapper lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto">
-                <a
-                  href="#"
-                  className="product-section_button flex items-center text-white justify-center gap-3"
-                >
-                  <p className="product-section_button-title">SEE MORE PRODUCTS</p>
-                  <Image
-                    src={nextArrowSvg}
-                    alt={"next arrow"}
-                    width={24}
-                    height={16}
-                    className="fill-white text-white"
-                  />
-                </a>
-              </div>
+
+              <a
+                href="#"
+                className="product-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto"
+              >
+                <p className="product-section_button-title">SEE MORE PRODUCTS</p>
+                <Image
+                  src={nextArrowSvg}
+                  alt={"next arrow"}
+                  width={24}
+                  height={16}
+                  className="fill-white text-white"
+                />
+              </a>
             </div>
           </div>
         </section>
 
-        <section className="popular-categories-section bg-main-bg-color pt-[110px] pb-5 ">
+        <section className="popular-categories-section bg-main-bg-color md:pt-[110px] pt-[60px] pb-5 ">
           <div className="container">
             <div className="popular-categories_wrapper">
               <div className="popular-categories_top-wrapper flex items-center justify-between">
-                <h2 className="popular-categories_title font-medium lg:text-3xl text-2xl">
+                <h2 className="popular-categories_title font-medium lg:text-3xl text-2xl tracking-[3px]">
                   POPULAR CATEGORIES
                 </h2>
                 <div className="popular-categories_nav-btn-wrapper flex items-center justify-center gap-5">
@@ -624,6 +624,11 @@ export default function Home() {
                       slidesPerView: 4,
                       spaceBetween: 20,
                     },
+                  }}
+                  modules={[Navigation]}
+                  navigation={{
+                    prevEl: ".popular-categories_left-btn",
+                    nextEl: ".popular-categories_right-btn",
                   }}
                   onSlideChange={() => console.log("slide change")}
                   onSwiper={(swiper) => console.log(swiper)}
@@ -722,6 +727,165 @@ export default function Home() {
                     </a>
                   </SwiperSlide>
                 </Swiper>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="instagram-section bg-main-bg-color md:pt-[100px] pt-[60px] pb-5 flex flex-col justify-center items-center px-8">
+          <div className="instagram-section_divider bg-accent-color h-[3px] w-10 mb-[30px]"></div>
+          <h2 className="instagram-section_title lg:text-3xl text-2xl font-medium tracking-[3px]">
+            INSTAGRAM INSPIRATION
+          </h2>
+          <div className="instagram_item-wrapper mt-14 flex gap-[10px] items-center justify-center flex-wrap">
+            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
+              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
+              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
+              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
+              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
+              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
