@@ -11,4 +11,28 @@
     border-color: #dba514;
     color: #32324d;
   }
+
+  .product_tab-swiper {
+    display: flex !important;
+  }
+
+  .product_tab-swiper .swiper-slide {
+    display: flex !important;
+  }
+
+  @media (min-width: 440px) {
+    .product_tab-swiper {
+      display: flex !important;
+    }
+
+    .product_tab-swiper .swiper-wrapper {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .product_tab-swiper .swiper-slide {
+      display: flex !important;
+      width: min-content !important;
+    }
+  }
 }

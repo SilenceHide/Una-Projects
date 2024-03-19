@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
 
 export default function Home() {
   const [navOpen, isNavOpen] = useState(false);
@@ -47,16 +50,16 @@ export default function Home() {
               <nav
                 className={`menu text-secondary-text-color fixed lg:static right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
-                    ? "left-0 bg-white border-t border-disable-text-color z-50"
-                    : "-left-full z-0 h-0"
+                    ? "left-0 bg-white border-t border-disable-text-color z-50 w-auto"
+                    : "-left-full z-0 w-0"
                 }`}
               >
                 <ul
-                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row lg:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px] ${
+                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px] ${
                     navOpen ? "justify-between" : "justify-start"
                   }`}
                 >
-                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         NEW IN
@@ -71,7 +74,7 @@ export default function Home() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         SOFAS
@@ -86,7 +89,7 @@ export default function Home() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         TABLES
@@ -101,7 +104,7 @@ export default function Home() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         BEDS
@@ -116,7 +119,7 @@ export default function Home() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         LIGHTING
@@ -131,7 +134,7 @@ export default function Home() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row ">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full ">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 relative">
                         KITCHEN
@@ -145,7 +148,7 @@ export default function Home() {
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color  top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 lg:my-0 z-50">
+                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color  top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between hidden group-hover/menu-item:flex group-hover/menu-item:transition-all group-hover/menu-item:duration-300 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 md:my-0 z-50">
                       <ul className="mega-menu_left flex 2xl:gap-[40px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
@@ -255,7 +258,7 @@ export default function Home() {
                       </div>
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item  flex items-center gap-1 cursor-pointer hover:border-b-accent-color">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         STORAGE
@@ -363,7 +366,366 @@ export default function Home() {
           <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px]"></div>
         </section>
 
-        <section></section>
+        <section className="product-section bg-main-bg-color mt-[10px] pt-[110px] pb-5">
+          <div className="container">
+            <div className="product-section_wrapper">
+              <div className="product_tab-wrapper">
+                <Swiper
+                  spaceBetween={30}
+                  slidesPerView={2.5}
+                  breakpoints={{
+                    440: {
+                      spaceBetween: 0,
+                      slidesPerView: 4,
+                    },
+                  }}
+                  onSlideChange={() => console.log("slide change")}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  className="product_tab-swiper text-secondary-text-color flex lg:max-w-[600px] justify-between"
+                >
+                  <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
+                    <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                      ALL
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
+                    <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
+                      POPULAR
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
+                    <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                      HOT
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
+                    <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                      NEW
+                    </a>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+              <div className="products_wrapper grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-10 lg:mt-14 mt-10 justify-center justify-items-center">
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12 "
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      EBRO BESIDE TABLE
+                    </p>
+                    <div className="product_img-price_wrapper flex gap-2">
+                      <p className="product_img-price text-red-hot font-medium tracking-[1px]">
+                        $250
+                      </p>
+                      <p className="product_img-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
+                        $310
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      TIRADO CHAIR
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $280
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      CALEIDO LAMP
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $355
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      EMMI SET
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $240
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      ILLARIA FLOOR LAMP
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $380
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      CALEIDO CHAIR
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $355
+                    </p>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      SCOTT ANGLE SOFA
+                    </p>
+                    <div className="product_img-price_wrapper flex gap-2">
+                      <p className="product_img-price text-red-hot font-medium tracking-[1px]">
+                        $4 900
+                      </p>
+                      <p className="product_img-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
+                        $5 400
+                      </p>
+                    </div>
+                  </div>
+                </a>
+                <a
+                  href="#"
+                  className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
+                >
+                  <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
+                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                    POPULAR
+                  </p>
+                  <div className="product_img-desc flex flex-col items-center gap-3">
+                    <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
+                    <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
+                      HAINESS WIDE SIDEBOARD
+                    </p>
+                    <p className="product_img-price text-accent-color font-medium tracking-[1px]">
+                      $1 750
+                    </p>
+                  </div>
+                </a>
+                {/* lg:w-[240px] lg:h-[240px] */}
+              </div>
+              <div className="product-section_button-wrapper lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto">
+                <a
+                  href="#"
+                  className="product-section_button flex items-center text-white justify-center gap-3"
+                >
+                  <p className="product-section_button-title">SEE MORE PRODUCTS</p>
+                  <Image
+                    src={nextArrowSvg}
+                    alt={"next arrow"}
+                    width={24}
+                    height={16}
+                    className="fill-white text-white"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="popular-categories-section bg-main-bg-color pt-[110px] pb-5 ">
+          <div className="container">
+            <div className="popular-categories_wrapper">
+              <div className="popular-categories_top-wrapper flex items-center justify-between">
+                <h2 className="popular-categories_title font-medium lg:text-3xl text-2xl">
+                  POPULAR CATEGORIES
+                </h2>
+                <div className="popular-categories_nav-btn-wrapper flex items-center justify-center gap-5">
+                  <div className="popular-categories_left-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                    <Image
+                      src={"/icons/Icon name=chevron_left.svg"}
+                      alt={"left-btn"}
+                      width={10}
+                      height={14}
+                    />
+                  </div>
+                  <div className="popular-categories_right-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                    <Image
+                      src={"/icons/Icon name=chevron_right.svg"}
+                      alt={"right-btn"}
+                      width={10}
+                      height={14}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="popular-categories mt-14">
+                <Swiper
+                  spaceBetween={15}
+                  slidesPerView={1}
+                  breakpoints={{
+                    // 640: {
+                    //   slidesPerView: 2,
+                    //   spaceBetween: 20,
+                    // },
+                    // 768: {
+                    //   slidesPerView: 4,
+                    //   spaceBetween: 40,
+                    // },
+                    1024: {
+                      slidesPerView: 4,
+                      spaceBetween: 12,
+                    },
+                  }}
+                  onSlideChange={() => console.log("slide change")}
+                  onSwiper={(swiper) => console.log(swiper)}
+                  className="popular-categories_swiper"
+                >
+                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">SOFAS</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">BEDS</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">LIGHTING</p>
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">CHAIRS</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">GARDEN</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">TEXTILES</p>
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">TABLE</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">PET BEDS</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">DECOR</p>
+                    </a>
+                  </SwiperSlide>
+                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px] ">STORAGE</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">DRINKWARE</p>
+                    </a>
+                    <a
+                      href="#"
+                      className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                    >
+                      <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
+                      <p className="popular-category_title tracking-[2px]">KITCHEN</p>
+                    </a>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
