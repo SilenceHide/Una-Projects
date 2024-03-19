@@ -609,27 +609,27 @@ export default function Home() {
               </div>
               <div className="popular-categories mt-14">
                 <Swiper
-                  spaceBetween={15}
                   slidesPerView={1}
+                  spaceBetween={20}
                   breakpoints={{
-                    // 640: {
-                    //   slidesPerView: 2,
-                    //   spaceBetween: 20,
-                    // },
-                    // 768: {
-                    //   slidesPerView: 4,
-                    //   spaceBetween: 40,
-                    // },
-                    1024: {
+                    768: {
+                      slidesPerView: 2,
+                      spaceBetween: 20,
+                    },
+                    1280: {
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+                    },
+                    1640: {
                       slidesPerView: 4,
-                      spaceBetween: 12,
+                      spaceBetween: 20,
                     },
                   }}
                   onSlideChange={() => console.log("slide change")}
                   onSwiper={(swiper) => console.log(swiper)}
                   className="popular-categories_swiper"
                 >
-                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                  <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
                     <a
                       href="#"
                       className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
@@ -652,7 +652,7 @@ export default function Home() {
                       <p className="popular-category_title tracking-[2px]">LIGHTING</p>
                     </a>
                   </SwiperSlide>
-                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                  <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
                     <a
                       href="#"
                       className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
@@ -675,7 +675,7 @@ export default function Home() {
                       <p className="popular-category_title tracking-[2px]">TEXTILES</p>
                     </a>
                   </SwiperSlide>
-                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                  <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
                     <a
                       href="#"
                       className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
@@ -698,7 +698,7 @@ export default function Home() {
                       <p className="popular-category_title tracking-[2px]">DECOR</p>
                     </a>
                   </SwiperSlide>
-                  <SwiperSlide className="popular-categories_col max-w-[400px]">
+                  <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
                     <a
                       href="#"
                       className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
