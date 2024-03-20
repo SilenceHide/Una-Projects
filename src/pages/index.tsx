@@ -41,10 +41,10 @@ export default function Home() {
                 )}
               </div>
               <Image
-                src={"/logo/logo-default.svg"}
+                src={"/logo/logo-small.svg"}
                 alt={"logo-default"}
-                width={82}
-                height={81}
+                width={72}
+                height={60}
                 priority
                 className="header_logo"
               />
@@ -563,7 +563,6 @@ export default function Home() {
                 </a>
                 {/* lg:w-[240px] lg:h-[240px] */}
               </div>
-
               <a
                 href="#"
                 className="product-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto"
@@ -732,16 +731,19 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="instagram-section bg-main-bg-color md:pt-[100px] pt-[60px] pb-5 flex flex-col justify-center items-center px-8">
+        <section className="instagram-section bg-main-bg-color md:pt-[100px] pt-[60px] pb-5 flex flex-col justify-center items-center md:px-8 px-4">
           <div className="instagram-section_divider bg-accent-color h-[3px] w-10 mb-[30px]"></div>
           <h2 className="instagram-section_title lg:text-3xl text-2xl font-medium tracking-[3px]">
             INSTAGRAM INSPIRATION
           </h2>
-          <div className="instagram_item-wrapper mt-14 flex gap-[10px] items-center justify-center flex-wrap">
-            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
-              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+          <div className="instagram_item-wrapper mt-14 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
+            <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                <a
+                  href="#"
+                  className="instagram_item-tag text-secondary-text-color hidden md:block"
+                >
                   @decorinsta
                 </a>
                 <div className="instagram_item-info flex gap-4 items-center justify-center">
@@ -768,10 +770,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
-              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+            <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                <a
+                  href="#"
+                  className="instagram_item-tag text-secondary-text-color hidden md:block"
+                >
                   @decorinsta
                 </a>
                 <div className="instagram_item-info flex gap-4 items-center justify-center">
@@ -798,10 +803,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
-              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+            <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                <a
+                  href="#"
+                  className="instagram_item-tag text-secondary-text-color hidden md:block"
+                >
                   @decorinsta
                 </a>
                 <div className="instagram_item-info flex gap-4 items-center justify-center">
@@ -828,10 +836,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
-              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+            <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-                <a href="#" className="instagram_item-tag text-secondary-text-color">
+                <a
+                  href="#"
+                  className="instagram_item-tag text-secondary-text-color hidden md:block"
+                >
                   @decorinsta
                 </a>
                 <div className="instagram_item-info flex gap-4 items-center justify-center">
@@ -858,8 +869,8 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="instagram_item max-w-[364px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow">
-              <div className="instagram_item-img w-[364px] h-[364px] bg-disable-text-color border-[10px] border-white"></div>
+            <div className="instagram_item md:max-w-[364px] max-w-[343px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
                 <a href="#" className="instagram_item-tag text-secondary-text-color">
                   @decorinsta
@@ -890,7 +901,313 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="blog-section bg-main-bg-color md:pt-[80px] pt-[60px] md:pb-[120px] pb-[56px]">
+          <div className="container">
+            <div className="blog_top-wrapper flex items-center justify-between gap-2 sm:gap-0">
+              <h2 className="blog_title font-medium lg:text-3xl text-2xl tracking-[3px]">
+                INTERESTING IN BLOG
+              </h2>
+              <div className="blog_nav-btn-wrapper flex items-center justify-center gap-5">
+                <div className="blog_left-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                  <Image
+                    src={"/icons/Icon name=chevron_left.svg"}
+                    alt={"left-btn"}
+                    width={10}
+                    height={14}
+                  />
+                </div>
+                <div className="blog_right-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                  <Image
+                    src={"/icons/Icon name=chevron_right.svg"}
+                    alt={"right-btn"}
+                    width={10}
+                    height={14}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="blog_items-wrapper mt-14">
+              <Swiper
+                slidesPerView={1}
+                spaceBetween={30}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 1.5,
+                    spaceBetween: 20,
+                  },
+                  1024: {
+                    slidesPerView: 1.8,
+                    spaceBetween: 20,
+                  },
+                  1280: {
+                    slidesPerView: 2.3,
+                    spaceBetween: 40,
+                  },
+                  1450: {
+                    slidesPerView: 2.6,
+                    spaceBetween: 20,
+                  },
+                  1640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                  },
+                }}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".blog_left-btn",
+                  nextEl: ".blog_right-btn",
+                }}
+                onSlideChange={() => console.log("slide change")}
+                onSwiper={(swiper) => console.log(swiper)}
+                className="blog_items_swiper"
+              >
+                <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] ">
+                  <a href="#">
+                    <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
+                    <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
+                      <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
+                      <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
+                        UPDATING YOUR BEDROOM? IT’S EASIER THAN YOU THINK
+                      </h3>
+                      <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
+                        May 2, 2022
+                      </p>
+                    </div>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px]">
+                  <a href="#">
+                    <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
+                    <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
+                      <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
+                      <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
+                        BACK ON THE MENU: HOSTING A POST-LOCKDOWN DINNER PARTY
+                      </h3>
+                      <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
+                        May 1, 2022
+                      </p>
+                    </div>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px]">
+                  <a href="#">
+                    <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
+                    <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
+                      <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
+                      <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
+                        HOW TO REFRESH YOUR KITCHEN IN 5 EASY STEPS
+                      </h3>
+                      <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
+                        February 27, 2022
+                      </p>
+                    </div>
+                  </a>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+            <a
+              href="#"
+              className="blog-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] sm:mt-14 mt-10 bg-disable-color py-3 m-auto"
+            >
+              <p className="blog-section_button-title">READ MORE ARTICLES</p>
+              <Image
+                src={nextArrowSvg}
+                alt={"next arrow"}
+                width={24}
+                height={16}
+                className="fill-white text-white"
+              />
+            </a>
+          </div>
+        </section>
       </main>
+
+      <footer className="footer pt-[75px] pb-5">
+        <div className="container">
+          <div className="footer_wrapper flex flex-col">
+            <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full pb-[78px] gap-8">
+              <Image
+                src={"/logo/logo-default.svg"}
+                alt={"logo-default"}
+                width={82}
+                height={80}
+                priority
+                className="footer_logo"
+              />
+              <div className="footer_links flex md:flex-row flex-col items-center gap-[30px] text-secondary-text-color tracking-[2px]">
+                <a
+                  href="#"
+                  className="footer_link border-b-2 border-transparent hover:border-b-accent-color hover:text-main-text-color transition-all"
+                >
+                  ABOUT
+                </a>
+                <a
+                  href="#"
+                  className="footer_link border-b-2 border-transparent hover:border-b-accent-color hover:text-main-text-color transition-all"
+                >
+                  BLOG
+                </a>
+                <a
+                  href="#"
+                  className="footer_link border-b-2 border-transparent hover:border-b-accent-color hover:text-main-text-color transition-all"
+                >
+                  DISCOUNTS
+                </a>
+                <a
+                  href="#"
+                  className="footer_link border-b-2 border-transparent hover:border-b-accent-color hover:text-main-text-color transition-all"
+                >
+                  FOR PARTNERS
+                </a>
+                <a
+                  href="#"
+                  className="footer_link border-b-2 border-transparent hover:border-b-accent-color hover:text-main-text-color transition-all"
+                >
+                  CONTACTS
+                </a>
+              </div>
+            </div>
+            <div className="footer_info py-10 border-b border-disable-color w-full flex lg:flex-row flex-col justify-between lg:gap-0 gap-10 sm:items-center lg:items-start">
+              <div className="footer_info-left flex xl:gap-[110px] lg:gap-[40px] md:gap-[80px] gap-10 sm:flex-row flex-col">
+                <div className="footer_information flex flex-col gap-4">
+                  <p className="footer_info-title font-medium tracking-[2px]">INFORMATION</p>
+                  <div className="footer_info-link_wrapper text-secondary-text-color flex sm:flex-col sm:gap-[10px] gap-14">
+                    <div className="footer_info-link_inner-wrapper flex flex-col gap-2">
+                      <a href="#" className="footer_info-link">
+                        shipping
+                      </a>
+                      <a href="#" className="footer_info-link">
+                        Payment options
+                      </a>
+                    </div>
+                    <div className="footer_info-link_inner-wrapper flex flex-col gap-2">
+                      <a href="#" className="footer_info-link">
+                        Terms and Conditions
+                      </a>
+                      <a href="#" className="footer_info-link">
+                        FAQ
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="footer_schedule-and-shipping flex sm:flex-col gap-[30px] sm:max-w-[175px] ">
+                  <div className="footer_schedule-wrapper flex flex-col gap-4">
+                    <p className="footer_schedule-title font-medium tracking-[2px]">SCHEDULE</p>
+                    <p className="footer_schedule-desc text-sub-text-color md:max-w-max max-w-[155px]">
+                      We accept orders from 9:00 to 22:00
+                    </p>
+                  </div>
+                  <div className="footer_shipping-wrapper flex flex-col gap-4">
+                    <p className="footer_shipping-title font-medium tracking-[2px]">
+                      SHIPPING ORDERS
+                    </p>
+                    <div className="footer_shipping-desc_wrapper">
+                      <p className="footer_shipping-desc text-sub-text-color">
+                        Mon-Sat – 9:00-19:00
+                      </p>
+                      <p className="footer_shipping-desc text-sub-text-color">Sun – weekend</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="footer_stay-in-touch flex flex-col gap-4">
+                  <p className="footer_schedule-title font-medium tracking-[2px]">STAY IN TOUCH</p>
+                  <div className="footer_stay-in-touch_links-wrapper flex sm:flex-col sm:gap-3 gap-5">
+                    <div className="footer_stay-in-touch_links-inner-wrapper flex flex-col gap-2">
+                      <a
+                        href="mailto:siteemail@gmail.com"
+                        className="footer_stay-in-touch_link text-secondary-text-color"
+                      >
+                        siteemail@gmail.com
+                      </a>
+                      <a
+                        href="tel:(406) 555-0120"
+                        className="footer_stay-in-touch_link text-secondary-text-color"
+                      >
+                        (406) 555-0120
+                      </a>
+                    </div>
+                    <div className="footer_stay-in-touch_links-inner-wrapper flex flex-col gap-2">
+                      <a
+                        href="tel:(480) 555-0103"
+                        className="footer_stay-in-touch_link text-secondary-text-color"
+                      >
+                        (480) 555-0103
+                      </a>
+                      <div className="footer_stay-in-touch_icon-wrapper flex gap-3 mt-1">
+                        <a href="#" className="footer_stay-in-touch_icon">
+                          <Image
+                            src={"/icons/Icon name=Facebook.svg"}
+                            alt={"facebook"}
+                            width={24}
+                            height={24}
+                            priority
+                            className="footer_icon"
+                          />
+                        </a>
+                        <a href="#" className="footer_stay-in-touch_icon">
+                          <Image
+                            src={"/icons/Icon name=twitter.svg"}
+                            alt={"facebook"}
+                            width={24}
+                            height={24}
+                            priority
+                            className="footer_icon"
+                          />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="footer_info-right max-w-[380px] flex flex-col gap-4">
+                <p className="footer_subscribe-title font-medium tracking-[2px]">SUBSCRIBE</p>
+                <p className="footer_subscribe-desc text-sub-text-color pr-24">
+                  Get the latest news and promotions on your inbox
+                </p>
+                <form
+                  action="#"
+                  className="footer_subscribe-form flex items-center border border-disable-color h-12 justify-between px-4 mt-4"
+                >
+                  <input
+                    type="email"
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-secondary-text-color selection:text-white selection:bg-secondary-text-color"
+                    placeholder="Email address"
+                  />
+                  <button type="submit" className="footer_subscribe_submit-btn">
+                    <Image
+                      src={"/icons/Icon name=next arrow.svg"}
+                      alt={"facebook"}
+                      width={24}
+                      height={16}
+                      priority
+                      className="footer_subscribe_submit-icon"
+                    />
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div className="footer_copyright_wrapper flex items-center justify-between mt-5">
+              <p className="footer_copyright text-[#999]">2022©All rights reserved</p>
+              <div className="footer_gtt-btn_wrapper">
+                <a
+                  href="#"
+                  className="footer_gtt-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer swiper-button-disabled swiper-button-lock transition-all"
+                >
+                  <Image
+                    src={"/icons/Icon name=up arrow.svg"}
+                    alt={"facebook"}
+                    width={24}
+                    height={24}
+                    priority
+                    className="footer_gtt-btn-icon"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
