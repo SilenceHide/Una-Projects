@@ -7,6 +7,7 @@ import { Navigation } from "swiper/modules";
 
 export default function Catalog() {
   const [navOpen, isNavOpen] = useState(false);
+  const [searchBoxOpen, isSearchBoxOpen] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
@@ -18,8 +19,8 @@ export default function Catalog() {
     <>
       <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center lg:static fixed lg:z-0 z-40 w-full bg-white top-0">
         <div className="container ">
-          <div className="header-wrapper flex items-center justify-between ">
-            <div className="left-header flex items-center lg:gap-8 gap-4">
+          <div className="header-wrapper flex items-center justify-between">
+            <div className="header-left flex items-center lg:gap-8 gap-4">
               <div
                 className="menu_button p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden transition-all duration-300"
                 onClick={() => isNavOpen(!navOpen)}
@@ -49,10 +50,14 @@ export default function Catalog() {
                 className="header_logo"
               />
               <nav
-                className={`menu text-secondary-text-color fixed lg:static right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
+                className={`menu text-secondary-text-color right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
                     : "-left-full z-0 invisible opacity-0"
+                } ${
+                  searchBoxOpen
+                    ? "lg:static fixed lg:-z-10 lg:invisible duration-150 lg:delay-0"
+                    : "lg:static fixed lg:z-10 lg:visible duration-150 lg:delay-500"
                 }`}
               >
                 <ul
@@ -327,23 +332,62 @@ export default function Catalog() {
                 </ul>
               </nav>
             </div>
-            <div className="right-header flex items-center gap-5">
+            <div className="header-right flex items-center gap-5">
               <a
                 href="tel:(704)-555-0127"
-                className="header_contact-number border-b-2 border-accent-color hidden xl:block"
+                className={`header_contact-number border-b-2 border-accent-color hidden transition-all xl:block relative ${
+                  searchBoxOpen ? "invisible -z-10" : "visible z-0"
+                }`}
               >
                 (704) 555-0127
               </a>
-              <div className="header_icon-wrapper flex items-center gap-3 lg:h-[100px] h-[70px]">
-                <div className="header_search-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer ">
-                  <Image
-                    src={"/icons/Icon name=search.svg"}
-                    alt={"search-icon"}
-                    width={22}
-                    height={22}
-                  />
+              <div className="header_icon-wrapper flex items-center justify-between gap-3 lg:h-[100px] h-[70px] ">
+                <div className="header_search-wrapper cursor-pointer flex sm:overflow-hidden relative">
+                  <div
+                    onClick={() => isSearchBoxOpen(true)}
+                    className={`header_search-inner-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-[1.5px] transition-all duration-300 ${
+                      searchBoxOpen ? "border-accent-color" : "border-disable-text-color"
+                    }`}
+                  >
+                    <Image
+                      src={"/icons/Icon name=search.svg"}
+                      alt={"search-icon"}
+                      width={22}
+                      height={22}
+                    />
+                  </div>
+                  <div
+                    className={`"header_search-input_wrapper flex items-center justify-between sm:ml-[14px] transition-all sm:duration-500 duration-300 fixed top-[70px] right-0 left-0 w-full px-5 xs:px-24 ${
+                      searchBoxOpen
+                        ? "visible xl:w-[330px] sm:w-[240px] sm:mr-0 bg-white "
+                        : "invisible sm:w-0 sm:mr-[-14px] bg-transparent "
+                    }`}
+                  >
+                    <input
+                      type="text"
+                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color transition-all duration-300 ${
+                        searchBoxOpen
+                          ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
+                          : "sm:w-0 invisible opacity-0"
+                      }`}
+                      placeholder="Search request..."
+                    />
+                    <div
+                      onClick={() => isSearchBoxOpen(false)}
+                      className={`header_search-close-btn w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] transition-all duration-300 ${
+                        searchBoxOpen ? "visible opacity-100" : "invisible opacity-0"
+                      }`}
+                    >
+                      <Image
+                        src={"/icons/Icon name=close.svg"}
+                        alt={"search-icon"}
+                        width={20}
+                        height={20}
+                      />
+                    </div>
+                  </div>
                 </div>
-                <div className="header_profile-wrapper p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer">
+                <div className="header_profile-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] cursor-pointer transition-all ">
                   <Image
                     src={"/icons/Icon name=user.svg"}
                     alt={"user-icon"}
@@ -351,7 +395,10 @@ export default function Catalog() {
                     height={22}
                   />
                 </div>
-                <div className="header_basket-wrapper group/header_basket-icon p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer basket-active relative">
+                <div
+                  className="header_basket-wrapper group/header_basket-icon w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] cursor-pointer basket-active relative  "
+                  onClick={() => isNavOpen(false)}
+                >
                   <Image
                     src={"/icons/Icon name=cart.svg"}
                     alt={"cart-icon"}
@@ -361,8 +408,136 @@ export default function Catalog() {
                   <p className="absolute top-[-6px] right-[-7px] text-white bg-accent-color rounded-full w-5 h-5 flex items-center justify-center text-xs">
                     10
                   </p>
-                  <div className="w-[560px] h-[808px] absolute top-[40px] left-[-520px] bg-transparent invisible opacity-0 group-hover/header_basket-icon:visible group-hover/header_basket-icon:opacity-100 transition-all">
-                    <div className="w-[560px] h-[808px] mt-[31px] bg-white border-t-[3px] border-accent-color "></div>
+                  <div className="header_basket_inner-wrapper max-w-[560px] absolute lg:top-[40px] top-[25px] md:left-[-520px] left-[-300px] bg-transparent invisible opacity-0 group-hover/header_basket-icon:visible group-hover/header_basket-icon:opacity-100 transition-all cursor-default z-10 ">
+                    <div className="header_basket_main-wrapper md:w-[560px] w-[343px] mt-[31px] bg-white border-t-[3px] border-accent-color lg:py-10 py-5 shadow-main-box-shadow overflow-y-scroll lg:static relative z-10 h-[90vh]">
+                      <div className="header_basket_info-summery tracking-[3px] font-medium md:text-2xl text-xl flex items-center justify-between border-b border-disable-color md:px-10 px-3 lg:pb-10 pb-5">
+                        <p className="header_basket-total-cart">CART (3)</p>
+                        <p className="header_basket-total-price">$1 160</p>
+                      </div>
+                      <div className="header_basket_products flex flex-col md:py-10 px-10 py-8 border-b border-disable-color">
+                        <div className="header_basket_product flex gap-[30px] md:flex-row flex-col  ">
+                          <div className="header_basket_product-img md:min-w-[160px] w-[160px] h-[160px] bg-disable-text-color"></div>
+                          <div className="header_basket_product-info_wrapper w-full flex flex-col md:items-stretch items-center">
+                            <div className="header_basket_product-desc border-b border-disable-color pb-4 w-full">
+                              <p className="header_basket_product-title font-medium tracking-[2px] mb-[10px]">
+                                HARU SOFA BED
+                              </p>
+                              <p className="header_basket_product-sub text-sm text-[#999]">
+                                yellow
+                              </p>
+                              <p className="header_basket_product-sub text-sm text-[#999]">
+                                50 sm х 30 sm
+                              </p>
+                              <p className="header_basket_product-price font-medium text-accent-color mt-[10px]">
+                                $460
+                              </p>
+                            </div>
+                            <div className="header_basket_product-number flex items-center justify-between mt-4 md:w-auto w-[200px]">
+                              <div className="header_basket_product-number_left flex items-center gap-4">
+                                <div className="header_basket_product-number_minus-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=minus.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                                <p className="header_basket_product-number_count">2</p>
+                                <div className="header_basket_product-number_plus-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=plus.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                              </div>
+                              <div className="header_basket_product-number_right">
+                                <div className="header_basket_product-number_delete-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=trash.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="header_basket_products-divider w-full h-[1px] bg-disable-color md:my-10 my-8"></div>
+                        <div className="header_basket_product flex gap-[30px] md:flex-row flex-col ">
+                          <div className="header_basket_product-img md:min-w-[160px] w-[160px] h-[160px] bg-disable-text-color"></div>
+                          <div className="header_basket_product-info_wrapper w-full flex flex-col md:items-stretch items-center">
+                            <div className="header_basket_product-desc border-b border-disable-color pb-4 w-full">
+                              <p className="header_basket_product-title font-medium tracking-[2px] mb-[10px]">
+                                EMMI SET
+                              </p>
+                              <p className="header_basket_product-sub text-sm text-[#999]">green</p>
+                              <p className="header_basket_product-price font-medium text-accent-color mt-[10px]">
+                                $240
+                              </p>
+                            </div>
+                            <div className="header_basket_product-number flex items-center justify-between mt-4 md:w-auto w-[200px]">
+                              <div className="header_basket_product-number_left flex items-center gap-4">
+                                <div className="header_basket_product-number_minus-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=minus.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                                <p className="header_basket_product-number_count">1</p>
+                                <div className="header_basket_product-number_plus-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=plus.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                              </div>
+                              <div className="header_basket_product-number_right">
+                                <div className="header_basket_product-number_delete-icon w-[46px] h-[46px] border border-disable-color rounded-full flex items-center justify-center cursor-pointer">
+                                  <Image
+                                    src={"/icons/Icon name=trash.svg"}
+                                    alt={"cart-icon"}
+                                    width={22}
+                                    height={22}
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="header_basket_promo-code lg:px-10 px-3 py-5 border-b border-disable-color flex items-center justify-between">
+                        <p className="header_basket_promo-code_title text-sub-text-color tracking-[2px] font-medium">
+                          APPLY PROMOCODE
+                        </p>
+                        <Image
+                          src={"/icons/Icon name=chevron_down.svg"}
+                          alt={"cart-icon"}
+                          width={16}
+                          height={8}
+                          className="cursor-pointer"
+                        />
+                      </div>
+                      <div className="header_basket_checkout-btn_wrapper lg:px-10 px-3 md:pt-10 pt-6">
+                        <button className="header_basket_checkout-btn text-white bg-disable-color flex justify-center items-center gap-[14px] w-full h-[60px]">
+                          <p className="header_basket_checkout-btn_title font-semibold md:text-lg tracking-[2px]">
+                            PROCEED TO CHECKOUT
+                          </p>
+                          <Image
+                            src={"/icons/Icon name=next arrow - white.svg"}
+                            alt={"cart-icon"}
+                            width={24}
+                            height={16}
+                          />
+                        </button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -521,7 +696,7 @@ export default function Catalog() {
                 >
                   <input
                     type="email"
-                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-secondary-text-color selection:text-white selection:bg-secondary-text-color"
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color"
                     placeholder="Email address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">
