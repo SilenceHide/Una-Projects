@@ -357,10 +357,10 @@ export default function Catalog() {
                     />
                   </div>
                   <div
-                    className={`"header_search-input_wrapper flex items-center justify-between sm:ml-[14px] transition-all sm:duration-500 duration-300 fixed top-[70px] right-0 left-0 w-full px-5 xs:px-24 ${
+                    className={`"header_search-input_wrapper flex items-center justify-between sm:ml-[14px] transition-all sm:duration-500 duration-300 sm:static fixed top-[70px] right-0 left-0 sm:p-0 px-5 xs:px-24 py-2  ${
                       searchBoxOpen
-                        ? "visible xl:w-[330px] sm:w-[240px] sm:mr-0 bg-white "
-                        : "invisible sm:w-0 sm:mr-[-14px] bg-transparent "
+                        ? "shadow-main-box-shadow sm:shadow-none visible xl:w-[330px] sm:w-[240px] sm:mr-0 bg-white z-50"
+                        : "shadow-none invisible sm:mr-[-14px] bg-transparent z-0 sm:w-0"
                     }`}
                   >
                     <input
@@ -368,7 +368,7 @@ export default function Catalog() {
                       className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color transition-all duration-300 ${
                         searchBoxOpen
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
-                          : "sm:w-0 invisible opacity-0"
+                          : "w-0 invisible opacity-0"
                       }`}
                       placeholder="Search request..."
                     />
