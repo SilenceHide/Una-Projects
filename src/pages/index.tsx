@@ -1268,10 +1268,10 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="footer pt-[75px] pb-5">
+      <footer className="footer lg:pt-[75px] pt-[60px] pb-5">
         <div className="container">
           <div className="footer_wrapper flex flex-col">
-            <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full pb-[78px] gap-8">
+            <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full lg:pb-[78px] pb-[60px] gap-8">
               <Image
                 src={"/logo/logo-default.svg"}
                 alt={"logo-default"}
@@ -1416,7 +1416,7 @@ export default function Home() {
                 >
                   <input
                     type="email"
-                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-secondary-text-color selection:text-white selection:bg-secondary-text-color"
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color"
                     placeholder="Email address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">

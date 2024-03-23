@@ -20,6 +20,10 @@
     display: flex !important;
   }
 
+  .selected-breadcrumb {
+    color: #32324d;
+  }
+
   @media (min-width: 440px) {
     .product_tab-swiper {
       display: flex !important;

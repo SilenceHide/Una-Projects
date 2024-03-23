@@ -563,12 +563,65 @@ export default function Catalog() {
         </div>
       </header>
 
-      <main className="main "></main>
+      <main className="main-catalog lg:pt-10 pt-24 pb-[100px] bg-main-bg-color">
+        <div className="container">
+          <div className="catalog_wrapper flex flex-col">
+            <div className="catalog_breadcrumbs flex items-center gap-2">
+              <p className="catalog_breadcrumb text-secondary-text-color font-medium text-[13px]">
+                Home
+              </p>
+              <Image
+                src={"/icons/Icon name=chevron_right.svg"}
+                alt={"chevron_right"}
+                width={7}
+                height={10}
+              />
+              <p className="catalog_breadcrumb text-secondary-text-color font-medium text-[13px] selected-breadcrumb">
+                Furniture
+              </p>
+            </div>
+            <div className="catalog_title-wrapper mt-[54px]">
+              <h1 className="catalog_title lg:text-3xl text-2xl font-medium tracking-[3px]">
+                FURNITURE
+              </h1>
+            </div>
+            <div className="catalog_filter-sort-btns mt-6 flex items-center gap-4 lg:hidden">
+              <button className="catalog_filter-btn flex items-center justify-center bg-disable-color w-[162px] h-[46px] gap-[10px]">
+                <p className="catalog_filter-title tracking-[2px] text-white uppercase">Filters</p>
+                <p className="catalog_filter-number tracking-[2px] text-white">4</p>
+                <Image
+                  src={"/icons/Icon name=close - white.svg"}
+                  alt={"chevron_right"}
+                  width={20}
+                  height={20}
+                />
+              </button>
+              <button className="catalog_sort-btn flex items-center justify-center bg-white w-[162px] h-[46px] gap-[10px] border border-disable-color">
+                <p className="catalog_filter-title tracking-[2px] text-secondary-text-color uppercase">
+                  Sort
+                </p>
+                <p className="catalog_filter-number tracking-[2px] text-secondary-text-color">1</p>
+                <Image
+                  src={"/icons/Icon name=close.svg"}
+                  alt={"chevron_right"}
+                  width={20}
+                  height={20}
+                />
+              </button>
+            </div>
+            <div className="catalog_filter-sort-tags"></div>
+            <div className="catalog_main-wrapper">
+              <div className="catalog_products-wrapper"></div>
+              <div className="catalog_filters-wrapper"></div>
+            </div>
+          </div>
+        </div>
+      </main>
 
-      <footer className="footer pt-[75px] pb-5">
+      <footer className="footer lg:pt-[75px] pt-[60px] pb-5">
         <div className="container">
           <div className="footer_wrapper flex flex-col">
-            <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full pb-[78px] gap-8">
+            <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full lg:pb-[78px] pb-[60px] gap-8">
               <Image
                 src={"/logo/logo-default.svg"}
                 alt={"logo-default"}
