@@ -379,7 +379,7 @@ export default function Home() {
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
                       }`}
-                      placeholder="Search request..."
+                      placeholder="Search Request..."
                     />
                     <div
                       onClick={() => isSearchBoxOpen(false)}
@@ -1417,7 +1417,7 @@ export default function Home() {
                   <input
                     type="email"
                     className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color "
-                    placeholder="Email address"
+                    placeholder="Email Address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">
                     <Image

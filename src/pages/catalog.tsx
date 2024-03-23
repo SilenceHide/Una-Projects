@@ -381,7 +381,7 @@ export default function Catalog() {
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
                       }`}
-                      placeholder="Search request..."
+                      placeholder="Search Request..."
                     />
                     <div
                       onClick={() => isSearchBoxOpen(false)}
@@ -658,636 +658,716 @@ export default function Catalog() {
               </button>
             </div>
             <div className="catalog_main-wrapper mt-10 flex gap-10">
-              <div className="catalog_products-wrapper flex items-center gap-8 flex-wrap">
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      Tirado chair
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $280
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
-                      HOT
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      Kaleido
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
-                        $199
+              <div className="catalog_products-wrapper flex flex-col items-center">
+                <div className="catalog_products-inner-wrapper flex items-center gap-8 flex-wrap">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        Tirado chair
                       </p>
-                      <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
-                        $240
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $280
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
+                        HOT
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        Kaleido
+                      </p>
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
+                          $199
+                        </p>
+                        <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
+                          $240
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        damien
+                      </p>
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $310
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      damien
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $310
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
-                      popular
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      emmi set
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
-                        $240
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
+                        popular
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        emmi set
+                      </p>
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
+                          $240
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        caleido lamp
+                      </p>
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $355
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      caleido lamp
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $355
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
-                      new
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      haru sofa bef
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
-                        $460
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
+                        new
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
-                      HOT
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      Scott angle sofa
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
-                        $4 900
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        haru sofa bef
                       </p>
-                      <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
-                        $5 400
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
+                          $460
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
+                        HOT
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        Scott angle sofa
+                      </p>
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
+                          $4 900
+                        </p>
+                        <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
+                          $5 400
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        hainess wide sideboard
+                      </p>
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $1 750
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      hainess wide sideboard
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $1 750
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
-                      new
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      illaria floor lamp
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
-                        $380
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
+                        new
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      ebro bedside table
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $300
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
-                  </div>
-                </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
-                    <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
-                      HOT
-                    </p>
-                  </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      aula coffee table
-                    </p>
-                    <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
-                      <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
-                        $299
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        illaria floor lamp
                       </p>
-                      <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
-                        $380
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-accent-color font-medium tracking-[1px]">
+                          $380
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        ebro bedside table
+                      </p>
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $300
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <p className="catalog_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
+                        HOT
                       </p>
                     </div>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        aula coffee table
+                      </p>
+                      <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
+                        <p className="catalog_product-price text-red-hot font-medium tracking-[1px]">
+                          $299
+                        </p>
+                        <p className="catalog_product-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
+                          $380
+                        </p>
+                      </div>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
+                  </div>
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                      <Swiper
+                        slidesPerView={1}
+                        spaceBetween={30}
+                        loop={true}
+                        pagination={{
+                          clickable: true,
+                        }}
+                        navigation={{
+                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
+                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                        }}
+                        modules={[Pagination, Navigation]}
+                        className="catalog_product-swiper h-full"
+                      >
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                        <SwiperSlide></SwiperSlide>
+                      </Swiper>
+                      <Image
+                        src={"/icons/prev-btn.svg"}
+                        alt={"prev-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                      <Image
+                        src={"/icons/next-btn.svg"}
+                        alt={"next-btn"}
+                        width={40}
+                        height={40}
+                        className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      />
+                    </div>
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                        haru small sofa bed
+                      </p>
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                        $2 500
+                      </p>
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                        add to cart
+                      </button>
+                    </div>
                   </div>
                 </div>
-                <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
-                    <Swiper
-                      slidesPerView={1}
-                      spaceBetween={30}
-                      loop={true}
-                      pagination={{
-                        clickable: true,
-                      }}
-                      navigation={{
-                        prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                        nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
-                      }}
-                      modules={[Pagination, Navigation]}
-                      className="catalog_product-swiper h-full"
-                    >
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                      <SwiperSlide></SwiperSlide>
-                    </Swiper>
+                <div className="catalog_product_page-number flex items-center mt-10 gap-7">
+                  <div className="catalog_product_prev-page cursor-pointer w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center border border-disable-color">
                     <Image
-                      src={"/icons/prev-btn.svg"}
-                      alt={"prev-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_left-btn cursor-pointer absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
-                    />
-                    <Image
-                      src={"/icons/next-btn.svg"}
-                      alt={"next-btn"}
-                      width={40}
-                      height={40}
-                      className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                      src={"/icons/Icon name=chevron_left.svg"}
+                      alt={"chevron_left"}
+                      width={10}
+                      height={14}
                     />
                   </div>
-                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
-                      haru small sofa bed
-                    </p>
-                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
-                      $2 500
-                    </p>
-                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
-                      add to cart
-                    </button>
+                  <div className="catalog_product_page-btns flex items-center gap-4">
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color selected-page">
+                      1
+                    </div>
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      2
+                    </div>
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      3
+                    </div>
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      4
+                    </div>
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      5
+                    </div>
                   </div>
+                  <div className="catalog_product_next-page cursor-pointer w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center border border-disable-color">
+                    <Image
+                      src={"/icons/Icon name=chevron_right.svg"}
+                      alt={"chevron_right"}
+                      width={10}
+                      height={14}
+                    />
+                  </div>
+                </div>
+                <div className="catalog_product-divider w-full h-[1px] bg-disable-color my-10"></div>
+                <button className="catalog_product_show-btn w-[214px] h-[60px] flex items-center justify-center bg-disable-color gap-[14px]">
+                  <p className="catalog_product_show-btn_title uppercase text-white tracking-[2px]">
+                    show more
+                  </p>
+                  <Image
+                    src={"/icons/Icon name=down arrow - white.svg"}
+                    alt={"down arrow"}
+                    width={24}
+                    height={24}
+                  />
+                </button>
+              </div>
+              <div className="catalog_filters-wrapper bg-white min-w-[387px] w-[387px] max-h-[1700px] py-[60px] px-[40px]">
+                <div className="catalog_filter_price-wrapper">
+                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                    price
+                  </h2>
+                  <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                </div>
+                <div className="catalog_filter_material-wrapper">
+                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                    Material
+                  </h2>
+                  <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                </div>
+                <div className="catalog_filter_color-wrapper">
+                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                    color
+                  </h2>
+                  <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                </div>
+                <div className="catalog_filter_collection-wrapper">
+                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                    collection
+                  </h2>
+                  <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                </div>
+                <div className="catalog_filter_additional-wrapper">
+                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                    additional
+                  </h2>
+                  <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
                 </div>
               </div>
-              <div className="catalog_filters-wrapper bg-white min-w-[387px] w-[387px] h-[500px]"></div>
             </div>
           </div>
         </div>
@@ -1442,7 +1522,7 @@ export default function Catalog() {
                   <input
                     type="email"
                     className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color "
-                    placeholder="Email address"
+                    placeholder="Email Address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">
                     <Image

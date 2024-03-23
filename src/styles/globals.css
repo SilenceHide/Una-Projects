@@ -24,6 +24,13 @@
     color: #32324d;
   }
 
+  .selected-sort,
+  .selected-page {
+    color: #fff;
+    border-color: #dba514;
+    background-color: #dba514;
+  }
+
   @media (min-width: 440px) {
     .product_tab-swiper {
       display: flex !important;
@@ -39,12 +46,6 @@
       width: min-content !important;
     }
   }
-}
-
-.selected-sort {
-  color: #fff;
-  border-color: #dba514;
-  background-color: #dba514;
 }
 
 .swiper-pagination-bullet {
