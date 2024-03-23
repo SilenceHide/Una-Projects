@@ -374,7 +374,7 @@ export default function Home() {
                   >
                     <input
                       type="text"
-                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color transition-all duration-300 ${
+                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color transition-all duration-300 ${
                         searchBoxOpen
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
@@ -593,7 +593,7 @@ export default function Home() {
             <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden"></div>
             <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
               <div className="banner_product-info_wrapper flex flex-col">
-                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px]">
+                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
                   HOT
                 </p>
                 <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
@@ -657,7 +657,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12 "
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -680,7 +680,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -698,7 +698,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -716,7 +716,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -734,7 +734,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -752,7 +752,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -770,7 +770,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -793,7 +793,7 @@ export default function Home() {
                   className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
                 >
                   <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-                  <p className="product_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
+                  <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
                     POPULAR
                   </p>
                   <div className="product_img-desc flex flex-col items-center gap-3">
@@ -1416,7 +1416,7 @@ export default function Home() {
                 >
                   <input
                     type="email"
-                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color selection:text-white selection:bg-secondary-text-color"
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color "
                     placeholder="Email address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">

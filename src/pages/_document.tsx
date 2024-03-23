@@ -8,7 +8,7 @@ export default function Document() {
         <link rel="icon" type="image/jpg" sizes="32x32" href="/logo/favicon.jpg" />
         <link rel="icon" type="image/jpg" sizes="16x16" href="/logo/favicon.jpg" />
       </Head>
-      <body className="font-Prompt text-main-text-color">
+      <body className="font-Prompt text-main-text-color selection:text-white selection:bg-secondary-text-color">
         <Main />
         <NextScript />
       </body>
