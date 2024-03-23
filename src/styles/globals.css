@@ -40,3 +40,32 @@
     }
   }
 }
+
+.selected-sort {
+  color: #fff;
+  border-color: #dba514;
+  background-color: #dba514;
+}
+
+.swiper-pagination-bullet {
+  background-color: #fff !important;
+  border: 1px solid #d1bcb2 !important;
+  opacity: 0 !important;
+  width: 9px !important;
+  height: 9px !important;
+  visibility: hidden !important;
+  transition: all 150ms ease-in-out !important;
+  -webkit-transition: all 150ms ease-in-out !important;
+  -moz-transition: all 150ms ease-in-out !important;
+  -ms-transition: all 150ms ease-in-out !important;
+  -o-transition: all 150ms ease-in-out !important;
+}
+
+.swiper-pagination-bullet-active {
+  border-color: #dba514 !important;
+}
+
+.catalog_product:hover .swiper-pagination-bullet {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

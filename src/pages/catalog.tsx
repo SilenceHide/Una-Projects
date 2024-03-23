@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
 import "swiper/css";
-import { Navigation } from "swiper/modules";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import { Pagination, Navigation } from "swiper/modules";
 
 export default function Catalog() {
   const [navOpen, isNavOpen] = useState(false);
@@ -591,7 +593,7 @@ export default function Catalog() {
                 <p className="catalog_filter-number tracking-[2px] text-white">4</p>
                 <Image
                   src={"/icons/Icon name=close - white.svg"}
-                  alt={"chevron_right"}
+                  alt={"close"}
                   width={20}
                   height={20}
                 />
@@ -601,17 +603,112 @@ export default function Catalog() {
                   Sort
                 </p>
                 <p className="catalog_filter-number tracking-[2px] text-secondary-text-color">1</p>
-                <Image
-                  src={"/icons/Icon name=close.svg"}
-                  alt={"chevron_right"}
-                  width={20}
-                  height={20}
-                />
+                <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={20} height={20} />
               </button>
             </div>
-            <div className="catalog_filter-sort-tags"></div>
-            <div className="catalog_main-wrapper">
-              <div className="catalog_products-wrapper"></div>
+            <div className="catalog_filter-sort-tags mt-[30px] flex flex-row items-center gap-[10px] flex-wrap">
+              <div className="catalog_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
+                <p className="catalog_sort-tag-title font-medium text-disable-color">Price: </p>
+                <p className="catalog_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  low to high
+                </p>
+              </div>
+              <div className="catalog_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
+                <p className="catalog_sort-tag-title font-medium text-disable-color">Price: </p>
+                <p className="catalog_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  high to low
+                </p>
+              </div>
+              <div className="catalog_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer text-secondary-text-color selected-sort">
+                <p className="catalog_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  Bestselling
+                </p>
+              </div>
+              <div className="catalog_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer text-secondary-text-color">
+                <p className="catalog_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  Relevance
+                </p>
+              </div>
+              <div className="catalog_filter-sort-tags_divider w-[2px] h-[32px] bg-disable-color max-w-[2px]"></div>
+              <div className="catalog_filter-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
+                <p className="catalog_filter-tag-title font-medium text-disable-color">Color: </p>
+                <p className="catalog_filter-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  Black
+                </p>
+                <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={16} height={16} />
+              </div>
+              <div className="catalog_filter-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
+                <p className="catalog_filter-tag-title font-medium text-disable-color">Material:</p>
+                <p className="catalog_filter-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  Leather
+                </p>
+                <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={16} height={16} />
+              </div>
+              <div className="catalog_filter-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
+                <p className="catalog_filter-tag-title font-medium text-disable-color">
+                  Collection:
+                </p>
+                <p className="catalog_filter-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
+                  Minimalism
+                </p>
+                <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={16} height={16} />
+              </div>
+              <button className="catalog_filter-tags_clear-btn flex items-center justify-center w-fit py-1 px-[14px] uppercase border border-accent-color bg-accent-color text-white font-medium tracking-[1px] text-sm leading-6">
+                clear all
+              </button>
+            </div>
+            <div className="catalog_main-wrapper mt-10">
+              <div className="catalog_products-wrapper">
+                <div className="catalog_product bg-white group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center cursor-pointer">
+                  <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                    <Swiper
+                      slidesPerView={1}
+                      spaceBetween={30}
+                      loop={true}
+                      pagination={{
+                        clickable: true,
+                      }}
+                      navigation={{
+                        prevEl: ".catalog_product-swiper_left-btn",
+                        nextEl: ".catalog_product-swiper_right-btn",
+                      }}
+                      modules={[Pagination, Navigation]}
+                      className="catalog_product-swiper h-full"
+                    >
+                      <SwiperSlide></SwiperSlide>
+                      <SwiperSlide></SwiperSlide>
+                      <SwiperSlide></SwiperSlide>
+                      <SwiperSlide></SwiperSlide>
+                    </Swiper>
+                    <Image
+                      src={"/icons/prev-btn.svg"}
+                      alt={"prev-btn"}
+                      width={40}
+                      height={40}
+                      className="catalog_product-swiper_left-btn absolute top-[160px] left-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                    />
+                    <Image
+                      src={"/icons/next-btn.svg"}
+                      alt={"next-btn"}
+                      width={40}
+                      height={40}
+                      className="catalog_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
+                    />
+                  </div>
+                  <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
+                    <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
+                    <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                      Tirado chair
+                    </p>
+                    <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      $280
+                    </p>
+                    <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      add to cart
+                    </button>
+                  </div>
+                </div>
+              </div>
               <div className="catalog_filters-wrapper"></div>
             </div>
           </div>
