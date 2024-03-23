@@ -8,6 +8,7 @@ import { Navigation } from "swiper/modules";
 export default function Catalog() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
+  const [cartOpen, isCartOpen] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
@@ -23,7 +24,11 @@ export default function Catalog() {
             <div className="header-left flex items-center lg:gap-8 gap-4">
               <div
                 className="menu_button p-[10px] rounded-full border-disable-text-color border-[1.5px] cursor-pointer lg:hidden transition-all duration-300"
-                onClick={() => isNavOpen(!navOpen)}
+                onClick={() => {
+                  isCartOpen(false);
+                  isSearchBoxOpen(false);
+                  isNavOpen(!navOpen);
+                }}
               >
                 {navOpen ? (
                   <Image
@@ -57,7 +62,7 @@ export default function Catalog() {
                 } ${
                   searchBoxOpen
                     ? "lg:static fixed lg:-z-10 lg:invisible duration-150 lg:delay-0"
-                    : "lg:static fixed lg:z-10 lg:visible duration-150 lg:delay-500"
+                    : "lg:static fixed lg:z-10 lg:visible duration-300 lg:delay-300"
                 }`}
               >
                 <ul
@@ -344,7 +349,11 @@ export default function Catalog() {
               <div className="header_icon-wrapper flex items-center justify-between gap-3 lg:h-[100px] h-[70px] ">
                 <div className="header_search-wrapper cursor-pointer flex sm:overflow-hidden relative">
                   <div
-                    onClick={() => isSearchBoxOpen(true)}
+                    onClick={() => {
+                      isSearchBoxOpen(true);
+                      isCartOpen(false);
+                      isNavOpen(false);
+                    }}
                     className={`header_search-inner-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-[1.5px] transition-all duration-300 ${
                       searchBoxOpen ? "border-accent-color" : "border-disable-text-color"
                     }`}
@@ -396,8 +405,12 @@ export default function Catalog() {
                   />
                 </div>
                 <div
-                  className="header_basket-wrapper group/header_basket-icon w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] cursor-pointer basket-active relative  "
-                  onClick={() => isNavOpen(false)}
+                  className="header_basket-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] cursor-pointer basket-active relative  "
+                  onClick={() => {
+                    isNavOpen(false);
+                    isSearchBoxOpen(false);
+                    isCartOpen(!cartOpen);
+                  }}
                 >
                   <Image
                     src={"/icons/Icon name=cart.svg"}
@@ -408,8 +421,12 @@ export default function Catalog() {
                   <p className="absolute top-[-6px] right-[-7px] text-white bg-accent-color rounded-full w-5 h-5 flex items-center justify-center text-xs">
                     10
                   </p>
-                  <div className="header_basket_inner-wrapper max-w-[560px] absolute lg:top-[40px] top-[25px] md:left-[-520px] left-[-300px] bg-transparent invisible opacity-0 group-hover/header_basket-icon:visible group-hover/header_basket-icon:opacity-100 transition-all cursor-default z-10 ">
-                    <div className="header_basket_main-wrapper md:w-[560px] w-[343px] mt-[31px] bg-white border-t-[3px] border-accent-color lg:py-10 py-5 shadow-main-box-shadow overflow-y-scroll lg:static relative z-10 h-[90vh]">
+                  <div
+                    className={`header_basket_inner-wrapper max-w-[560px] absolute lg:top-[40px] top-[25px] md:left-[-520px] left-[-300px] bg-transparent transition-all cursor-default z-10 ${
+                      cartOpen ? "visible opacity-100" : "invisible opacity-0"
+                    }`}
+                  >
+                    <div className="header_basket_main-wrapper md:w-[560px] w-[343px] mt-[31px] bg-white border-t-[3px] border-accent-color lg:py-10 py-5 shadow-main-box-shadow overflow-y-scroll lg:static relative z-10 h-[85vh]">
                       <div className="header_basket_info-summery tracking-[3px] font-medium md:text-2xl text-xl flex items-center justify-between border-b border-disable-color md:px-10 px-3 lg:pb-10 pb-5">
                         <p className="header_basket-total-cart">CART (3)</p>
                         <p className="header_basket-total-price">$1 160</p>
