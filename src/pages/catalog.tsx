@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -11,12 +10,7 @@ export default function Catalog() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      isNavOpen(true);
-    }
-  }, [navOpen]);
+  const [filterOpen, isFilterOpen] = useState(false);
 
   return (
     <>
@@ -60,7 +54,7 @@ export default function Catalog() {
                 className={`menu text-secondary-text-color right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
-                    : "-left-full z-0 invisible opacity-0"
+                    : "-left-full z-0 invisible opacity-0 lg:left-0 lg:visible lg:opacity-100"
                 } ${
                   searchBoxOpen
                     ? "lg:static fixed lg:-z-10 lg:invisible duration-150 lg:delay-0"
@@ -582,13 +576,16 @@ export default function Catalog() {
                 Furniture
               </p>
             </div>
-            <div className="catalog_title-wrapper mt-[54px]">
+            <div className="catalog_title-wrapper lg:mt-[54px] mt-8">
               <h1 className="catalog_title lg:text-3xl text-2xl font-medium tracking-[3px]">
                 FURNITURE
               </h1>
             </div>
-            <div className="catalog_filter-sort-btns mt-6 flex items-center gap-4 lg:hidden">
-              <button className="catalog_filter-btn flex items-center justify-center bg-disable-color w-[162px] h-[46px] gap-[10px]">
+            <div className="catalog_filter-sort-btns mt-6 flex items-center gap-4 xl:hidden">
+              <button
+                onClick={() => isFilterOpen(!filterOpen)}
+                className="catalog_filter-btn flex items-center justify-center bg-disable-color w-[162px] h-[46px] gap-[10px]"
+              >
                 <p className="catalog_filter-title tracking-[2px] text-white uppercase">Filters</p>
                 <p className="catalog_filter-number tracking-[2px] text-white">4</p>
                 <Image
@@ -657,11 +654,11 @@ export default function Catalog() {
                 clear all
               </button>
             </div>
-            <div className="catalog_main-wrapper mt-10 flex gap-10">
+            <div className="catalog_main-wrapper mt-10 flex gap-8 relative">
               <div className="catalog_products-wrapper flex flex-col items-center">
-                <div className="catalog_products-inner-wrapper flex items-center gap-8 flex-wrap">
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                <div className="catalog_products-inner-wrapper flex items-center gap-6 flex-wrap justify-center">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] min-h-[343px]: border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -709,8 +706,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -766,8 +763,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -815,8 +812,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -869,8 +866,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -918,8 +915,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -972,8 +969,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1029,8 +1026,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1078,8 +1075,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1132,8 +1129,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1181,8 +1178,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1238,8 +1235,8 @@ export default function Catalog() {
                       </button>
                     </div>
                   </div>
-                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow max-w-[380px] h-[530px] flex flex-col items-center ">
-                    <div className="catalog_product_swiper-wrapper bg-disable-text-color w-[380px] h-[380px] max-h-[380px] min-h-[380px] border-[10px] border-white relative">
+                  <div className="catalog_product bg-white overflow-hidden group/catalog_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
+                    <div className="catalog_product_swiper-wrapper bg-disable-text-color lg:w-[380px] w-[343px] lg:h-[380px] h-[343px] lg:max-h-[380px] max-h-[343px] lg:min-h-[380px] border-[10px] border-white relative">
                       <Swiper
                         slidesPerView={1}
                         spaceBetween={30}
@@ -1288,7 +1285,7 @@ export default function Catalog() {
                     </div>
                   </div>
                 </div>
-                <div className="catalog_product_page-number flex items-center mt-10 gap-7">
+                <div className="catalog_product_page-number flex items-center mt-10 sm:gap-7 gap-[18px]">
                   <div className="catalog_product_prev-page cursor-pointer w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center border border-disable-color">
                     <Image
                       src={"/icons/Icon name=chevron_left.svg"}
@@ -1297,7 +1294,7 @@ export default function Catalog() {
                       height={14}
                     />
                   </div>
-                  <div className="catalog_product_page-btns flex items-center gap-4">
+                  <div className="catalog_product_page-btns flex items-center sm:gap-4 gap-[10px]">
                     <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color selected-page">
                       1
                     </div>
@@ -1310,7 +1307,7 @@ export default function Catalog() {
                     <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
                       4
                     </div>
-                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                    <div className="catalog_product_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full items-center justify-center border border-disable-text-color sm:flex hidden">
                       5
                     </div>
                   </div>
@@ -1336,7 +1333,13 @@ export default function Catalog() {
                   />
                 </button>
               </div>
-              <div className="catalog_filters-wrapper bg-white min-w-[387px] w-[387px] max-h-[1700px] py-[60px] px-[40px] flex flex-col gap-[60px]">
+              <div
+                className={`catalog_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] sm:py-[50px] py-[40px] px-[30px] flex xl:flex-col sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] xl:static absolute top-0 sm:left-0 left-[-20px] right-0 z-10 flex-wrap transition-all duration-300 ${
+                  filterOpen
+                    ? "visible opacity-100"
+                    : "xl:visible xl:opacity-100 invisible opacity-0"
+                }`}
+              >
                 <div className="catalog_filter_price-wrapper">
                   <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
                     price
@@ -1566,6 +1569,11 @@ export default function Catalog() {
                         dark gray
                       </label>
                     </div>
+                    <div className="catalog_filter_collection-more-btn_wrapper">
+                      <button className="catalog_filter_collection-more-btn border-b border-accent-color">
+                        Show 8 more
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="catalog_filter_collection-wrapper">
@@ -1578,85 +1586,90 @@ export default function Catalog() {
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-metal"
-                        value={"metal"}
+                        id="material-checkbox-minimalism"
+                        value={"minimalism"}
                       />
                       <label
-                        htmlFor="material-checkbox-metal"
+                        htmlFor="material-checkbox-minimalism"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        metal
+                        minimalism
                       </label>
                     </div>
                     <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-plastic"
-                        value={"plastic"}
+                        id="material-checkbox-eco-style"
+                        value={"eco style"}
                       />
                       <label
-                        htmlFor="material-checkbox-plastic"
+                        htmlFor="material-checkbox-eco-style"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        plastic
+                        eco style
                       </label>
                     </div>
                     <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-leather"
-                        value={"leather"}
+                        id="material-checkbox-glam"
+                        value={"glam"}
                       />
                       <label
-                        htmlFor="material-checkbox-leather"
+                        htmlFor="material-checkbox-glam"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        leather
+                        glam
                       </label>
                     </div>
                     <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-marble"
-                        value={"marble"}
+                        id="material-checkbox-royal"
+                        value={"royal"}
                       />
                       <label
-                        htmlFor="material-checkbox-marble"
+                        htmlFor="material-checkbox-royal"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        marble
+                        royal
                       </label>
                     </div>
                     <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-glass"
-                        value={"glass"}
+                        id="material-checkbox-pink-rose"
+                        value={"pink rose"}
                       />
                       <label
-                        htmlFor="material-checkbox-glass"
+                        htmlFor="material-checkbox-pink-rose"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        glass
+                        pink rose
                       </label>
                     </div>
                     <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
                       <input
                         type="checkbox"
                         className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
-                        id="material-checkbox-rattan"
-                        value={"rattan"}
+                        id="material-checkbox-hi-tech"
+                        value={"hi tech"}
                       />
                       <label
-                        htmlFor="material-checkbox-rattan"
+                        htmlFor="material-checkbox-hi-tech"
                         className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
                       >
-                        rattan
+                        hi tech
                       </label>
+                    </div>
+                    <div className="catalog_filter_collection-more-btn_wrapper">
+                      <button className="catalog_filter_collection-more-btn border-b border-accent-color">
+                        Show 8 more
+                      </button>
                     </div>
                   </div>
                 </div>

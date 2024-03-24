@@ -58,7 +58,7 @@ export default function Home() {
                 className={`menu text-secondary-text-color right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
-                    : "-left-full z-0 invisible opacity-0"
+                    : "-left-full z-0 invisible opacity-0 lg:left-0 lg:visible lg:opacity-100"
                 } ${
                   searchBoxOpen
                     ? "lg:static fixed lg:-z-10 lg:invisible duration-150 lg:delay-0"
@@ -374,7 +374,7 @@ export default function Home() {
                   >
                     <input
                       type="text"
-                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-placeholder-text-color transition-all duration-300 ${
+                      className={`header_search-input outline-none text-secondary-text-color transition-all duration-300 placeholder:text-placeholder-text-color ${
                         searchBoxOpen
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
