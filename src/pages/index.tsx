@@ -10,12 +10,6 @@ export default function Home() {
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
 
-  useEffect(() => {
-    if (window.innerWidth >= 1024) {
-      isNavOpen(true);
-    }
-  }, [navOpen]);
-
   return (
     <>
       <header className="header shadow-main-box-shadow lg:h-[100px] h-[70px] flex items-center justify-center lg:static fixed lg:z-0 z-40 w-full bg-white top-0">
