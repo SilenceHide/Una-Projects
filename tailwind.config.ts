@@ -36,6 +36,7 @@ const config: Config = {
         "secondary-text-color": "#AD8775",
         "disable-text-color": "#EDE4E0",
         "sub-text-color": "#666666",
+        "placeholder-text-color": "#999999",
         "red-hot": "#FF6666",
         "green-new": "#84BF56",
         "orange-popular": "#E59D49",

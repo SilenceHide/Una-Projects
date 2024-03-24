@@ -376,7 +376,7 @@ export default function Catalog() {
                   >
                     <input
                       type="text"
-                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color transition-all duration-300 ${
+                      className={`header_search-input outline-none text-secondary-text-color transition-all duration-300 placeholder:text-placeholder-text-color ${
                         searchBoxOpen
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
@@ -1336,36 +1336,393 @@ export default function Catalog() {
                   />
                 </button>
               </div>
-              <div className="catalog_filters-wrapper bg-white min-w-[387px] w-[387px] max-h-[1700px] py-[60px] px-[40px]">
+              <div className="catalog_filters-wrapper bg-white min-w-[387px] w-[387px] max-h-[1700px] py-[60px] px-[40px] flex flex-col gap-[60px]">
                 <div className="catalog_filter_price-wrapper">
                   <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
                     price
                   </h2>
                   <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                  <div className="catalog_filter_price-range_wrapper mb-[14px] relative min-h-[20px]">
+                    <input
+                      id="fromSlider"
+                      type="range"
+                      className="catalog_filter_price-range"
+                      value={0}
+                      min={0}
+                      max={50}
+                    />
+                    <input
+                      id="toSlider"
+                      type="range"
+                      className="catalog_filter_price-range"
+                      value={100}
+                      min={51}
+                      max={100}
+                    />
+                  </div>
+                  <div className="catalog_filter_price-input_wrapper flex items-center gap-[10px]">
+                    <input
+                      type="number"
+                      className="catalog_filter_price-input border border-disable-color max-w-[90px] h-[46px] p-4 outline-none caret-secondary-text-color text-secondary-text-color placeholder:text-placeholder-text-color"
+                      placeholder="$50"
+                      min={1}
+                    />
+                    <p className="catalog_filter_price-input-divider uppercase font-medium tracking-[1px] text-sub-text-color">
+                      —
+                    </p>
+                    <input
+                      type="number"
+                      className="catalog_filter_price-input border border-disable-color max-w-[90px] h-[46px] p-4 outline-none caret-secondary-text-color text-secondary-text-color placeholder:text-placeholder-text-color"
+                      placeholder="$1200"
+                      min={1}
+                    />
+                    <button
+                      type="button"
+                      className="catalog_filter_price-btn h-[46px] w-[74px] text-white bg-disable-color"
+                    >
+                      OK
+                    </button>
+                  </div>
                 </div>
                 <div className="catalog_filter_material-wrapper">
-                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                  <h2 className="catalog_filter_material-title uppercase font-medium text-xl tracking-[2.5px]">
                     Material
                   </h2>
                   <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                  <div className="catalog_filter_material-checkbox-wrapper flex flex-col gap-5">
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-metal"
+                        value={"metal"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-metal"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        metal
+                      </label>
+                    </div>
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-plastic"
+                        value={"plastic"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-plastic"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        plastic
+                      </label>
+                    </div>
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-leather"
+                        value={"leather"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-leather"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        leather
+                      </label>
+                    </div>
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-marble"
+                        value={"marble"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-marble"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        marble
+                      </label>
+                    </div>
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-glass"
+                        value={"glass"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-glass"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        glass
+                      </label>
+                    </div>
+                    <div className="catalog_filter_material-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_material-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-rattan"
+                        value={"rattan"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-rattan"
+                        className="catalog_filter_material-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        rattan
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 <div className="catalog_filter_color-wrapper">
-                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                  <h2 className="catalog_filter_color-title uppercase font-medium text-xl tracking-[2.5px]">
                     color
                   </h2>
                   <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                  <div className="catalog_filter_color-checkbox-wrapper flex flex-col gap-5">
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-white"
+                        value={"#FFFFFF"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-white"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        white
+                      </label>
+                    </div>
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-black"
+                        value={"#000000"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-black"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        black
+                      </label>
+                    </div>
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-gold"
+                        value={"#DBA514"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-gold"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        gold
+                      </label>
+                    </div>
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-orange"
+                        value={"#E59D49"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-orange"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        orange
+                      </label>
+                    </div>
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-light-beige"
+                        value={"#EDE4E0"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-light-beige"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        light beige
+                      </label>
+                    </div>
+                    <div className="catalog_filter_color-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_color-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-dark-gray"
+                        value={"#666666"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-dark-gray"
+                        className="catalog_filter_color-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        dark gray
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 <div className="catalog_filter_collection-wrapper">
-                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                  <h2 className="catalog_filter_collection-title uppercase font-medium text-xl tracking-[2.5px]">
                     collection
                   </h2>
                   <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                  <div className="catalog_filter_collection-checkbox-wrapper flex flex-col gap-5">
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-metal"
+                        value={"metal"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-metal"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        metal
+                      </label>
+                    </div>
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-plastic"
+                        value={"plastic"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-plastic"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        plastic
+                      </label>
+                    </div>
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-leather"
+                        value={"leather"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-leather"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        leather
+                      </label>
+                    </div>
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-marble"
+                        value={"marble"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-marble"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        marble
+                      </label>
+                    </div>
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-glass"
+                        value={"glass"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-glass"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        glass
+                      </label>
+                    </div>
+                    <div className="catalog_filter_collection-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_collection-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-rattan"
+                        value={"rattan"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-rattan"
+                        className="catalog_filter_collection-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        rattan
+                      </label>
+                    </div>
+                  </div>
                 </div>
                 <div className="catalog_filter_additional-wrapper">
-                  <h2 className="catalog_filter_price-title uppercase font-medium text-xl tracking-[2.5px]">
+                  <h2 className="catalog_filter_additional-title uppercase font-medium text-xl tracking-[2.5px]">
                     additional
                   </h2>
                   <div className="catalog_filter_divider w-[30px] h-[1px] bg-disable-color mt-[15px] mb-[30px]"></div>
+                  <div className="catalog_filter_additional-checkbox-wrapper flex flex-col gap-5">
+                    <div className="catalog_filter_additional-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_additional-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-set"
+                        value={"set"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-set"
+                        className="catalog_filter_additional-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        set
+                      </label>
+                    </div>
+                    <div className="catalog_filter_additional-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_additional-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-combined"
+                        value={"combined"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-combined"
+                        className="catalog_filter_additional-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        combined
+                      </label>
+                    </div>
+                    <div className="catalog_filter_additional-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_additional-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-transformer"
+                        value={"transformer"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-transformer"
+                        className="catalog_filter_additional-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        transformer
+                      </label>
+                    </div>
+                    <div className="catalog_filter_additional-checkbox-inner-wrapper flex items-center gap-[10px] ">
+                      <input
+                        type="checkbox"
+                        className="catalog_filter_additional-checkbox w-[18px] h-[18px] outline-none border-secondary-text-color"
+                        id="material-checkbox-frameless"
+                        value={"frameless"}
+                      />
+                      <label
+                        htmlFor="material-checkbox-frameless"
+                        className="catalog_filter_additional-checkbox_label uppercase font-medium tracking-[2px] text-secondary-text-color"
+                      >
+                        frameless
+                      </label>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1521,7 +1878,7 @@ export default function Catalog() {
                 >
                   <input
                     type="email"
-                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color "
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-placeholder-text-color "
                     placeholder="Email Address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">

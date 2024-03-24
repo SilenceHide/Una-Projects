@@ -374,7 +374,7 @@ export default function Home() {
                   >
                     <input
                       type="text"
-                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-sub-text-color transition-all duration-300 ${
+                      className={`header_search-input outline-none text-secondary-text-color placeholder:text-placeholder-text-color transition-all duration-300 ${
                         searchBoxOpen
                           ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
                           : "w-0 invisible opacity-0"
@@ -1416,7 +1416,7 @@ export default function Home() {
                 >
                   <input
                     type="email"
-                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-sub-text-color "
+                    className="footer_subscribe_email-input outline-none text-secondary-text-color placeholder:text-placeholder-text-color "
                     placeholder="Email Address"
                   />
                   <button type="submit" className="footer_subscribe_submit-btn">
