@@ -51,7 +51,7 @@ export default function Catalog() {
                 className="header_logo"
               />
               <nav
-                className={`menu text-secondary-text-color right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
+                className={`menu text-secondary-text-color right-0 top-[70px] lg:p-0 lg:overflow-hidden md:overflow-visible overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] md:h-fit h-[90vh] md:shadow-main-box-shadow lg:shadow-none ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
                     : "-left-full z-0 invisible opacity-0 lg:left-0 lg:visible lg:opacity-100"
@@ -62,7 +62,7 @@ export default function Catalog() {
                 }`}
               >
                 <ul
-                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px] ${
+                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px]  ${
                     navOpen ? "justify-between" : "justify-start"
                   }`}
                 >
@@ -155,7 +155,7 @@ export default function Catalog() {
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 md:my-0 z-50 cursor-default">
+                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] md:shadow-main-box-shadow xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 lg:h-fit md:h-[70vh] h-0 lg:group-hover/menu-item:h-fit group-hover/menu-item:h-[70vh] flex-wrap xl:gap-0 xs:px-5 gap-10 my-0 md:group-hover/menu-item:my-0 group-hover/menu-item:my-10 md:my-0 z-50 cursor-default lg:overflow-visible overflow-scroll md:pb-7">
                       <ul className="mega-menu_left flex 2xl:gap-[40px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
@@ -667,8 +667,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -693,15 +693,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         Tirado chair
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $280
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -716,8 +716,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -745,9 +745,9 @@ export default function Catalog() {
                         HOT
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         Kaleido
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -758,7 +758,7 @@ export default function Catalog() {
                           $240
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -773,8 +773,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -799,15 +799,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         damien
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $310
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -822,8 +822,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -851,9 +851,9 @@ export default function Catalog() {
                         popular
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         emmi set
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -861,7 +861,7 @@ export default function Catalog() {
                           $240
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -876,8 +876,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -902,15 +902,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         caleido lamp
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $355
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -925,8 +925,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -954,9 +954,9 @@ export default function Catalog() {
                         new
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         haru sofa bef
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -964,7 +964,7 @@ export default function Catalog() {
                           $460
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -979,8 +979,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1008,9 +1008,9 @@ export default function Catalog() {
                         HOT
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         Scott angle sofa
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -1021,7 +1021,7 @@ export default function Catalog() {
                           $5 400
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1036,8 +1036,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1062,15 +1062,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         hainess wide sideboard
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $1 750
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1085,8 +1085,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1114,9 +1114,9 @@ export default function Catalog() {
                         new
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         illaria floor lamp
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -1124,7 +1124,7 @@ export default function Catalog() {
                           $380
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1139,8 +1139,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1165,15 +1165,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         ebro bedside table
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $300
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1188,8 +1188,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1217,9 +1217,9 @@ export default function Catalog() {
                         HOT
                       </p>
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         aula coffee table
                       </p>
                       <div className="catalog_product-price_wrapper flex gap-2 transition-all group-hover/catalog_product:pb-[15px]">
@@ -1230,7 +1230,7 @@ export default function Catalog() {
                           $380
                         </p>
                       </div>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1245,8 +1245,8 @@ export default function Catalog() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".catalog_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".catalog_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".catalog_product-swiper_left-btn",
+                          nextEl: ".catalog_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="catalog_product-swiper h-full"
@@ -1271,15 +1271,15 @@ export default function Catalog() {
                         className="catalog_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all"
                       />
                     </div>
-                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px]">
-                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all"></div>
-                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 ">
+                    <div className="catalog_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/catalog_product:pt-[15px] duration-200">
+                      <div className="catalog_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/catalog_product:hidden transition-all duration-200"></div>
+                      <p className="catalog_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/catalog_product:mt-0 duration-200 ">
                         haru small sofa bed
                       </p>
-                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] ">
+                      <p className="catalog_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/catalog_product:pb-[15px] duration-200 ">
                         $2 500
                       </p>
-                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px]">
+                      <button className="catalog_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/catalog_product:visible group-hover/catalog_product:opacity-100 transition-all group-hover/catalog_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1334,7 +1334,7 @@ export default function Catalog() {
                 </button>
               </div>
               <div
-                className={`catalog_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] sm:py-[50px] py-[40px] px-[30px] flex xl:flex-col sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] xl:static absolute top-0 sm:left-0 left-[-20px] right-0 z-10 flex-wrap transition-all duration-300 ${
+                className={`catalog_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] sm:py-[50px] py-[40px] px-[30px] flex xl:flex-col sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] xl:static absolute top-0 sm:left-0 left-[-20px] right-0 xl:z-0 z-10 flex-wrap transition-all duration-300 ${
                   filterOpen
                     ? "visible opacity-100 xl:shadow-none shadow-main-box-shadow"
                     : "xl:visible xl:opacity-100 invisible opacity-0 shadow-none"

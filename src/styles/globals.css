@@ -246,3 +246,8 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+.subcategories_product:hover .swiper-pagination-bullet {
+  opacity: 1 !important;
+  visibility: visible !important;
+}

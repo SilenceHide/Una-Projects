@@ -4,7 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css/grid";
+import { Pagination, Navigation, Grid } from "swiper/modules";
 
 export default function Subcategories() {
   const [navOpen, isNavOpen] = useState(false);
@@ -52,7 +53,7 @@ export default function Subcategories() {
                 className="header_logo"
               />
               <nav
-                className={`menu text-secondary-text-color right-0 top-[70px] bottom-0 lg:p-0 lg:overflow-hidden overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] ${
+                className={`menu text-secondary-text-color right-0 top-[70px] lg:p-0 lg:overflow-hidden md:overflow-visible overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] md:h-fit h-[90vh] md:shadow-main-box-shadow lg:shadow-none ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
                     : "-left-full z-0 invisible opacity-0 lg:left-0 lg:visible lg:opacity-100"
@@ -63,7 +64,7 @@ export default function Subcategories() {
                 }`}
               >
                 <ul
-                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px] ${
+                  className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px]  ${
                     navOpen ? "justify-between" : "justify-start"
                   }`}
                 >
@@ -156,7 +157,7 @@ export default function Subcategories() {
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] lg:shadow-main-box-shadow h-fit xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 flex-wrap xl:gap-0 xs:px-5 gap-10 my-10 md:my-0 z-50 cursor-default">
+                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] md:shadow-main-box-shadow xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 lg:h-fit md:h-[70vh] h-0 lg:group-hover/menu-item:h-fit group-hover/menu-item:h-[70vh] flex-wrap xl:gap-0 xs:px-5 gap-10 my-0 md:group-hover/menu-item:my-0 group-hover/menu-item:my-10 md:my-0 z-50 cursor-default lg:overflow-visible overflow-scroll md:pb-7">
                       <ul className="mega-menu_left flex 2xl:gap-[40px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
@@ -577,7 +578,123 @@ export default function Subcategories() {
                 New In
               </p>
             </div>
-            <div className="subcategories_title-wrapper lg:mt-[54px] mt-8 flex items-end justify-between">
+            <div className="subcategories lg:mt-10 mt-[30px] flex max-h-[220px]">
+              <Swiper
+                slidesPerView={1}
+                grid={{
+                  rows: 1,
+                }}
+                spaceBetween={20}
+                pagination={{
+                  clickable: true,
+                }}
+                modules={[Grid, Pagination]}
+                breakpoints={{
+                  640: {
+                    slidesPerView: 2,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    grid: { rows: 2 },
+                  },
+                  1280: {
+                    slidesPerView: 4,
+                    grid: { rows: 2 },
+                  },
+                  1640: {
+                    slidesPerView: 5,
+                    grid: { rows: 2 },
+                  },
+                }}
+                className="subcategories_slider flex items-center justify-center "
+              >
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">mirrors</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">wall art</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">clocks</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">vases</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">storage</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">candles</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">Shelves</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">Plant Pots</p>
+                  </a>
+                </SwiperSlide>
+                <SwiperSlide className="subcategories_slide min-w-[312px] h-[100px]">
+                  <a
+                    href="#"
+                    className="subcategory bg-white p-[10px] flex items-center gap-3 font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
+                  >
+                    <div className="subcategory_img-wrapper min-w-[110px] h-[80px] bg-disable-text-color"></div>
+                    <p className="subcategory_title tracking-[2px] uppercase">
+                      Bathroom Accessories
+                    </p>
+                  </a>
+                </SwiperSlide>
+              </Swiper>
+            </div>
+            <div className="subcategories_divider w-full h-[1px] bg-disable-color lg:mt-10 mt-[30px] lg:mb-[30px] mb-5 "></div>
+            <div className="subcategories_title-wrapper flex items-end justify-between">
               <h1 className="subcategories_title lg:text-3xl text-2xl font-medium tracking-[3px] uppercase">
                 home decor
               </h1>
@@ -791,8 +908,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -814,18 +931,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         Tirado chair
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $280
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -840,8 +957,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -863,15 +980,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
                         HOT
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         Kaleido
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -882,7 +999,7 @@ export default function Subcategories() {
                           $240
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -897,8 +1014,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -920,18 +1037,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         damien
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $310
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -946,8 +1063,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -969,15 +1086,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
                         popular
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         emmi set
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -985,7 +1102,7 @@ export default function Subcategories() {
                           $240
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1000,8 +1117,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1023,18 +1140,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         caleido lamp
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $355
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1049,8 +1166,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1072,15 +1189,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
                         new
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         haru sofa bef
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -1088,7 +1205,7 @@ export default function Subcategories() {
                           $460
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1103,8 +1220,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1126,15 +1243,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
                         HOT
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         Scott angle sofa
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -1145,7 +1262,7 @@ export default function Subcategories() {
                           $5 400
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1160,8 +1277,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1183,18 +1300,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         hainess wide sideboard
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $1 750
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1209,8 +1326,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1232,15 +1349,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-green-new py-1 px-4 top-2 left-2 tracking-[1px] uppercase">
                         new
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         illaria floor lamp
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -1248,7 +1365,7 @@ export default function Subcategories() {
                           $380
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1263,8 +1380,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1286,18 +1403,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         ebro bedside table
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $300
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1312,8 +1429,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1335,15 +1452,15 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                       <p className="subcategories_product-swiper-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-2 left-2 tracking-[1px]">
                         HOT
                       </p>
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         aula coffee table
                       </p>
                       <div className="subcategories_product-price_wrapper flex gap-2 transition-all group-hover/subcategories_product:pb-[15px]">
@@ -1354,7 +1471,7 @@ export default function Subcategories() {
                           $380
                         </p>
                       </div>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
@@ -1369,8 +1486,8 @@ export default function Subcategories() {
                           clickable: true,
                         }}
                         navigation={{
-                          prevEl: ".subcategories_product-swiper_left-btn cursor-pointer",
-                          nextEl: ".subcategories_product-swiper_right-btn cursor-pointer",
+                          prevEl: ".subcategories_product-swiper_left-btn",
+                          nextEl: ".subcategories_product-swiper_right-btn",
                         }}
                         modules={[Pagination, Navigation]}
                         className="subcategories_product-swiper h-full"
@@ -1392,18 +1509,18 @@ export default function Subcategories() {
                         alt={"next-btn"}
                         width={40}
                         height={40}
-                        className="subcategories_product-swiper_right-btn cursor-pointer absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all"
+                        className="subcategories_product-swiper_right-btn absolute top-[160px] right-0 z-20 invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all cursor-pointer"
                       />
                     </div>
-                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px]">
-                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all"></div>
-                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 ">
+                    <div className="subcategories_product_info-wrapper bg-white pt-[30px] px-5 w-[380px] flex flex-col items-center transition-all group-hover/subcategories_product:pt-[15px] duration-200">
+                      <div className="subcategories_product-rectangle w-[30px] h-[1px] bg-disable-color group-hover/subcategories_product:hidden transition-all duration-200"></div>
+                      <p className="subcategories_product-title uppercase font-medium tracking-[2px] mt-[20px] mb-[10px] transition-all group-hover/subcategories_product:mt-0 duration-200 ">
                         haru small sofa bed
                       </p>
-                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] ">
+                      <p className="subcategories_product-price text-accent-color font-medium tracking-[1px] transition-all group-hover/subcategories_product:pb-[15px] duration-200 ">
                         $2 500
                       </p>
-                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px]">
+                      <button className="subcategories_product-add-cart-btn w-[190px] h-[50px] bg-disable-color tracking-[2px] uppercase text-white invisible opacity-0 group-hover/subcategories_product:visible group-hover/subcategories_product:opacity-100 transition-all group-hover/subcategories_product:mb-[20px] duration-100">
                         add to cart
                       </button>
                     </div>
