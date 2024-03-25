@@ -11,6 +11,7 @@ export default function Subcategories() {
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
   const [filterOpen, isFilterOpen] = useState(false);
+  const [sortOpen, isSortOpen] = useState(false);
 
   return (
     <>
@@ -580,56 +581,85 @@ export default function Subcategories() {
               <h1 className="subcategories_title lg:text-3xl text-2xl font-medium tracking-[3px] uppercase">
                 home decor
               </h1>
-              <div className="subcategories_filter-sort_wrapper flex items-end gap-6">
-                <div className="subcategories_filter-sort_inner-wrapper flex flex-col gap-[10px]">
-                  <label
-                    htmlFor="subcategories_filter-sort_select"
-                    className="subcategories_filter-sort_label uppercase font-semibold text-xs tracking-[1px] "
+              <div className="subcategories_filter-sort_wrapper hidden items-end gap-6 xl:flex">
+                <div className="subcategories_filter-sort_inner-wrapper flex flex-col gap-[10px] relative ">
+                  <p
+                    className={`subcategories_filter-sort_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
+                      sortOpen ? "visible opacity-100" : "invisible opacity-0"
+                    }`}
                   >
                     Sort by
-                  </label>
-                  <select
-                    name="sort-by"
-                    id="subcategories_filter-sort_select"
-                    className="subcategories_filter-sort_select outline-none h-[46px] w-[280px]"
+                  </p>
+                  <button
+                    onClick={() => {
+                      isFilterOpen(false);
+                      isSortOpen(!sortOpen);
+                    }}
+                    className={`subcategories_filter-sort_select h-[46px] w-[280px] p-[15px] border bg-white flex items-center justify-between transition-all ${
+                      sortOpen ? "border-accent-color" : "border-disable-color"
+                    }`}
                   >
-                    <option
-                      selected
-                      className="subcategories_filter-sort_option font-medium text-placeholder-text-color"
-                    >
+                    <p className="subcategories_filter-sort_select_title font-medium text-placeholder-text-color">
                       Sort by
-                    </option>
-                    <option
-                      value="low to high"
-                      className="subcategories_filter-sort_option font-medium"
+                    </p>
+                    <Image
+                      src={"/icons/Icon name=chevron_down.svg"}
+                      alt={"chevron_down"}
+                      width={14}
+                      height={10}
+                      className={`subcategories_filter-sort_select-icon pointer-events-none transition-all ${
+                        sortOpen ? "rotate-180" : "rotate-0"
+                      }`}
+                    />
+                  </button>
+                  <ul
+                    className={`subcategories_filter-sort_list absolute z-[10] left-[0px] top-[72px] w-[280px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all  ${
+                      sortOpen ? "visible opacity-100" : "invisible opacity-0"
+                    }`}
+                  >
+                    <li
+                      className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                      value={"low to high"}
                     >
                       Price: low to high
-                    </option>
-                    <option
-                      value="high to low"
-                      className="subcategories_filter-sort_option font-medium"
+                    </li>
+                    <li
+                      className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                      value={"high to low"}
                     >
                       Price: high to low
-                    </option>
-                    <option
-                      value="popular"
-                      className="subcategories_filter-sort_option font-medium"
+                    </li>
+                    <li
+                      className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                      value={"popular"}
                     >
                       Popular
-                    </option>
-                    <option value="new" className="subcategories_filter-sort_option font-medium">
+                    </li>
+                    <li
+                      className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                      value={"new"}
+                    >
                       New
-                    </option>
-                  </select>
+                    </li>
+                  </ul>
                 </div>
-                <button className="subcategories_filter-btn h-[46px] w-[118px] uppercase tracking-[2px] bg-disable-color text-white">
+                <button
+                  onClick={() => {
+                    isSortOpen(false);
+                    isFilterOpen(!filterOpen);
+                  }}
+                  className="subcategories_filter-btn h-[46px] w-[118px] uppercase tracking-[2px] bg-disable-color text-white"
+                >
                   Filters
                 </button>
               </div>
             </div>
-            <div className="subcategories_filter-sort-btns mt-6 flex items-center gap-4 xl:hidden">
+            <div className="subcategories_filter-sort-btns mt-6 flex items-center gap-4 xl:hidden relative">
               <button
-                onClick={() => isFilterOpen(!filterOpen)}
+                onClick={() => {
+                  isSortOpen(false);
+                  isFilterOpen(!filterOpen);
+                }}
                 className="subcategories_filter-btn flex items-center justify-center bg-disable-color w-[162px] h-[46px] gap-[10px]"
               >
                 <p className="subcategories_filter-title tracking-[2px] text-white uppercase">
@@ -643,7 +673,13 @@ export default function Subcategories() {
                   height={20}
                 />
               </button>
-              <button className="subcategories_sort-btn flex items-center justify-center bg-white w-[162px] h-[46px] gap-[10px] border border-disable-color">
+              <button
+                onClick={() => {
+                  isFilterOpen(false);
+                  isSortOpen(!sortOpen);
+                }}
+                className="subcategories_sort-btn flex items-center justify-center bg-white w-[162px] h-[46px] gap-[10px] border border-disable-color"
+              >
                 <p className="subcategories_filter-title tracking-[2px] text-secondary-text-color uppercase">
                   Sort
                 </p>
@@ -652,16 +688,50 @@ export default function Subcategories() {
                 </p>
                 <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={20} height={20} />
               </button>
+              <ul
+                className={`subcategories_filter-sort_list absolute z-[10] left-0 right-0  top-[72px] xs:w-[280px] w-full p-[15px] bg-white flex flex-col gap-4 transition-all shadow-main-box-shadow  ${
+                  sortOpen ? "visible opacity-100" : "invisible opacity-0"
+                }`}
+              >
+                <li
+                  className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                  value={"low to high"}
+                >
+                  Price: low to high
+                </li>
+                <li
+                  className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                  value={"high to low"}
+                >
+                  Price: high to low
+                </li>
+                <li
+                  className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                  value={"popular"}
+                >
+                  Popular
+                </li>
+                <li
+                  className="subcategories_filter-sort_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                  value={"new"}
+                >
+                  New
+                </li>
+              </ul>
             </div>
             {/* <div className="subcategories_filter-sort-tags mt-[30px] flex flex-row items-center gap-[10px] flex-wrap">
               <div className="subcategories_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
-                <p className="subcategories_sort-tag-title font-medium text-disable-color">Price: </p>
+                <p className="subcategories_sort-tag-title font-medium text-disable-color">
+                  Price:{" "}
+                </p>
                 <p className="subcategories_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
                   low to high
                 </p>
               </div>
               <div className="subcategories_sort-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
-                <p className="subcategories_sort-tag-title font-medium text-disable-color">Price: </p>
+                <p className="subcategories_sort-tag-title font-medium text-disable-color">
+                  Price:{" "}
+                </p>
                 <p className="subcategories_sort-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
                   high to low
                 </p>
@@ -678,14 +748,18 @@ export default function Subcategories() {
               </div>
               <div className="subcategories_filter-sort-tags_divider w-[2px] h-[32px] bg-disable-color max-w-[2px]"></div>
               <div className="subcategories_filter-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
-                <p className="subcategories_filter-tag-title font-medium text-disable-color">Color: </p>
+                <p className="subcategories_filter-tag-title font-medium text-disable-color">
+                  Color:{" "}
+                </p>
                 <p className="subcategories_filter-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
                   Black
                 </p>
                 <Image src={"/icons/Icon name=close.svg"} alt={"close"} width={16} height={16} />
               </div>
               <div className="subcategories_filter-tag_wrapper flex items-center justify-center gap-[6px] bg-white w-fit py-1 px-[14px] border border-disable-text-color cursor-pointer">
-                <p className="subcategories_filter-tag-title font-medium text-disable-color">Material:</p>
+                <p className="subcategories_filter-tag-title font-medium text-disable-color">
+                  Material:
+                </p>
                 <p className="subcategories_filter-tag-desc uppercase font-medium text-sm leading-6 tracking-[1px] align-middle">
                   Leather
                 </p>
@@ -1383,11 +1457,9 @@ export default function Subcategories() {
                   />
                 </button>
               </div>
-              {/* <div
-                className={`subcategories_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] sm:py-[50px] py-[40px] px-[30px] flex xl:flex-col sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] xl:static absolute top-0 sm:left-0 left-[-20px] right-0 z-10 flex-wrap transition-all duration-300 ${
-                  filterOpen
-                    ? "visible opacity-100"
-                    : "xl:visible xl:opacity-100 invisible opacity-0"
+              <div
+                className={`subcategories_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] md:px-[60px] sm:py-[50px] py-[40px] px-[30px] flex xl:justify-between  sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] absolute top-0 sm:left-0 left-[-20px] right-0 z-10 flex-wrap transition-all duration-300 shadow-main-box-shadow ${
+                  filterOpen ? "visible opacity-100" : "invisible opacity-0"
                 }`}
               >
                 <div className="subcategories_filter_price-wrapper">
@@ -1787,7 +1859,7 @@ export default function Subcategories() {
                     </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>

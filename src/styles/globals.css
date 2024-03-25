@@ -131,7 +131,8 @@
     display: flex !important;
   }
 
-  .selected-breadcrumb {
+  .selected-breadcrumb,
+  .selected-sort-option {
     color: #32324d;
   }
 
@@ -140,6 +141,70 @@
     color: #fff;
     border-color: #dba514;
     background-color: #dba514;
+  }
+
+  input#material-checkbox-white::before,
+  input#material-checkbox-white:checked:before {
+    background-color: #fff;
+    border: 1.5px solid #ede4e0;
+  }
+  input#material-checkbox-white:checked:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 11px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+  }
+
+  input#material-checkbox-black::before,
+  input#material-checkbox-black:checked:before {
+    background-color: #000;
+    border: 1.5px solid #000;
+  }
+
+  input#material-checkbox-gold::before,
+  input#material-checkbox-gold:checked:before {
+    background-color: #dba514;
+    border: 1.5px solid #dba514;
+  }
+
+  input#material-checkbox-orange::before,
+  input#material-checkbox-orange:checked:before {
+    background-color: #e59d49;
+    border: 1.5px solid #e59d49;
+  }
+
+  input#material-checkbox-light-beige::before,
+  input#material-checkbox-light-beige:checked:before {
+    background-color: #ede4e0;
+    border: 1.5px solid #ede4e0;
+  }
+  input#material-checkbox-light-beige:checked:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 11px;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+  }
+
+  input#material-checkbox-dark-gray::before,
+  input#material-checkbox-dark-gray:checked:before {
+    background-color: #666666;
+    border: 1.5px solid #666666;
   }
 
   @media (min-width: 440px) {
@@ -180,68 +245,4 @@
 .catalog_product:hover .swiper-pagination-bullet {
   opacity: 1 !important;
   visibility: visible !important;
-}
-
-input#material-checkbox-white::before,
-input#material-checkbox-white:checked:before {
-  background-color: #fff;
-  border: 1.5px solid #ede4e0;
-}
-input#material-checkbox-white:checked:after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 11px;
-  border: solid #000;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  position: absolute;
-  top: 2px;
-  left: 6px;
-}
-
-input#material-checkbox-black::before,
-input#material-checkbox-black:checked:before {
-  background-color: #000;
-  border: 1.5px solid #000;
-}
-
-input#material-checkbox-gold::before,
-input#material-checkbox-gold:checked:before {
-  background-color: #dba514;
-  border: 1.5px solid #dba514;
-}
-
-input#material-checkbox-orange::before,
-input#material-checkbox-orange:checked:before {
-  background-color: #e59d49;
-  border: 1.5px solid #e59d49;
-}
-
-input#material-checkbox-light-beige::before,
-input#material-checkbox-light-beige:checked:before {
-  background-color: #ede4e0;
-  border: 1.5px solid #ede4e0;
-}
-input#material-checkbox-light-beige:checked:after {
-  content: "";
-  display: block;
-  width: 6px;
-  height: 11px;
-  border: solid #000;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-  position: absolute;
-  top: 2px;
-  left: 6px;
-}
-
-input#material-checkbox-dark-gray::before,
-input#material-checkbox-dark-gray:checked:before {
-  background-color: #666666;
-  border: 1.5px solid #666666;
 }

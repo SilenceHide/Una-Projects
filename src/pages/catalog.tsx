@@ -1336,8 +1336,8 @@ export default function Catalog() {
               <div
                 className={`catalog_filters-wrapper bg-white sm:min-w-[380px] min-w-[375px] max-h-[1800px] sm:py-[50px] py-[40px] px-[30px] flex xl:flex-col sm:flex-row flex-col xl:gap-[60px] sm:gap-x-24 gap-[40px] xl:static absolute top-0 sm:left-0 left-[-20px] right-0 z-10 flex-wrap transition-all duration-300 ${
                   filterOpen
-                    ? "visible opacity-100"
-                    : "xl:visible xl:opacity-100 invisible opacity-0"
+                    ? "visible opacity-100 xl:shadow-none shadow-main-box-shadow"
+                    : "xl:visible xl:opacity-100 invisible opacity-0 shadow-none"
                 }`}
               >
                 <div className="catalog_filter_price-wrapper">
