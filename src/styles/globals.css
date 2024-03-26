@@ -255,3 +255,8 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+.search-result_product:hover .swiper-pagination-bullet {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
