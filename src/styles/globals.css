@@ -143,6 +143,10 @@
     background-color: #dba514;
   }
 
+  .disable-btn {
+    background-color: #ede4e0;
+  }
+
   input#material-checkbox-white::before,
   input#material-checkbox-white:checked:before {
     background-color: #fff;

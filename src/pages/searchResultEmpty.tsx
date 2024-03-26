@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/grid";
 import { Pagination, Navigation } from "swiper/modules";
 
-export default function SearchResult() {
+export default function SearchResultEmpty() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
@@ -581,10 +581,11 @@ export default function SearchResult() {
                 Showing results for «Desk lamp»
               </h1>
               <p className="search-result_found-number font-medium tracking-[2px] uppercase">
-                Found: 4
+                Sorry, no results found
               </p>
             </div>
-            <div className="search-result_main-wrapper mt-10 flex gap-8">
+            {/* hidden when cannot find anything */}
+            {/* <div className="search-result_main-wrapper mt-10 flex gap-8">
               <div className="search-result_products-wrapper flex flex-col items-center">
                 <div className="search-result_products-inner-wrapper flex items-center gap-6 flex-wrap justify-center">
                   <div className="search-result_product bg-white overflow-hidden group/search-result_product transition-all hover:shadow-main-box-shadow lg:max-w-[380px] max-w-[343px] h-[530px] flex flex-col items-center ">
@@ -798,7 +799,7 @@ export default function SearchResult() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="search-result_also-like_wrapper mt-[100px] flex flex-col items-center gap-[58px]">
               <h2 className="search-result_also-like_title uppercase font-medium text-2xl tracking-[3px]">
                 you may also like
