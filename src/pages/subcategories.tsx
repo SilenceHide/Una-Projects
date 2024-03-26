@@ -2147,11 +2147,13 @@ export default function Subcategories() {
               </div>
             </div>
             <div className="footer_copyright_wrapper flex items-center justify-between mt-5">
-              <p className="footer_copyright text-[#999]">2022©All rights reserved</p>
+              <p className="footer_copyright text-placeholder-text-color">
+                2022©All rights reserved
+              </p>
               <div className="footer_gtt-btn_wrapper">
                 <a
                   href="#"
-                  className="footer_gtt-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer swiper-button-disabled swiper-button-lock transition-all"
+                  className="footer_gtt-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer transition-all"
                 >
                   <Image
                     src={"/icons/Icon name=up arrow.svg"}
