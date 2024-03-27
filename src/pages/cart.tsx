@@ -577,7 +577,7 @@ export default function Cart() {
                 Cart
               </h1>
             </div>
-            <div className="cart_main-wrapper flex flex-col xl:flex-row justify-between mt-14 gap-10 xl:items-start items-center">
+            <div className="cart_main-wrapper flex flex-col xl:flex-row justify-between lg:mt-14 mt-8 gap-10 xl:items-start items-center">
               <div className="cart_left-wrapper flex flex-col bg-white px-10 h-fit lg:max-w-[1000px] lg:w-[1000px] sm:max-w-full max-w-[343px]">
                 <div className="cart_product-wrapper flex md:flex-row flex-col md:gap-0 gap-5  md:items-center justify-between border-b border-disable-color py-10 w-full">
                   <div className="cart_product_info-wrapper flex gap-[30px]">
@@ -802,7 +802,7 @@ export default function Cart() {
                       <p className="cart_total-price">$11 500</p>
                     </div>
                   </div>
-                  <button className="cart_checkout-btn text-white bg-disable-color flex justify-center items-center gap-[14px] w-full h-[60px] mt-3 px-3 xl:mb-0 md:mb-6 mb-0">
+                  <button className="cart_checkout-btn text-white bg-disable-color flex justify-center items-center gap-[14px] w-full h-[60px] mt-4 px-3 xl:mb-0 md:mb-6 mb-0">
                     <p className="cart_checkout-btn_title font-semibold text-lg tracking-[2px] ">
                       PROCEED TO CHECKOUT
                     </p>
