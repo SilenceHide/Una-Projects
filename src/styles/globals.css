@@ -3,6 +3,22 @@
 @tailwind utilities;
 
 @layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #ede4e0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #d1bcb2;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ad8775;
+  }
+
   input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
   }
@@ -110,6 +126,54 @@
     -moz-transition: all 150ms ease-in-out;
     -ms-transition: all 150ms ease-in-out;
     -o-transition: all 150ms ease-in-out;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 1.5px solid #d1bcb2;
+    border-radius: 50%;
+    outline: none;
+    /* box-shadow: 0 0 5px #999;
+    transition: box-shadow 0.3s ease; */
+  }
+
+  input[type="radio"]:before {
+    content: "";
+    display: block;
+    width: 75%;
+    height: 75%;
+    margin: 12% auto;
+    border-radius: 50%;
+  }
+
+  input[type="radio"]:checked {
+    border-color: #dba514;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+  }
+
+  input[type="radio"]:checked:before {
+    background: #dba514;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
+  }
+
+  input[type="radio"]:checked + label {
+    font-weight: 500;
+    color: #32324d;
+    transition: all 200ms ease-in-out;
+    -webkit-transition: all 200ms ease-in-out;
+    -moz-transition: all 200ms ease-in-out;
+    -ms-transition: all 200ms ease-in-out;
+    -o-transition: all 200ms ease-in-out;
   }
 }
 

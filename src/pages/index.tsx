@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
 import "swiper/css";
