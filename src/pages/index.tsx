@@ -9,6 +9,7 @@ export default function Home() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
+  const [promocodeBasketOpen, isPromocodeBasketOpen] = useState(false);
 
   return (
     <>
@@ -416,7 +417,7 @@ export default function Home() {
                     10
                   </p>
                   <div
-                    className={`header_basket_inner-wrapper max-w-[560px] absolute lg:top-[40px] top-[25px] md:left-[-520px] left-[-300px] bg-transparent transition-all cursor-default z-10 ${
+                    className={`header_basket_inner-wrapper max-w-[560px] absolute lg:top-[40px] top-[25px] md:left-[-520px] left-[-290px] bg-transparent transition-all cursor-default z-10 ${
                       cartOpen ? "visible opacity-100" : "invisible opacity-0"
                     }`}
                   >
@@ -433,10 +434,10 @@ export default function Home() {
                               <p className="header_basket_product-title font-medium tracking-[2px] mb-[10px]">
                                 HARU SOFA BED
                               </p>
-                              <p className="header_basket_product-sub text-sm text-[#999]">
+                              <p className="header_basket_product-sub text-sm text-placeholder-text-color">
                                 yellow
                               </p>
-                              <p className="header_basket_product-sub text-sm text-[#999]">
+                              <p className="header_basket_product-sub text-sm text-placeholder-text-color">
                                 50 sm х 30 sm
                               </p>
                               <p className="header_basket_product-price font-medium text-accent-color mt-[10px]">
@@ -484,7 +485,9 @@ export default function Home() {
                               <p className="header_basket_product-title font-medium tracking-[2px] mb-[10px]">
                                 EMMI SET
                               </p>
-                              <p className="header_basket_product-sub text-sm text-[#999]">green</p>
+                              <p className="header_basket_product-sub text-sm text-placeholder-text-color">
+                                green
+                              </p>
                               <p className="header_basket_product-price font-medium text-accent-color mt-[10px]">
                                 $240
                               </p>
@@ -523,18 +526,47 @@ export default function Home() {
                           </div>
                         </div>
                       </div>
-                      <div className="header_basket_promo-code lg:px-10 px-3 py-5 border-b border-disable-color flex items-center justify-between">
-                        <p className="header_basket_promo-code_title text-sub-text-color tracking-[2px] font-medium">
-                          APPLY PROMOCODE
-                        </p>
-                        <Image
-                          src={"/icons/Icon name=chevron_down.svg"}
-                          alt={"cart-icon"}
-                          width={16}
-                          height={8}
-                          className="cursor-pointer"
-                        />
+
+                      <div
+                        className={`header_basket_promo-code_wrapper md:px-10 px-3 py-4 shrink border-b border-disable-color flex flex-col justify-between transition-all duration-300 ${
+                          promocodeBasketOpen ? "gap-5" : "gap-0"
+                        }`}
+                      >
+                        <div
+                          onClick={() => isPromocodeBasketOpen(!promocodeBasketOpen)}
+                          className="header_basket_promo-code_top-wrapper cursor-pointer flex justify-between items-center"
+                        >
+                          <p className="header_basket_promo-code_title text-sub-text-color tracking-[2px] font-medium">
+                            APPLY PROMOCODE
+                          </p>
+                          <Image
+                            src={"/icons/Icon name=chevron_down.svg"}
+                            alt={"checkout-icon"}
+                            width={16}
+                            height={8}
+                            className={`cursor-pointer transition-all duration-300 ${
+                              promocodeBasketOpen ? "rotate-180" : "rotate-0"
+                            }`}
+                          />
+                        </div>
+                        <div
+                          className={`header_basket_promo-code_bottom-wrapper flex items-center justify-between transition-all duration-300 overflow-hidden lg:gap-0 gap-1 ${
+                            promocodeBasketOpen
+                              ? "visible opacity-100 h-[46px]"
+                              : "invisible opacity-0 h-0"
+                          }`}
+                        >
+                          <input
+                            type="text"
+                            className="header_basket_promo-code_input outline-none sm:w-[210px] w-[160px] h-full px-4 caret-secondary-text-color text-secondary-text-color border border-disable-color"
+                            placeholder="Z34kKOY"
+                          />
+                          <p className="header_basket_promo-code_discount font-medium text-accent-color tracking-[1px] text-center">
+                            $13 discount
+                          </p>
+                        </div>
                       </div>
+
                       <div className="header_basket_checkout-btn_wrapper lg:px-10 px-3 md:pt-10 pt-6">
                         <button className="header_basket_checkout-btn text-white bg-disable-color flex justify-center items-center gap-[14px] w-full h-[60px]">
                           <p className="header_basket_checkout-btn_title font-semibold md:text-lg tracking-[2px]">
