@@ -708,6 +708,7 @@ export default function Subcategories() {
                     Sort by
                   </p>
                   <button
+                    type="button"
                     onClick={() => {
                       isFilterOpen(false);
                       isSortOpen(!sortOpen);

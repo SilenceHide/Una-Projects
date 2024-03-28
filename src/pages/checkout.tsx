@@ -5,6 +5,8 @@ export default function Checkout() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
+  const [countryOpen, isCountryOpen] = useState(false);
+  const [cityOpen, isCityOpen] = useState(false);
 
   return (
     <>
@@ -578,9 +580,250 @@ export default function Checkout() {
               </h1>
             </div>
             <div className="checkout_main-wrapper flex flex-col xl:flex-row justify-between lg:mt-14 mt-8 gap-10 xl:items-start items-center">
-              <div className="checkout_left-wrapper flex flex-col bg-white px-10 h-fit lg:max-w-[1000px] lg:w-[1000px] sm:max-w-full max-w-[343px]">
-                <div className="checkout_product-wrapper flex md:flex-row flex-col md:gap-0 gap-5  md:items-center justify-between border-b border-disable-color py-10 w-full"></div>
-                <div className="checkout_product-bottom py-10 flex md:flex-row flex-col justify-between items-center md:gap-0 gap-6 "></div>
+              <div className="checkout_left-wrapper flex flex-col bg-white 3xl:px-[100px] px-[80px] py-10 h-fit lg:max-w-[1000px] lg:w-[1000px] sm:max-w-full max-w-[343px]">
+                <form action="#" className="checkout-form">
+                  <div className="checkout_personal-info-wrapper flex flex-col gap-6 justify-between border-b border-disable-color py-10 w-full">
+                    <h2 className="checkout_personal-info-title uppercase font-medium tracking-[3px] text-2xl mb-1">
+                      personal info
+                    </h2>
+                    <div className="checkout_personal-info_inner-wrapper flex items-center justify-between">
+                      <div className="checkout_personal-info flex flex-col gap-[10px]">
+                        <label
+                          htmlFor="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                        >
+                          first name *
+                        </label>
+                        <input
+                          type="text"
+                          id="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_input outline-none border border-disable-color w-[380px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                        />
+                      </div>
+                      <div className="checkout_personal-info flex flex-col gap-[10px]">
+                        <label
+                          htmlFor="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                        >
+                          last name *
+                        </label>
+                        <input
+                          type="text"
+                          id="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_input outline-none border border-disable-color w-[380px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                        />
+                      </div>
+                    </div>
+                    <div className="checkout_personal-info_inner-wrapper flex items-center justify-between">
+                      <div className="checkout_personal-info flex flex-col gap-[10px]">
+                        <label
+                          htmlFor="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                        >
+                          phone
+                        </label>
+                        <input
+                          type="text"
+                          id="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_input outline-none border border-disable-color w-[380px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                        />
+                      </div>
+                      <div className="checkout_personal-info flex flex-col gap-[10px]">
+                        <label
+                          htmlFor="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                        >
+                          email
+                        </label>
+                        <input
+                          type="email"
+                          id="checkout_personal-info_first-name"
+                          className="checkout_personal-info_first-name_input outline-none border border-disable-color w-[380px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                        />
+                      </div>
+                    </div>
+                    <div className="checkout_personal-info_checkbox-wrapper flex items-center gap-3">
+                      <input
+                        type="checkbox"
+                        id="checkout_personal-info_checkbox"
+                        className="checkout_personal-info_checkbox-input"
+                      />
+                      <label
+                        htmlFor="checkout_personal-info_checkbox"
+                        className="checkout_personal-info_checkbox-label uppercase font-medium tracking-[2px] mt-[6px]"
+                      >
+                        don’t call me
+                      </label>
+                    </div>
+                  </div>
+                  <div className="checkout_delivery-wrapper flex flex-col gap-6 justify-between py-10 w-full">
+                    <h2 className="checkout_delivery-title uppercase font-medium tracking-[3px] text-2xl mb-1">
+                      delivery
+                    </h2>
+                    <div className="checkout_delivery_inner-wrapper flex items-center justify-between">
+                      <div className="checkout_inner-wrapper flex flex-col gap-[10px] relative ">
+                        <p
+                          className={`checkout_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
+                            countryOpen ? "visible opacity-100" : "invisible opacity-0"
+                          }`}
+                        >
+                          Select country *
+                        </p>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            isCountryOpen(!countryOpen);
+                          }}
+                          className={`checkout_select h-[46px] w-[380px] p-[15px] border outline-none bg-white flex items-center justify-between transition-all ${
+                            countryOpen ? "border-accent-color" : "border-disable-color"
+                          }`}
+                        >
+                          <p className="checkout_select_title font-medium text-placeholder-text-color">
+                            Select country *
+                          </p>
+                          <Image
+                            src={"/icons/Icon name=chevron_down.svg"}
+                            alt={"chevron_down"}
+                            width={14}
+                            height={10}
+                            className={`checkout_select-icon pointer-events-none transition-all ${
+                              countryOpen ? "rotate-180" : "rotate-0"
+                            }`}
+                          />
+                        </button>
+                        <ul
+                          className={`checkout_list absolute z-[10] left-[0px] top-[72px] w-[380px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all h-[170px] overflow-y-scroll  ${
+                            countryOpen ? "visible opacity-100" : "invisible opacity-0"
+                          }`}
+                        >
+                          <li
+                            className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                            value={"UK"}
+                          >
+                            UK
+                          </li>
+                          <li
+                            className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                            value={"USA"}
+                          >
+                            USA
+                          </li>
+                          <li
+                            className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                            value={"Ukraine"}
+                          >
+                            Ukraine
+                          </li>
+                          <li
+                            className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                            value={"Uganda"}
+                          >
+                            Uganda
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="checkout_delivery flex flex-col gap-[10px]">
+                        <div className="checkout_inner-wrapper flex flex-col gap-[10px] relative ">
+                          <p
+                            className={`checkout_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
+                              cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                            }`}
+                          >
+                            Town/city *
+                          </p>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              isCityOpen(!cityOpen);
+                            }}
+                            className={`checkout_select h-[46px] w-[380px] p-[15px] border outline-none bg-white flex items-center justify-between transition-all ${
+                              cityOpen ? "border-accent-color" : "border-disable-color"
+                            }`}
+                          >
+                            <p className="checkout_select_title font-medium text-placeholder-text-color">
+                              Town/city *
+                            </p>
+                            <Image
+                              src={"/icons/Icon name=chevron_down.svg"}
+                              alt={"chevron_down"}
+                              width={14}
+                              height={10}
+                              className={`checkout_select-icon pointer-events-none transition-all ${
+                                cityOpen ? "rotate-180" : "rotate-0"
+                              }`}
+                            />
+                          </button>
+                          <ul
+                            className={`checkout_list absolute z-[10] left-[0px] top-[72px] w-[380px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all h-[170px] overflow-y-scroll ${
+                              cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                            }`}
+                          >
+                            <li
+                              className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                              value={"UK"}
+                            >
+                              UK
+                            </li>
+                            <li
+                              className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                              value={"USA"}
+                            >
+                              USA
+                            </li>
+                            <li
+                              className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                              value={"Ukraine"}
+                            >
+                              Ukraine
+                            </li>
+                            <li
+                              className="checkout_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                              value={"Uganda"}
+                            >
+                              Uganda
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="checkout_delivery_inner-wrapper flex items-center justify-between">
+                      <div className="checkout_delivery flex flex-col gap-[10px]">
+                        <input
+                          type="text"
+                          id="checkout_delivery_first-name"
+                          className="checkout_delivery_first-name_input outline-none border border-disable-color w-[380px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          placeholder="Street name *"
+                        />
+                      </div>
+                      <div className="checkout_delivery flex flex-col gap-[10px]">
+                        <input
+                          type="email"
+                          id="checkout_delivery_first-name"
+                          className="checkout_delivery_first-name_input outline-none border border-disable-color w-[175px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          placeholder="Apartment"
+                        />
+                      </div>
+                      <div className="checkout_delivery flex flex-col gap-[10px]">
+                        <input
+                          type="email"
+                          id="checkout_delivery_first-name"
+                          className="checkout_delivery_first-name_input outline-none border border-disable-color w-[175px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          placeholder="ZIP Code"
+                        />
+                      </div>
+                    </div>
+                    <div className="checkout_delivery_comment-wrapper flex items-center gap-3 ">
+                      <textarea
+                        name="checkout_delivery-comment"
+                        id="checkout_delivery-comment"
+                        cols={30}
+                        rows={10}
+                        className="checkout_delivery-comment h-[46px] w-full outline-none border border-disable-color resize-none px-4 py-2"
+                        placeholder="Your comment"
+                      ></textarea>
+                    </div>
+                  </div>
+                </form>
               </div>
               <div className="checkout_right-wrapper xl:w-[560px] sm:w-full w-[343px] bg-white border-t-[3px] border-accent-color py-10 shadow-main-box-shadow flex xl:flex-col md:flex-row flex-col justify-around">
                 <div className="checkout_info-summery tracking-[3px] font-medium md:text-2xl text-xl flex items-center justify-between border-b border-disable-color lg:px-10 md:px-3 px-10 lg:pb-10 pb-5 xl:border-b md:border-b-0 text-center xl:text-start">
