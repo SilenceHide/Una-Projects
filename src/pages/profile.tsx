@@ -624,58 +624,148 @@ export default function Profile() {
                   logout
                 </p>
               </div>
-              <div className="wishlist_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
-                <div className="wishlist_product pb-10 border-b border-disable-color flex items-center justify-between gap-[100px]">
-                  <div className="wishlist_product_left flex items-center gap-[30px] max-w-[590px] min-w-[590px] w-full">
-                    <div className="wishlist_product-img min-w-[160px] w-[160px] h-[160px] bg-disable-text-color"></div>
-                    <div className="wishlist_product-info flex items-center justify-between w-full">
-                      <div className="wishlist_product-info_left">
-                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium">
-                          donna lamp
-                        </p>
-                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
-                          gold
-                        </p>
-                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
-                          50 sm х 30 sm
-                        </p>
+              <div className="orders_inner-wrapper xs:w-full sm:px-[60px] py-[60px] px-4 bg-white w-[375px]">
+                <div className="orders_wrapper flex flex-col gap-[60px]">
+                  <div className="order-current_wrapper flex flex-col gap-[10px]">
+                    <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
+                      Current orders (2)
+                    </h2>
+                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
+                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                        <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                        <p className="order_date text-placeholder-text-color">12.07.2019, 14:13</p>
+                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                          <Image
+                            src={"/icons/Icon name=truck.svg"}
+                            alt={"truck"}
+                            width={18}
+                            height={18}
+                          />
+                          <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                            En route
+                          </p>
+                        </div>
                       </div>
-                      <div className="wishlist_product-info_right">
-                        <p className="wishlist_product-price tracking-[1px] text-accent-color font-medium">
-                          $245
-                        </p>
+                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                        <div className="order_total-price-wrapper">
+                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                            $1 000
+                          </p>
+                        </div>
+                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                          <Image
+                            src={"/icons/Icon name=small ch_down.svg"}
+                            alt={"arrow-down"}
+                            width={14}
+                            height={10}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
+                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                        <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                        <p className="order_date text-placeholder-text-color">10.07.2019, 11:40</p>
+                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                          <Image
+                            src={"/icons/Icon name=document.svg"}
+                            alt={"document"}
+                            width={18}
+                            height={18}
+                          />
+                          <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                            New order
+                          </p>
+                        </div>
+                      </div>
+                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                        <div className="order_total-price-wrapper flex gap-2">
+                          <p className="order_total-price text-red-hot font-medium tracking-[1px]">
+                            $3 500
+                          </p>
+                          <p className="order_total-discount text-disable-color font-medium tracking-[1px] line-through">
+                            $4 000
+                          </p>
+                        </div>
+                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                          <Image
+                            src={"/icons/Icon name=small ch_down.svg"}
+                            alt={"arrow-down"}
+                            width={14}
+                            height={10}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="wishlist_product_right flex w-full items-center justify-between">
-                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
-                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
-                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                  <div className="order-history_wrapper flex flex-col gap-[10px]">
+                    <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
+                      order history (2)
+                    </h2>
+                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
+                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                        <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                        <p className="order_date text-placeholder-text-color">12.07.2019, 14:13</p>
+                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
                           <Image
-                            src={"/icons/Icon name=cart.svg"}
-                            alt={"cart"}
-                            width={24}
-                            height={24}
-                            priority
+                            src={"/icons/cancel-disable.svg"}
+                            alt={"cancel"}
+                            width={18}
+                            height={18}
                           />
-                        </div>
-                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color">
-                          add to cart
+                          <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                            Cancelled
+                          </p>
                         </div>
                       </div>
-                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
-                        <Image
-                          src={"/icons/Icon name=trash.svg"}
-                          alt={"trash"}
-                          width={18}
-                          height={20}
-                          priority
-                        />
+                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                        <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                          $280
+                        </p>
+                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                          <Image
+                            src={"/icons/Icon name=small ch_down.svg"}
+                            alt={"arrow-down"}
+                            width={14}
+                            height={10}
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
+                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                        <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                        <p className="order_date text-placeholder-text-color">10.07.2019, 11:40</p>
+                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                          <Image
+                            src={"/icons/done-success.svg"}
+                            alt={"done"}
+                            width={18}
+                            height={18}
+                          />
+                          <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                            Done
+                          </p>
+                        </div>
+                      </div>
+                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                        <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                          $1 090
+                        </p>
+                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                          <Image
+                            src={"/icons/Icon name=small ch_down.svg"}
+                            alt={"arrow-down"}
+                            width={14}
+                            height={10}
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
+
               {/* <div className="profile_personal_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
                 <div className="profile_info flex md:flex-row flex-col gap-[60px]">
                   <div className="profile_personal flex flex-col gap-5 md:max-w-[300px] w-full">
@@ -1097,6 +1187,240 @@ export default function Profile() {
                     </div>
                   </div>
                 </form>
+              </div> */}
+              {/* <div className="wishlist_inner-wrapper xs:w-full sm:px-[60px] md:pb-[60px] md:pt-0 pb-10 pt-[10px] px-4 bg-white w-[375px]">
+                <div className="wishlist_product md:py-10 py-[30px] border-b border-disable-color flex md:items-center justify-between 3xl:gap-[100px] lg:gap-10 gap-5 md:flex-row flex-col">
+                  <div className="wishlist_product_left flex lg:items-center gap-[30px] max-w-[590px] w-full lg:min-w-[450px] min-w-[360px]">
+                    <div className="wishlist_product-img md:min-w-[160px] md:w-[160px] md:h-[160px] min-w-[80px] w-[80px] h-[80px] bg-disable-text-color"></div>
+                    <div className="wishlist_product-info flex lg:flex-row flex-col lg:items-center justify-between w-full">
+                      <div className="wishlist_product-info_left flex flex-col md:gap-[10px] md:mb-0 mb-4">
+                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium md:mb-0 mb-[10px]">
+                          donna lamp
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          gold
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          50 sm х 30 sm
+                        </p>
+                      </div>
+                      <div className="wishlist_product-info_right">
+                        <p className="wishlist_product-price tracking-[1px] text-accent-color font-medium">
+                          $245
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="wishlist_product_right flex xl:max-w-[400px] max-w-[350px] w-full items-center justify-between">
+                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
+                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
+                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                          <Image
+                            src={"/icons/Icon name=cart.svg"}
+                            alt={"cart"}
+                            width={24}
+                            height={24}
+                            priority
+                          />
+                        </div>
+                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color text-center">
+                          add to cart
+                        </div>
+                      </div>
+                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
+                        <Image
+                          src={"/icons/Icon name=trash.svg"}
+                          alt={"trash"}
+                          width={18}
+                          height={20}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wishlist_product md:py-10 py-[30px] border-b border-disable-color flex md:items-center justify-between 3xl:gap-[100px] lg:gap-10 gap-5 md:flex-row flex-col">
+                  <div className="wishlist_product_left flex lg:items-center gap-[30px] max-w-[590px] w-full lg:min-w-[450px] min-w-[360px]">
+                    <div className="wishlist_product-img md:min-w-[160px] md:w-[160px] md:h-[160px] min-w-[80px] w-[80px] h-[80px] bg-disable-text-color"></div>
+                    <div className="wishlist_product-info flex lg:flex-row flex-col lg:items-center justify-between w-full">
+                      <div className="wishlist_product-info_left flex flex-col md:gap-[10px] md:mb-0 mb-4">
+                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium md:mb-0 mb-[10px]">
+                          wingrove
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          brown
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          natural wood
+                        </p>
+                      </div>
+                      <div className="wishlist_product-info_right flex items-center gap-2">
+                        <p className="wishlist_product-price tracking-[1px] text-red-hot font-medium">
+                          $825
+                        </p>
+                        <p className="wishlist_product-price tracking-[1px] text-disable-color line-through font-medium">
+                          $900
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="wishlist_product_right flex xl:max-w-[400px] max-w-[350px] w-full items-center justify-between">
+                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
+                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
+                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                          <Image
+                            src={"/icons/Icon name=cart.svg"}
+                            alt={"cart"}
+                            width={24}
+                            height={24}
+                            priority
+                          />
+                        </div>
+                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color text-center">
+                          add to cart
+                        </div>
+                      </div>
+                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
+                        <Image
+                          src={"/icons/Icon name=trash.svg"}
+                          alt={"trash"}
+                          width={18}
+                          height={20}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wishlist_product md:py-10 py-[30px] border-b border-disable-color flex md:items-center justify-between 3xl:gap-[100px] lg:gap-10 gap-5 md:flex-row flex-col">
+                  <div className="wishlist_product_left flex lg:items-center gap-[30px] max-w-[590px] w-full lg:min-w-[450px] min-w-[360px]">
+                    <div className="wishlist_product-img md:min-w-[160px] md:w-[160px] md:h-[160px] min-w-[80px] w-[80px] h-[80px] bg-disable-text-color"></div>
+                    <div className="wishlist_product-info flex lg:flex-row flex-col lg:items-center justify-between w-full">
+                      <div className="wishlist_product-info_left flex flex-col md:gap-[10px] md:mb-0 mb-4">
+                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium md:mb-0 mb-[10px]">
+                          lavelle bed
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          milk
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          180 x 200 mm
+                        </p>
+                      </div>
+                      <div className="wishlist_product-info_right flex items-center gap-2">
+                        <p className="wishlist_product-price tracking-[1px] text-accent-color font-medium">
+                          $1 000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="wishlist_product_right flex xl:max-w-[400px] max-w-[350px] w-full items-center justify-between">
+                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
+                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
+                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                          <Image
+                            src={"/icons/Icon name=cart.svg"}
+                            alt={"cart"}
+                            width={24}
+                            height={24}
+                            priority
+                          />
+                        </div>
+                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color text-center">
+                          add to cart
+                        </div>
+                      </div>
+                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
+                        <Image
+                          src={"/icons/Icon name=trash.svg"}
+                          alt={"trash"}
+                          width={18}
+                          height={20}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wishlist_product md:py-10 py-[30px] border-b border-disable-color flex md:items-center justify-between 3xl:gap-[100px] lg:gap-10 gap-5 md:flex-row flex-col">
+                  <div className="wishlist_product_left flex lg:items-center gap-[30px] max-w-[590px] w-full lg:min-w-[450px] min-w-[360px]">
+                    <div className="wishlist_product-img md:min-w-[160px] md:w-[160px] md:h-[160px] min-w-[80px] w-[80px] h-[80px] bg-disable-text-color"></div>
+                    <div className="wishlist_product-info flex lg:flex-row flex-col lg:items-center justify-between w-full">
+                      <div className="wishlist_product-info_left flex flex-col md:gap-[10px] md:mb-0 mb-4">
+                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium md:mb-0 mb-[10px]">
+                          alisma coffee table
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          milk
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          180 x 200 mm
+                        </p>
+                      </div>
+                      <div className="wishlist_product-info_right flex items-center gap-2">
+                        <p className="wishlist_product-price tracking-[1px] text-accent-color font-medium">
+                          $300
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="wishlist_product_right flex xl:max-w-[400px] max-w-[350px] w-full items-center justify-between">
+                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
+                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
+                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                          <Image
+                            src={"/icons/Icon name=cart.svg"}
+                            alt={"cart"}
+                            width={24}
+                            height={24}
+                            priority
+                          />
+                        </div>
+                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color text-center">
+                          add to cart
+                        </div>
+                      </div>
+                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
+                        <Image
+                          src={"/icons/Icon name=trash.svg"}
+                          alt={"trash"}
+                          width={18}
+                          height={20}
+                          priority
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="wishlist_page-number flex items-center mt-10 sm:gap-7 gap-[18px] justify-center">
+                  <div className="wishlist_prev-page cursor-pointer w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center border border-disable-color">
+                    <Image
+                      src={"/icons/Icon name=chevron_left.svg"}
+                      alt={"chevron_left"}
+                      width={10}
+                      height={14}
+                    />
+                  </div>
+                  <div className="wishlist_page-btns flex items-center sm:gap-4 gap-[10px]">
+                    <div className="wishlist_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color selected-page">
+                      1
+                    </div>
+                    <div className="wishlist_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      2
+                    </div>
+                    <div className="wishlist_page-btn w-[46px] h-[46px] cursor-pointer font-medium text-disable-color bg-white rounded-full flex items-center justify-center border border-disable-text-color">
+                      3
+                    </div>
+                  </div>
+                  <div className="wishlist_next-page cursor-pointer w-[46px] h-[46px] bg-white rounded-full flex items-center justify-center border border-disable-color">
+                    <Image
+                      src={"/icons/Icon name=chevron_right.svg"}
+                      alt={"chevron_right"}
+                      width={10}
+                      height={14}
+                    />
+                  </div>
+                </div>
               </div> */}
             </div>
           </div>
