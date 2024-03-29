@@ -448,8 +448,8 @@ export default function Profile() {
                                   <Image
                                     src={"/icons/Icon name=minus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={20}
                                   />
                                 </div>
                                 <p className="header_basket_product-number_count">2</p>
@@ -457,7 +457,7 @@ export default function Profile() {
                                   <Image
                                     src={"/icons/Icon name=plus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
+                                    width={18}
                                     height={22}
                                   />
                                 </div>
@@ -496,8 +496,8 @@ export default function Profile() {
                                   <Image
                                     src={"/icons/Icon name=minus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={20}
                                   />
                                 </div>
                                 <p className="header_basket_product-number_count">1</p>
@@ -505,7 +505,7 @@ export default function Profile() {
                                   <Image
                                     src={"/icons/Icon name=plus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
+                                    width={18}
                                     height={22}
                                   />
                                 </div>
@@ -624,103 +624,57 @@ export default function Profile() {
                   logout
                 </p>
               </div>
-              <div className="profile_change-pass_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] ">
-                <form action="#" className="profile_change-pass_form flex flex-col gap-[60px]">
-                  <div className="profile_change-pass flex flex-col lg:gap-[60px] gap-10 max-w-[660px] w-full">
-                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
-                      <p className="profile_title uppercase font-medium tracking-[2px]">
-                        change password
-                      </p>
-                    </div>
-                    <div className="profile_change-pass_input-wrapper flex lg:flex-row flex-col justify-between lg:gap-0 gap-10">
-                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            old password
-                            <Image
-                              src={"/icons/Icon name=validated.svg"}
-                              alt={"validated"}
-                              width={18}
-                              height={18}
-                              priority
-                              className="header_logo absolute top-[40px] right-[15px]"
-                            />
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <a
-                            href="#"
-                            className="profile_change-pass_forgot text-secondary-text-color"
-                          >
-                            Forgot password?
-                          </a>
-                          <p className="profile_change-pass_help text-placeholder-text-color">
-                            The strong password must At least 8 characters and it contains uppercase
-                            and lowercase Latin letters and numbers and special characters.
-                          </p>
-                        </div>
+              <div className="wishlist_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
+                <div className="wishlist_product pb-10 border-b border-disable-color flex items-center justify-between gap-[100px]">
+                  <div className="wishlist_product_left flex items-center gap-[30px] max-w-[590px] min-w-[590px] w-full">
+                    <div className="wishlist_product-img min-w-[160px] w-[160px] h-[160px] bg-disable-text-color"></div>
+                    <div className="wishlist_product-info flex items-center justify-between w-full">
+                      <div className="wishlist_product-info_left">
+                        <p className="wishlist_product-title uppercase tracking-[2px] font-medium">
+                          donna lamp
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          gold
+                        </p>
+                        <p className="wishlist_product-desc text-sm text-placeholder-text-color">
+                          50 sm х 30 sm
+                        </p>
                       </div>
-                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            new password
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px] mt-[14px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            repeat password
-                            <Image
-                              src={"/icons/Icon name=validated.svg"}
-                              alt={"validated"}
-                              width={18}
-                              height={18}
-                              priority
-                              className="header_logo absolute top-[40px] right-[15px] invisible opacity-0"
-                            />
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
+                      <div className="wishlist_product-info_right">
+                        <p className="wishlist_product-price tracking-[1px] text-accent-color font-medium">
+                          $245
+                        </p>
                       </div>
                     </div>
                   </div>
-                  <div className="profile_change-pass_btns-wrapper flex gap-6">
-                    <button
-                      type="button"
-                      className="profile_btn_change-pass uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
-                    >
-                      save changes
-                    </button>
-                    <button
-                      type="button"
-                      className="profile_btn_cancel uppercase tracking-[2px] w-[122px] h-[46px] border border-disable-color text-secondary-text-color"
-                    >
-                      cancel
-                    </button>
+                  <div className="wishlist_product_right flex w-full items-center justify-between">
+                    <div className="wishlist_product-add-delete_wrapper flex items-center justify-between w-full">
+                      <div className="wishlist_product-add flex items-center gap-[10px] cursor-pointer">
+                        <div className="wishlist_product-cart-btn w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color">
+                          <Image
+                            src={"/icons/Icon name=cart.svg"}
+                            alt={"cart"}
+                            width={24}
+                            height={24}
+                            priority
+                          />
+                        </div>
+                        <div className="wishlist_product-add-title uppercase tracking-[2px] text-secondary-text-color">
+                          add to cart
+                        </div>
+                      </div>
+                      <div className="wishlist_product-delete w-[46px] h-[46px] rounded-full flex items-center justify-center border border-disable-color cursor-pointer">
+                        <Image
+                          src={"/icons/Icon name=trash.svg"}
+                          alt={"trash"}
+                          width={18}
+                          height={20}
+                          priority
+                        />
+                      </div>
+                    </div>
                   </div>
-                </form>
+                </div>
               </div>
               {/* <div className="profile_personal_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
                 <div className="profile_info flex md:flex-row flex-col gap-[60px]">

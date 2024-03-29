@@ -449,8 +449,8 @@ export default function Checkout() {
                                   <Image
                                     src={"/icons/Icon name=minus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={20}
                                   />
                                 </div>
                                 <p className="header_basket_product-number_count">2</p>
@@ -458,7 +458,7 @@ export default function Checkout() {
                                   <Image
                                     src={"/icons/Icon name=plus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
+                                    width={18}
                                     height={22}
                                   />
                                 </div>
@@ -497,8 +497,8 @@ export default function Checkout() {
                                   <Image
                                     src={"/icons/Icon name=minus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
-                                    height={22}
+                                    width={16}
+                                    height={20}
                                   />
                                 </div>
                                 <p className="header_basket_product-number_count">1</p>
@@ -506,7 +506,7 @@ export default function Checkout() {
                                   <Image
                                     src={"/icons/Icon name=plus.svg"}
                                     alt={"cart-icon"}
-                                    width={22}
+                                    width={18}
                                     height={22}
                                   />
                                 </div>
