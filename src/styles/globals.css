@@ -207,6 +207,11 @@
     background-color: #dba514;
   }
 
+  .selected-tab {
+    color: #32324d;
+    border-color: #dba514;
+  }
+
   .disable-btn {
     background-color: #ede4e0;
   }

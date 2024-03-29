@@ -609,9 +609,9 @@ export default function Profile() {
                 profile
               </h1>
             </div>
-            <div className="profile_wrapper flex flex-col xl:flex-row justify-between lg:mt-14 mt-8 gap-10 xl:items-start items-center">
-              <div className="profile_tabs-wrapper bg-white p-[60px] flex flex-col gap-8 min-w-[380px]">
-                <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color">
+            <div className="profile_main-wrapper flex flex-col xl:flex-row justify-between lg:mt-14 mt-8 gap-10 items-start xs:static relative left-[-15px]">
+              <div className="profile_tabs-wrapper bg-white sm:p-[60px] py-14 px-4 flex flex-col gap-8 xs:min-w-[380px] w-[375px]  ">
+                <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color selected-tab ">
                   Personal
                 </p>
                 <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color">
@@ -624,157 +624,247 @@ export default function Profile() {
                   logout
                 </p>
               </div>
-              <form action="#" className="profile-info_form w-full p-[60px] bg-white">
-                <div className="profile_main-wrapper flex flex-col h-fit max-w-[660px]">
-                  <div className="profile_personal-info-wrapper flex flex-col gap-6 justify-between pb-10 pt-0 w-full">
-                    <h2 className="profile_personal-info-title uppercase font-medium tracking-[3px] text-2xl pb-1 border-b border-disable-color mb-4">
-                      personal
-                    </h2>
-                    <div className="profile_personal-info_inner-wrapper flex lg:items-center justify-between lg:flex-row flex-col gap-6 lg:gap-0 ">
-                      <div className="profile_personal-info flex flex-col gap-[10px]">
-                        <label
-                          htmlFor="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
-                        >
-                          first name *
-                        </label>
-                        <input
-                          type="text"
-                          id="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                        />
-                      </div>
-                      <div className="profile_personal-info flex flex-col gap-[10px]">
-                        <label
-                          htmlFor="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
-                        >
-                          last name *
-                        </label>
-                        <input
-                          type="text"
-                          id="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                        />
-                      </div>
+              <div className="profile_personal-inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
+                <div className="profile_info flex gap-[60px]">
+                  <div className="profile_personal flex flex-col gap-5 max-w-[300px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">Personal</p>
                     </div>
-                    <div className="profile_personal-info_inner-wrapper flex lg:items-center justify-between lg:flex-row flex-col gap-6 lg:gap-0 ">
-                      <div className="profile_personal-info flex flex-col gap-[10px]">
-                        <label
-                          htmlFor="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
-                        >
-                          phone
-                        </label>
-                        <input
-                          type="text"
-                          id="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                        />
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">First name</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">Alexander</p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Last name</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">Silencehide</p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Email</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">
+                        Silencehide@gmail.com
+                      </p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Phone</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">–</p>
+                    </div>
+                  </div>
+                  <div className="profile_address flex flex-col gap-5 max-w-[660px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">Address</p>
+                    </div>
+                    <div className="profile_address-info_wrapper flex gap-[60px]">
+                      <div className="profile_address-info_left flex flex-col w-full gap-5">
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Country</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Town/city</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Street</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Apartment</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
                       </div>
-                      <div className="profile_personal-info flex flex-col gap-[10px]">
-                        <label
-                          htmlFor="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
-                        >
-                          email
-                        </label>
-                        <input
-                          type="email"
-                          id="profile_personal-info_first-name"
-                          className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                        />
+                      <div className="profile_address-info_right flex flex-col w-full gap-5">
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">ZIP Code</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Comment</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <div className="profile_address-wrapper flex flex-col gap-6 justify-between pt-10 pb-0 w-full">
-                    <h2 className="profile_address-title uppercase font-medium tracking-[3px] text-2xl mb-1 pb-1 border-b border-disable-color">
-                      address
-                    </h2>
-                    <div className="profile_address_select-wrapper flex lg:items-center justify-between mb-5 lg:flex-row flex-col gap-[26px]">
-                      <div className="profile_inner-wrapper flex flex-col gap-[10px] relative ">
-                        <p
-                          className={`profile_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
-                            countryOpen ? "visible opacity-100" : "invisible opacity-0"
-                          }`}
-                        >
-                          Select country *
-                        </p>
-                        <button
-                          type="button"
-                          onClick={() => {
-                            isCityOpen(false);
-                            isCountryOpen(!countryOpen);
-                          }}
-                          className={`profile_select h-[46px] xl:w-[315px] w-[343px] p-[15px] border outline-none bg-white flex items-center justify-between transition-all ${
-                            countryOpen ? "border-accent-color" : "border-disable-color"
-                          }`}
-                        >
-                          <p className="profile_select_title text-placeholder-text-color">
-                            Select country *
-                          </p>
-                          <Image
-                            src={"/icons/Icon name=chevron_down.svg"}
-                            alt={"chevron_down"}
-                            width={14}
-                            height={10}
-                            className={`profile_select-icon pointer-events-none transition-all ${
-                              countryOpen ? "rotate-180" : "rotate-0"
-                            }`}
-                          />
-                        </button>
-                        <ul
-                          className={`profile_list absolute z-[10] left-[0px] top-[72px] xl:w-[315px] w-[343px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all duration-300 h-[170px] overflow-y-scroll  ${
-                            countryOpen ? "visible opacity-100" : "invisible opacity-0"
-                          }`}
-                        >
-                          <li
-                            className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
-                            value={"UK"}
-                          >
-                            UK
-                          </li>
-                          <li
-                            className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
-                            value={"USA"}
-                          >
-                            USA
-                          </li>
-                          <li
-                            className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
-                            value={"Ukraine"}
-                          >
-                            Ukraine
-                          </li>
-                          <li
-                            className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
-                            value={"Uganda"}
-                          >
-                            Uganda
-                          </li>
-                        </ul>
+                </div>
+                <div className="profile_btns-wrapper flex gap-6">
+                  <button
+                    type="button"
+                    className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
+                  >
+                    edit information
+                  </button>
+                  <button
+                    type="button"
+                    className="profile_btn_change-pass uppercase tracking-[2px] w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
+                  >
+                    change password
+                  </button>
+                </div>
+              </div>
+              {/* <div className="profile_personal-inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
+                <div className="profile_info flex gap-[60px]">
+                  <div className="profile_personal flex flex-col gap-5 max-w-[300px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">Personal</p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">First name</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">Alexander</p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Last name</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">Silencehide</p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Email</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">
+                        Silencehide@gmail.com
+                      </p>
+                    </div>
+                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
+                      <p className="profile_personal-info_title font-medium">Phone</p>
+                      <p className="profile_personal-info_desc text-sub-text-color">–</p>
+                    </div>
+                  </div>
+                  <div className="profile_address flex flex-col gap-5 max-w-[660px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">Address</p>
+                    </div>
+                    <div className="profile_address-info_wrapper flex gap-[60px]">
+                      <div className="profile_address-info_left flex flex-col w-full gap-5">
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Country</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Town/city</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Street</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Apartment</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
                       </div>
-                      <div className="profile_address flex flex-col gap-[10px] relative">
+                      <div className="profile_address-info_right flex flex-col w-full gap-5">
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">ZIP Code</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
+                          <p className="profile_address-info_title font-medium">Comment</p>
+                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="profile_btns-wrapper flex gap-6">
+                  <button
+                    type="button"
+                    className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
+                  >
+                    edit information
+                  </button>
+                  <button
+                    type="button"
+                    className="profile_btn_change-pass uppercase tracking-[2px] w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
+                  >
+                    change password
+                  </button>
+                </div>
+              </div> */}
+              {/* <div className="profile_form_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
+                <form action="#" className="profile-info_form ">
+                  <div className="profile_form-wrapper flex flex-col h-fit xl:max-w-[660px]">
+                    <div className="profile_personal-info-wrapper flex flex-col gap-6 justify-between pb-10 pt-0 w-full">
+                      <h2 className="profile_personal-info-title uppercase font-medium tracking-[3px] text-2xl pb-1 border-b border-disable-color mb-4">
+                        personal
+                      </h2>
+                      <div className="profile_personal-info_inner-wrapper flex lg:items-center justify-between lg:flex-row flex-col gap-6 lg:gap-0 ">
+                        <div className="profile_personal-info flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                          >
+                            first name *
+                          </label>
+                          <input
+                            type="text"
+                            id="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          />
+                        </div>
+                        <div className="profile_personal-info flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                          >
+                            last name *
+                          </label>
+                          <input
+                            type="text"
+                            id="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          />
+                        </div>
+                      </div>
+                      <div className="profile_personal-info_inner-wrapper flex lg:items-center justify-between lg:flex-row flex-col gap-6 lg:gap-0 ">
+                        <div className="profile_personal-info flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                          >
+                            phone
+                          </label>
+                          <input
+                            type="text"
+                            id="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          />
+                        </div>
+                        <div className="profile_personal-info flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_label uppercase text-placeholder-text-color font-semibold text-xs tracking-[1px]"
+                          >
+                            email
+                          </label>
+                          <input
+                            type="email"
+                            id="profile_personal-info_first-name"
+                            className="profile_personal-info_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div className="profile_address-wrapper flex flex-col gap-6 justify-between pt-10 pb-0 w-full">
+                      <h2 className="profile_address-title uppercase font-medium tracking-[3px] text-2xl mb-1 pb-1 border-b border-disable-color">
+                        address
+                      </h2>
+                      <div className="profile_address_select-wrapper flex lg:items-center justify-between mb-5 lg:flex-row flex-col gap-[26px]">
                         <div className="profile_inner-wrapper flex flex-col gap-[10px] relative ">
                           <p
                             className={`profile_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
-                              cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                              countryOpen ? "visible opacity-100" : "invisible opacity-0"
                             }`}
                           >
-                            Town/city *
+                            Select country *
                           </p>
                           <button
                             type="button"
                             onClick={() => {
-                              isCountryOpen(false);
-                              isCityOpen(!cityOpen);
+                              isCityOpen(false);
+                              isCountryOpen(!countryOpen);
                             }}
                             className={`profile_select h-[46px] xl:w-[315px] w-[343px] p-[15px] border outline-none bg-white flex items-center justify-between transition-all ${
-                              cityOpen ? "border-accent-color" : "border-disable-color"
+                              countryOpen ? "border-accent-color" : "border-disable-color"
                             }`}
                           >
                             <p className="profile_select_title text-placeholder-text-color">
-                              Town/city *
+                              Select country *
                             </p>
                             <Image
                               src={"/icons/Icon name=chevron_down.svg"}
@@ -782,13 +872,13 @@ export default function Profile() {
                               width={14}
                               height={10}
                               className={`profile_select-icon pointer-events-none transition-all ${
-                                cityOpen ? "rotate-180" : "rotate-0"
+                                countryOpen ? "rotate-180" : "rotate-0"
                               }`}
                             />
                           </button>
                           <ul
-                            className={`profile_list absolute z-[10] left-[0px] top-[72px] xl:w-[315px] w-[343px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all duration-300 h-[170px] overflow-y-scroll ${
-                              cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                            className={`profile_list absolute z-[10] left-[0px] top-[72px] xl:w-[315px] w-[343px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all duration-300 h-[170px] overflow-y-scroll  ${
+                              countryOpen ? "visible opacity-100" : "invisible opacity-0"
                             }`}
                           >
                             <li
@@ -817,45 +907,123 @@ export default function Profile() {
                             </li>
                           </ul>
                         </div>
+                        <div className="profile_address flex flex-col gap-[10px] relative">
+                          <div className="profile_inner-wrapper flex flex-col gap-[10px] relative ">
+                            <p
+                              className={`profile_label uppercase font-semibold text-xs tracking-[1px] transition-all ${
+                                cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                              }`}
+                            >
+                              Town/city *
+                            </p>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                isCountryOpen(false);
+                                isCityOpen(!cityOpen);
+                              }}
+                              className={`profile_select h-[46px] xl:w-[315px] w-[343px] p-[15px] border outline-none bg-white flex items-center justify-between transition-all ${
+                                cityOpen ? "border-accent-color" : "border-disable-color"
+                              }`}
+                            >
+                              <p className="profile_select_title text-placeholder-text-color">
+                                Town/city *
+                              </p>
+                              <Image
+                                src={"/icons/Icon name=chevron_down.svg"}
+                                alt={"chevron_down"}
+                                width={14}
+                                height={10}
+                                className={`profile_select-icon pointer-events-none transition-all ${
+                                  cityOpen ? "rotate-180" : "rotate-0"
+                                }`}
+                              />
+                            </button>
+                            <ul
+                              className={`profile_list absolute z-[10] left-[0px] top-[72px] xl:w-[315px] w-[343px] p-[15px] border border-accent-color bg-white flex flex-col gap-4 transition-all duration-300 h-[170px] overflow-y-scroll ${
+                                cityOpen ? "visible opacity-100" : "invisible opacity-0"
+                              }`}
+                            >
+                              <li
+                                className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                                value={"UK"}
+                              >
+                                UK
+                              </li>
+                              <li
+                                className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium "
+                                value={"USA"}
+                              >
+                                USA
+                              </li>
+                              <li
+                                className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                                value={"Ukraine"}
+                              >
+                                Ukraine
+                              </li>
+                              <li
+                                className="profile_item cursor-pointer transition-all hover:text-main-text-color text-secondary-text-color font-medium"
+                                value={"Uganda"}
+                              >
+                                Uganda
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="profile_address_location-wrapper flex lg:items-center items-start justify-between mb-5 lg:flex-row flex-col lg:gap-0 gap-10">
+                        <div className="profile_address flex flex-col gap-[10px]">
+                          <input
+                            type="text"
+                            id="profile_address_first-name"
+                            className="profile_address_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                            placeholder="Street name *"
+                          />
+                        </div>
+                        <div className="profile_address flex items-center justify-between gap-[24px]">
+                          <input
+                            type="text"
+                            id="profile_address_first-name"
+                            className="profile_address_first-name_input outline-none border border-disable-color xl:w-[145px] w-[165px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                            placeholder="Apartment"
+                          />
+                          <input
+                            type="text"
+                            id="profile_address_first-name"
+                            className="profile_address_first-name_input outline-none border border-disable-color xl:w-[145px] w-[165px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
+                            placeholder="ZIP Code"
+                          />
+                        </div>
+                      </div>
+                      <div className="profile_address_comment-wrapper flex items-center gap-3 ">
+                        <textarea
+                          name="profile_address-comment"
+                          id="profile_address-comment"
+                          cols={30}
+                          rows={10}
+                          className="profile_address-comment lg:h-[46px] h-[90px] w-full outline-none border border-disable-color resize-none px-4 py-2 text-secondary-text-color caret-secondary-text-color"
+                          placeholder="Your comment"
+                        ></textarea>
                       </div>
                     </div>
-                    <div className="profile_address_location-wrapper flex items-center justify-between mb-5 lg:flex-row flex-col lg:gap-0 gap-10">
-                      <div className="profile_address flex flex-col gap-[10px]">
-                        <input
-                          type="text"
-                          id="profile_address_first-name"
-                          className="profile_address_first-name_input outline-none border border-disable-color xl:w-[315px] w-[343px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                          placeholder="Street name *"
-                        />
-                      </div>
-                      <div className="profile_address flex items-center justify-between gap-[24px]">
-                        <input
-                          type="text"
-                          id="profile_address_first-name"
-                          className="profile_address_first-name_input outline-none border border-disable-color xl:w-[145px] w-[165px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                          placeholder="Apartment"
-                        />
-                        <input
-                          type="text"
-                          id="profile_address_first-name"
-                          className="profile_address_first-name_input outline-none border border-disable-color xl:w-[145px] w-[165px] h-[46px] px-4 caret-secondary-text-color text-secondary-text-color"
-                          placeholder="ZIP Code"
-                        />
-                      </div>
-                    </div>
-                    <div className="profile_address_comment-wrapper flex items-center gap-3 ">
-                      <textarea
-                        name="profile_address-comment"
-                        id="profile_address-comment"
-                        cols={30}
-                        rows={10}
-                        className="profile_address-comment lg:h-[46px] h-[90px] w-full outline-none border border-disable-color resize-none px-4 py-2 text-secondary-text-color caret-secondary-text-color"
-                        placeholder="Your comment"
-                      ></textarea>
+                    <div className="profile_btns-wrapper mt-[60px] flex items-center gap-6">
+                      <button
+                        type="button"
+                        className="profile_info-form_save-btn w-[190px] h-[46px] uppercase tracking-[2px] text-white bg-disable-color"
+                      >
+                        save changes
+                      </button>
+                      <button
+                        type="button"
+                        className="profile_info-form_cancel-btn w-[122px] h-[46px] uppercase tracking-[2px] border border-disable-color text-secondary-text-color"
+                      >
+                        cancel
+                      </button>
                     </div>
                   </div>
-                </div>
-              </form>
+                </form>
+              </div> */}
             </div>
           </div>
         </div>
