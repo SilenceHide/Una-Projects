@@ -624,85 +624,107 @@ export default function Profile() {
                   logout
                 </p>
               </div>
-              <div className="profile_personal-inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
-                <div className="profile_info flex gap-[60px]">
-                  <div className="profile_personal flex flex-col gap-5 max-w-[300px] w-full">
+              <div className="profile_change-pass_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] ">
+                <form action="#" className="profile_change-pass_form flex flex-col gap-[60px]">
+                  <div className="profile_change-pass flex flex-col lg:gap-[60px] gap-10 max-w-[660px] w-full">
                     <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
-                      <p className="profile_title uppercase font-medium tracking-[2px]">Personal</p>
-                    </div>
-                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
-                      <p className="profile_personal-info_title font-medium">First name</p>
-                      <p className="profile_personal-info_desc text-sub-text-color">Alexander</p>
-                    </div>
-                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
-                      <p className="profile_personal-info_title font-medium">Last name</p>
-                      <p className="profile_personal-info_desc text-sub-text-color">Silencehide</p>
-                    </div>
-                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
-                      <p className="profile_personal-info_title font-medium">Email</p>
-                      <p className="profile_personal-info_desc text-sub-text-color">
-                        Silencehide@gmail.com
+                      <p className="profile_title uppercase font-medium tracking-[2px]">
+                        change password
                       </p>
                     </div>
-                    <div className="profile_personal-info flex items-center justify-between border-b border-disable-color pb-1">
-                      <p className="profile_personal-info_title font-medium">Phone</p>
-                      <p className="profile_personal-info_desc text-sub-text-color">–</p>
-                    </div>
-                  </div>
-                  <div className="profile_address flex flex-col gap-5 max-w-[660px] w-full">
-                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
-                      <p className="profile_title uppercase font-medium tracking-[2px]">Address</p>
-                    </div>
-                    <div className="profile_address-info_wrapper flex gap-[60px]">
-                      <div className="profile_address-info_left flex flex-col w-full gap-5">
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">Country</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                    <div className="profile_change-pass_input-wrapper flex lg:flex-row flex-col justify-between lg:gap-0 gap-10">
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            old password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px]"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
                         </div>
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">Town/city</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
-                        </div>
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">Street</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
-                        </div>
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">Apartment</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
-                        </div>
-                      </div>
-                      <div className="profile_address-info_right flex flex-col w-full gap-5">
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">ZIP Code</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
-                        </div>
-                        <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
-                          <p className="profile_address-info_title font-medium">Comment</p>
-                          <p className="profile_address-info_desc text-sub-text-color">–</p>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <a
+                            href="#"
+                            className="profile_change-pass_forgot text-secondary-text-color"
+                          >
+                            Forgot password?
+                          </a>
+                          <p className="profile_change-pass_help text-placeholder-text-color">
+                            The strong password must At least 8 characters and it contains uppercase
+                            and lowercase Latin letters and numbers and special characters.
+                          </p>
                         </div>
                       </div>
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            new password
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px] mt-[14px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            repeat password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px] invisible opacity-0"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="profile_btns-wrapper flex gap-6">
-                  <button
-                    type="button"
-                    className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
-                  >
-                    edit information
-                  </button>
-                  <button
-                    type="button"
-                    className="profile_btn_change-pass uppercase tracking-[2px] w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
-                  >
-                    change password
-                  </button>
-                </div>
+                  <div className="profile_change-pass_btns-wrapper flex gap-6">
+                    <button
+                      type="button"
+                      className="profile_btn_change-pass uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
+                    >
+                      save changes
+                    </button>
+                    <button
+                      type="button"
+                      className="profile_btn_cancel uppercase tracking-[2px] w-[122px] h-[46px] border border-disable-color text-secondary-text-color"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
               </div>
-              {/* <div className="profile_personal-inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
-                <div className="profile_info flex gap-[60px]">
-                  <div className="profile_personal flex flex-col gap-5 max-w-[300px] w-full">
+              {/* <div className="profile_personal_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
+                <div className="profile_info flex md:flex-row flex-col gap-[60px]">
+                  <div className="profile_personal flex flex-col gap-5 md:max-w-[300px] w-full">
                     <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
                       <p className="profile_title uppercase font-medium tracking-[2px]">Personal</p>
                     </div>
@@ -729,7 +751,7 @@ export default function Profile() {
                     <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
                       <p className="profile_title uppercase font-medium tracking-[2px]">Address</p>
                     </div>
-                    <div className="profile_address-info_wrapper flex gap-[60px]">
+                    <div className="profile_address-info_wrapper flex 2xl:flex-row xl:flex-col lg:flex-row flex-col 2xl:gap-[60px] xl:gap-5 lg:gap-[60px] gap-5">
                       <div className="profile_address-info_left flex flex-col w-full gap-5">
                         <div className="profile_address-info flex items-center justify-between border-b border-disable-color pb-1">
                           <p className="profile_address-info_title font-medium">Country</p>
@@ -761,23 +783,121 @@ export default function Profile() {
                     </div>
                   </div>
                 </div>
-                <div className="profile_btns-wrapper flex gap-6">
+                <div className="profile_btns-wrapper flex sm:flex-row flex-col gap-6">
                   <button
                     type="button"
-                    className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white w-[224px] h-[46px]"
+                    className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white sm:w-[224px] h-[46px]"
                   >
                     edit information
                   </button>
                   <button
                     type="button"
-                    className="profile_btn_change-pass uppercase tracking-[2px] w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
+                    className="profile_btn_change-pass uppercase tracking-[2px] sm:w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
                   >
                     change password
                   </button>
                 </div>
               </div> */}
-              {/* <div className="profile_form_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
-                <form action="#" className="profile-info_form ">
+              {/* <div className="profile_change-pass_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] ">
+                <form action="#" className="profile_change-pass_form flex flex-col gap-[60px]">
+                  <div className="profile_change-pass flex flex-col lg:gap-[60px] gap-10 max-w-[660px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">
+                        change password
+                      </p>
+                    </div>
+                    <div className="profile_change-pass_input-wrapper flex lg:flex-row flex-col justify-between lg:gap-0 gap-10">
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            old password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px]"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <a
+                            href="#"
+                            className="profile_change-pass_forgot text-secondary-text-color"
+                          >
+                            Forgot password?
+                          </a>
+                          <p className="profile_change-pass_help text-placeholder-text-color">
+                            The strong password must At least 8 characters and it contains uppercase
+                            and lowercase Latin letters and numbers and special characters.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            new password
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px] mt-[14px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            repeat password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px] invisible opacity-0"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="profile_change-pass_btns-wrapper flex sm:flex-row flex-col gap-6">
+                    <button
+                      type="button"
+                      className="profile_btn_change-pass uppercase tracking-[2px] bg-disable-color text-white sm:w-[224px] h-[46px]"
+                    >
+                      save changes
+                    </button>
+                    <button
+                      type="button"
+                      className="profile_btn_cancel uppercase tracking-[2px] sm:w-[122px] h-[46px] border border-disable-color text-secondary-text-color"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
+              </div> */}
+              {/* <div className="profile_edit-info_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
+                <form action="#" className="profile-edit-info_form ">
                   <div className="profile_form-wrapper flex flex-col h-fit xl:max-w-[660px]">
                     <div className="profile_personal-info-wrapper flex flex-col gap-6 justify-between pb-10 pt-0 w-full">
                       <h2 className="profile_personal-info-title uppercase font-medium tracking-[3px] text-2xl pb-1 border-b border-disable-color mb-4">

@@ -175,6 +175,14 @@
     -ms-transition: all 200ms ease-in-out;
     -o-transition: all 200ms ease-in-out;
   }
+
+  input[type="password"] {
+    font-family: small-caption;
+    font-size: 30px;
+    letter-spacing: 1px;
+    color: #d1bcb2;
+    vertical-align: middle;
+  }
 }
 
 @layer utilities {
