@@ -6,8 +6,18 @@ export default function Profile() {
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
   const [promocodeBasketOpen, isPromocodeBasketOpen] = useState(false);
+
   const [countryOpen, isCountryOpen] = useState(false);
   const [cityOpen, isCityOpen] = useState(false);
+
+  const [currentOrderOpen, isCurrentOrderOpen] = useState(false);
+  const [historyOrderOpen, isHistoryOrderOpen] = useState(false);
+
+  const [personalInfoShow, isPersonalInfoShow] = useState(true);
+  const [editInfoShow, isEditInfoShow] = useState(false);
+  const [changePassShow, isChangePassShow] = useState(false);
+  const [wishlistShow, isWishlistShow] = useState(false);
+  const [ordersShow, isOrdersShow] = useState(false);
 
   return (
     <>
@@ -48,7 +58,7 @@ export default function Profile() {
                 className="header_logo"
               />
               <nav
-                className={`menu text-secondary-text-color right-0 top-[70px] lg:p-0 lg:overflow-hidden md:overflow-visible overflow-scroll transition-all duration-300 px-4 py-10 lg:h-[100px] md:h-fit h-[90vh] md:shadow-main-box-shadow lg:shadow-none ${
+                className={`menu text-secondary-text-color right-0 top-[70px] lg:p-0 lg:overflow-hidden md:overflow-visible overflow-scroll transition-all duration-300 px-4 md:py-0 py-10 lg:h-[100px] md:h-fit h-[90vh] md:shadow-main-box-shadow lg:shadow-none ${
                   navOpen
                     ? "left-0 bg-white border-t border-disable-text-color z-50 visible opacity-100"
                     : "-left-full z-0 invisible opacity-0 lg:left-0 lg:visible lg:opacity-100"
@@ -63,7 +73,7 @@ export default function Profile() {
                     navOpen ? "justify-between" : "justify-start"
                   }`}
                 >
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         NEW IN
@@ -78,7 +88,7 @@ export default function Profile() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         SOFAS
@@ -93,7 +103,7 @@ export default function Profile() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         TABLES
@@ -108,7 +118,7 @@ export default function Profile() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         BEDS
@@ -123,7 +133,7 @@ export default function Profile() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         LIGHTING
@@ -138,7 +148,7 @@ export default function Profile() {
                       />
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full ">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10 ">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 relative">
                         KITCHEN
@@ -152,7 +162,7 @@ export default function Profile() {
                         priority
                       />
                     </div>
-                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] md:shadow-main-box-shadow xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 lg:h-fit md:h-[70vh] h-0 lg:group-hover/menu-item:h-fit group-hover/menu-item:h-[70vh] flex-wrap xl:gap-0 xs:px-5 gap-10 my-0 md:group-hover/menu-item:my-0 group-hover/menu-item:my-10 md:my-0 z-50 cursor-default lg:overflow-visible overflow-scroll md:pb-7">
+                    <div className="mega-menu md:absolute bg-white lg:border-t border-disable-text-color top-[100px] bottom-0 left-0 right-0 transition-all lg:py-[60px] lg:px-[140px] xl:px-[70px] 3xl:px-[140px] md:shadow-main-box-shadow xl:justify-between flex invisible opacity-0 group-hover/menu-item:visible group-hover/menu-item:opacity-100 lg:h-fit md:h-[70vh] h-0 lg:group-hover/menu-item:h-fit group-hover/menu-item:h-[70vh] flex-wrap xl:gap-0 xs:px-5 gap-10 my-0 md:group-hover/menu-item:my-0 group-hover/menu-item:my-10 md:my-0 z-50 cursor-default lg:overflow-visible overflow-y-scroll md:pb-7">
                       <ul className="mega-menu_left flex 2xl:gap-[40px] xl:gap-7 lg:gap-10 md:gap-5 sm:gap-0 gap-10 group-hover/menu-item:transition-all flex-wrap justify-center md:justify-between flex-grow xl:flex-grow-0">
                         <li className="mega-item flex flex-col gap-4 lg:pt-0 md:basis-[20%] sm:basis-[25%] basis-[40%] shrink lg:shrink-0 lg:basis-auto">
                           <h4 className="mega-title text-main-text-color font-medium xl:tracking-[0px] 2xl:tracking-[2px]">
@@ -312,7 +322,7 @@ export default function Profile() {
                       </div>
                     </div>
                   </li>
-                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full">
+                  <li className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10">
                     <div className="menu-item_wrapper flex items-center gap-1">
                       <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300">
                         STORAGE
@@ -609,253 +619,57 @@ export default function Profile() {
                 profile
               </h1>
             </div>
-            <div className="profile_main-wrapper flex flex-col xl:flex-row justify-between lg:mt-14 mt-8 gap-10 items-start xs:static relative left-[-15px]">
-              <div className="profile_tabs-wrapper bg-white sm:p-[60px] py-14 px-4 flex flex-col gap-8 xs:min-w-[380px] w-[375px]  ">
-                <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color selected-tab ">
+            <div className="profile_main-wrapper xs:overflow-hidden flex flex-col xl:flex-row lg:mt-14 mt-8 items-start xs:static relative left-[-15px]">
+              <div className="profile_tabs-wrapper bg-white sm:p-[60px] py-14 px-4 flex flex-col gap-8 xs:min-w-[380px] w-[375px] xl:mr-10 xl:mb-0 mb-10 ">
+                <p
+                  onClick={() => {
+                    isEditInfoShow(false);
+                    isChangePassShow(false);
+                    isWishlistShow(false);
+                    isOrdersShow(false);
+                    isPersonalInfoShow(true);
+                  }}
+                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color selected-tab "
+                >
                   Personal
                 </p>
-                <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color">
+                <p
+                  onClick={() => {
+                    isEditInfoShow(false);
+                    isChangePassShow(false);
+                    isOrdersShow(false);
+                    isPersonalInfoShow(false);
+                    isWishlistShow(true);
+                  }}
+                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color"
+                >
                   wishlist (4)
                 </p>
-                <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color">
+                <p
+                  onClick={() => {
+                    isEditInfoShow(false);
+                    isChangePassShow(false);
+                    isPersonalInfoShow(false);
+                    isWishlistShow(false);
+                    isOrdersShow(true);
+                  }}
+                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color"
+                >
                   orders (2)
                 </p>
                 <p className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color">
                   logout
                 </p>
               </div>
-              <div className="orders_inner-wrapper xs:w-full sm:px-[60px] py-[60px] px-4 bg-white w-[375px]">
-                <div className="orders_wrapper flex flex-col gap-[60px]">
-                  <div className="order-current_wrapper flex flex-col gap-[10px]">
-                    <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
-                      Current orders (2)
-                    </h2>
-                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
-                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
-                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
-                          <p className="order_date text-placeholder-text-color">
-                            12.07.2019, 14:13
-                          </p>
-                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                            <Image
-                              src={"/icons/Icon name=truck.svg"}
-                              alt={"truck"}
-                              width={18}
-                              height={18}
-                            />
-                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
-                              En route
-                            </p>
-                          </div>
-                        </div>
-                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                          <div className="order_total-price-wrapper">
-                            <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                              $1 000
-                            </p>
-                          </div>
-                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                            <Image
-                              src={"/icons/Icon name=small ch_down.svg"}
-                              alt={"arrow-down"}
-                              width={14}
-                              height={10}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
-                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3  cursor-pointer">
-                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
-                          <p className="order_date text-placeholder-text-color">
-                            10.07.2019, 11:40
-                          </p>
-                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                            <Image
-                              src={"/icons/Icon name=document.svg"}
-                              alt={"document"}
-                              width={18}
-                              height={18}
-                            />
-                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
-                              New order
-                            </p>
-                          </div>
-                        </div>
-                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                          <div className="order_total-price-wrapper flex gap-2">
-                            <p className="order_total-price text-red-hot font-medium tracking-[1px]">
-                              $3 500
-                            </p>
-                            <p className="order_total-discount text-disable-color font-medium tracking-[1px] line-through">
-                              $4 000
-                            </p>
-                          </div>
-                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                            <Image
-                              src={"/icons/Icon name=small ch_down.svg"}
-                              alt={"arrow-down"}
-                              width={14}
-                              height={10}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div className="order_product-costumer_wrapper border-t mt-[10px] border-disable-color sm:py-10 py-5 flex lg:items-center lg:flex-row flex-col">
-                        <div className="order_product-info_wrapper 2xl:max-w-[600px] lg:max-w-[500px] w-full lg:border-r lg:border-b-0 border-b border-disable-color lg:pr-10 lg:pb-0 sm:pb-10 pb-6">
-                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
-                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
-                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
-                              <div className="order_product_info-left flex flex-col gap-[10px]">
-                                <p className="order_product-title uppercase tracking-[2px] font-medium">
-                                  black table
-                                </p>
-                                <div className="order_product-wrapper">
-                                  <p className="order_product-info text-sm text-placeholder-text-color">
-                                    black
-                                  </p>
-                                  <p className="order_product-info text-sm text-placeholder-text-color">
-                                    50 sm х 30 sm
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="order_product_info-right flex items-center gap-20">
-                                <p className="order_product-number font-medium text-disable-color">
-                                  x2
-                                </p>
-                                <p className="order_product-price font-medium tracking-[1px] text-accent-color">
-                                  $2 000
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="order_product-info_divider 2xl:w-[560px] lg:w-[460px] w-full h-[1px] bg-disable-text-color my-10"></div>
-                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
-                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
-                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
-                              <div className="order_product_info-left flex flex-col gap-[10px]">
-                                <p className="order_product-title uppercase tracking-[2px] font-medium">
-                                  combined table
-                                </p>
-                                <div className="order_product-wrapper">
-                                  <p className="order_product-info text-sm text-placeholder-text-color">
-                                    black
-                                  </p>
-                                </div>
-                              </div>
-                              <div className="order_product_info-right flex items-center gap-20">
-                                <p className="order_product-number font-medium text-disable-color">
-                                  x3
-                                </p>
-                                <div className="order_product-price_wrapper flex gap-3 sm:flex-col">
-                                  <p className="order_product-price font-medium tracking-[1px] text-red-hot">
-                                    $1 500
-                                  </p>
-                                  <p className="order_product-price font-medium tracking-[1px] line-through text-disable-color">
-                                    $2 000
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="order_costumer-info_wrapper lg:pl-10 lg:pt-0 sm:pt-10 pt-6 flex flex-col gap-6">
-                          <div className="order_checkout-info tracking-[2px] uppercase font-medium flex flex-col gap-4">
-                            <p className="order_checkout_delivery-info">Self pickup (free)</p>
-                            <p className="order_checkout_payment-info">Visa/mastercard</p>
-                          </div>
-                          <div className="order_costumer-info text-sub-text-color flex flex-col gap-[10px]">
-                            <p className="order_costumer-name">Alexander Silencehide</p>
-                            <p className="order_costumer-email">Silencehide@mail.com</p>
-                            <p className="order_costumer-phone">(480) 555-0103</p>
-                            <p className="order_costumer-address">
-                              4517 Washington Ave. Manchester, Kentucky 39495
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="order-history_wrapper flex flex-col gap-[10px]">
-                    <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
-                      order history (2)
-                    </h2>
-                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
-                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
-                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
-                          <p className="order_date text-placeholder-text-color">
-                            12.07.2019, 14:13
-                          </p>
-                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                            <Image
-                              src={"/icons/cancel-disable.svg"}
-                              alt={"cancel"}
-                              width={18}
-                              height={18}
-                            />
-                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
-                              Cancelled
-                            </p>
-                          </div>
-                        </div>
-                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                            $280
-                          </p>
-                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                            <Image
-                              src={"/icons/Icon name=small ch_down.svg"}
-                              alt={"arrow-down"}
-                              width={14}
-                              height={10}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
-                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
-                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
-                          <p className="order_date text-placeholder-text-color">
-                            10.07.2019, 11:40
-                          </p>
-                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                            <Image
-                              src={"/icons/done-success.svg"}
-                              alt={"done"}
-                              width={18}
-                              height={18}
-                            />
-                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
-                              Done
-                            </p>
-                          </div>
-                        </div>
-                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                            $1 090
-                          </p>
-                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                            <Image
-                              src={"/icons/Icon name=small ch_down.svg"}
-                              alt={"arrow-down"}
-                              width={14}
-                              height={10}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* <div className="profile_personal_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] flex flex-col gap-[60px]">
+              {/* profile section */}
+              <div
+                className={`profile_personal_inner-wrapper bg-white flex flex-col gap-[60px] transition-all ${
+                  personalInfoShow
+                    ? "visible opacity-100 delay-150 left-0 z-[2] xs:w-full w-[375px] sm:p-[60px] py-14 px-4 "
+                    : "invisible opacity-0 -left-full -z-10 w-0 p-0 h-0"
+                }`}
+              >
                 <div className="profile_info flex md:flex-row flex-col gap-[60px]">
                   <div className="profile_personal flex flex-col gap-5 md:max-w-[300px] w-full">
                     <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
@@ -918,118 +732,36 @@ export default function Profile() {
                 </div>
                 <div className="profile_btns-wrapper flex sm:flex-row flex-col gap-6">
                   <button
+                    onClick={() => {
+                      isPersonalInfoShow(false);
+                      isEditInfoShow(true);
+                    }}
                     type="button"
                     className="profile_btn_edit-info uppercase tracking-[2px] bg-disable-color text-white sm:w-[224px] h-[46px]"
                   >
                     edit information
                   </button>
                   <button
+                    onClick={() => {
+                      isPersonalInfoShow(false);
+                      isChangePassShow(true);
+                    }}
                     type="button"
                     className="profile_btn_change-pass uppercase tracking-[2px] sm:w-[224px] h-[46px] border border-disable-color text-secondary-text-color"
                   >
                     change password
                   </button>
                 </div>
-              </div> */}
-              {/* <div className="profile_change-pass_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px] ">
-                <form action="#" className="profile_change-pass_form flex flex-col gap-[60px]">
-                  <div className="profile_change-pass flex flex-col lg:gap-[60px] gap-10 max-w-[660px] w-full">
-                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
-                      <p className="profile_title uppercase font-medium tracking-[2px]">
-                        change password
-                      </p>
-                    </div>
-                    <div className="profile_change-pass_input-wrapper flex lg:flex-row flex-col justify-between lg:gap-0 gap-10">
-                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            old password
-                            <Image
-                              src={"/icons/Icon name=validated.svg"}
-                              alt={"validated"}
-                              width={18}
-                              height={18}
-                              priority
-                              className="header_logo absolute top-[40px] right-[15px]"
-                            />
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <a
-                            href="#"
-                            className="profile_change-pass_forgot text-secondary-text-color"
-                          >
-                            Forgot password?
-                          </a>
-                          <p className="profile_change-pass_help text-placeholder-text-color">
-                            The strong password must At least 8 characters and it contains uppercase
-                            and lowercase Latin letters and numbers and special characters.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            new password
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
-                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px] mt-[14px]">
-                          <label
-                            htmlFor="profile_change-pass_input"
-                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
-                          >
-                            repeat password
-                            <Image
-                              src={"/icons/Icon name=validated.svg"}
-                              alt={"validated"}
-                              width={18}
-                              height={18}
-                              priority
-                              className="header_logo absolute top-[40px] right-[15px] invisible opacity-0"
-                            />
-                          </label>
-                          <input
-                            type="password"
-                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
-                            id="profile_change-pass_input"
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="profile_change-pass_btns-wrapper flex sm:flex-row flex-col gap-6">
-                    <button
-                      type="button"
-                      className="profile_btn_change-pass uppercase tracking-[2px] bg-disable-color text-white sm:w-[224px] h-[46px]"
-                    >
-                      save changes
-                    </button>
-                    <button
-                      type="button"
-                      className="profile_btn_cancel uppercase tracking-[2px] sm:w-[122px] h-[46px] border border-disable-color text-secondary-text-color"
-                    >
-                      cancel
-                    </button>
-                  </div>
-                </form>
-              </div> */}
-              {/* <div className="profile_edit-info_inner-wrapper xs:w-full sm:p-[60px] py-14 px-4 bg-white w-[375px]">
+              </div>
+
+              {/* edit profile section */}
+              <div
+                className={`profile_edit-info_inner-wrapper bg-white transition-all ${
+                  editInfoShow
+                    ? "visible opacity-100 delay-150 left-0 z-[2] xs:w-full w-[375px] sm:p-[60px] py-14 px-4"
+                    : "invisible opacity-0 -left-full -z-10 w-0 p-0 h-0"
+                }`}
+              >
                 <form action="#" className="profile-edit-info_form ">
                   <div className="profile_form-wrapper flex flex-col h-fit xl:max-w-[660px]">
                     <div className="profile_personal-info-wrapper flex flex-col gap-6 justify-between pb-10 pt-0 w-full">
@@ -1268,6 +1000,10 @@ export default function Profile() {
                         save changes
                       </button>
                       <button
+                        onClick={() => {
+                          isPersonalInfoShow(true);
+                          isEditInfoShow(false);
+                        }}
                         type="button"
                         className="profile_info-form_cancel-btn w-[122px] h-[46px] uppercase tracking-[2px] border border-disable-color text-secondary-text-color"
                       >
@@ -1276,8 +1012,126 @@ export default function Profile() {
                     </div>
                   </div>
                 </form>
-              </div> */}
-              {/* <div className="wishlist_inner-wrapper xs:w-full sm:px-[60px] md:pb-[60px] md:pt-0 pb-10 pt-[10px] px-4 bg-white w-[375px]">
+              </div>
+
+              {/* change password section */}
+              <div
+                className={`profile_change-pass_inner-wrapper bg-white transition-all ${
+                  changePassShow
+                    ? "visible opacity-100 delay-150 left-0 z-[2] xs:w-full w-[375px] sm:p-[60px] py-14 px-4 "
+                    : "invisible opacity-0 -left-full -z-10 w-0 p-0 h-0"
+                }`}
+              >
+                <form action="#" className="profile_change-pass_form flex flex-col gap-[60px]">
+                  <div className="profile_change-pass flex flex-col lg:gap-[60px] gap-10 max-w-[660px] w-full">
+                    <div className="profile_title-wrapper border-b border-disable-color pb-1 mb-5">
+                      <p className="profile_title uppercase font-medium tracking-[2px]">
+                        change password
+                      </p>
+                    </div>
+                    <div className="profile_change-pass_input-wrapper flex lg:flex-row flex-col justify-between lg:gap-0 gap-10">
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            old password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px]"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <a
+                            href="#"
+                            className="profile_change-pass_forgot text-secondary-text-color"
+                          >
+                            Forgot password?
+                          </a>
+                          <p className="profile_change-pass_help text-placeholder-text-color">
+                            The strong password must At least 8 characters and it contains uppercase
+                            and lowercase Latin letters and numbers and special characters.
+                          </p>
+                        </div>
+                      </div>
+                      <div className="profile_change-pass_inputs flex flex-col gap-4 max-w-[315px] ">
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            new password
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                        <div className="profile_change-pass_input_inner-wrapper flex flex-col gap-[10px] mt-[14px]">
+                          <label
+                            htmlFor="profile_change-pass_input"
+                            className="profile_change-pass_label uppercase font-semibold text-xs tracking-[1px] text-placeholder-text-color relative"
+                          >
+                            repeat password
+                            <Image
+                              src={"/icons/Icon name=validated.svg"}
+                              alt={"validated"}
+                              width={18}
+                              height={18}
+                              priority
+                              className="header_logo absolute top-[40px] right-[15px] invisible opacity-0"
+                            />
+                          </label>
+                          <input
+                            type="password"
+                            className="profile_change-pass_input outline-none border border-disable-color w-[315px] h-[46px] p-[15px] caret-secondary-text-color "
+                            id="profile_change-pass_input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="profile_change-pass_btns-wrapper flex sm:flex-row flex-col gap-6">
+                    <button
+                      type="button"
+                      className="profile_btn_change-pass uppercase tracking-[2px] bg-disable-color text-white sm:w-[224px] h-[46px]"
+                    >
+                      save changes
+                    </button>
+                    <button
+                      onClick={() => {
+                        isPersonalInfoShow(true);
+                        isChangePassShow(false);
+                      }}
+                      type="button"
+                      className="profile_btn_cancel uppercase tracking-[2px] sm:w-[122px] h-[46px] border border-disable-color text-secondary-text-color"
+                    >
+                      cancel
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              {/* wishlist section */}
+              <div
+                className={`wishlist_inner-wrapper bg-white transition-all ${
+                  wishlistShow
+                    ? "visible opacity-100 delay-150 left-0 z-10 xs:w-full w-[375px] sm:px-[60px] md:pb-[60px] md:pt-0 pb-10 pt-[10px] px-4 "
+                    : "invisible opacity-0 -left-full -z-10 w-0 p-0 h-0"
+                }`}
+              >
                 <div className="wishlist_product md:py-10 py-[30px] border-b border-disable-color flex md:items-center justify-between 3xl:gap-[100px] lg:gap-10 gap-5 md:flex-row flex-col">
                   <div className="wishlist_product_left flex lg:items-center gap-[30px] max-w-[590px] w-full lg:min-w-[450px] min-w-[360px]">
                     <div className="wishlist_product-img md:min-w-[160px] md:w-[160px] md:h-[160px] min-w-[80px] w-[80px] h-[80px] bg-disable-text-color"></div>
@@ -1510,7 +1364,348 @@ export default function Profile() {
                     />
                   </div>
                 </div>
-              </div> */}
+              </div>
+
+              {/* orders section */}
+              <div
+                className={` orders_inner-wrapper bg-white transition-all ${
+                  ordersShow
+                    ? "visible opacity-100 delay-150 left-0 z-10 xs:w-full sm:px-[60px] py-[60px] px-4 w-[375px]"
+                    : "invisible opacity-0 -left-full -z-10 w-0 p-0 h-0"
+                }`}
+              >
+                <div className="orders_wrapper flex flex-col gap-[60px]">
+                  <div className="order-current_wrapper flex flex-col gap-[10px]">
+                    <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
+                      Current orders (2)
+                    </h2>
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_current_inner-wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                          <p className="order_date text-placeholder-text-color">
+                            12.07.2019, 14:13
+                          </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/Icon name=truck.svg"}
+                              alt={"truck"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                              En route
+                            </p>
+                          </div>
+                        </div>
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <div className="order_total-price-wrapper">
+                            <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                              $1 000
+                            </p>
+                          </div>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div
+                        onClick={() => {
+                          isCurrentOrderOpen(!currentOrderOpen);
+                        }}
+                        className="order_current_inner-wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 cursor-pointer"
+                      >
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                          <p className="order_date text-placeholder-text-color">
+                            10.07.2019, 11:40
+                          </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/Icon name=document.svg"}
+                              alt={"document"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                              New order
+                            </p>
+                          </div>
+                        </div>
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <div className="order_total-price-wrapper flex gap-2">
+                            <p className="order_total-price text-red-hot font-medium tracking-[1px]">
+                              $3 500
+                            </p>
+                            <p className="order_total-discount text-disable-color font-medium tracking-[1px] line-through">
+                              $4 000
+                            </p>
+                          </div>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                              className={`${
+                                currentOrderOpen ? "rotate-180" : "rotate-0"
+                              } transition-all`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`order_product-costumer_wrapper border-t mt-[10px] border-disable-color overflow-hidden flex lg:items-center lg:flex-row flex-col transition-all duration-300
+                      ${
+                        currentOrderOpen
+                          ? "lg:h-[322px] h-[617px] visible opacity-100 sm:py-10 py-5 mt-[10px]"
+                          : "h-0 invisible opacity-0 p-0 mt-0"
+                      }`}
+                      >
+                        <div className="order_product-info_wrapper 2xl:max-w-[600px] lg:max-w-[500px] w-full lg:border-r lg:border-b-0 border-b border-disable-color lg:pr-10 lg:pb-0 sm:pb-10 pb-6">
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  black table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    50 sm х 30 sm
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x2
+                                </p>
+                                <p className="order_product-price font-medium tracking-[1px] text-accent-color">
+                                  $2 000
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="order_product-info_divider 2xl:w-[560px] lg:w-[460px] w-full h-[1px] bg-disable-text-color my-10"></div>
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  combined table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x3
+                                </p>
+                                <div className="order_product-price_wrapper flex gap-3 sm:flex-col">
+                                  <p className="order_product-price font-medium tracking-[1px] text-red-hot">
+                                    $1 500
+                                  </p>
+                                  <p className="order_product-price font-medium tracking-[1px] line-through text-disable-color">
+                                    $2 000
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="order_costumer-info_wrapper lg:pl-10 lg:pt-0 sm:pt-10 pt-6 flex flex-col gap-6">
+                          <div className="order_checkout-info tracking-[2px] uppercase font-medium flex flex-col gap-4">
+                            <p className="order_checkout_delivery-info">Self pickup (free)</p>
+                            <p className="order_checkout_payment-info">Visa/mastercard</p>
+                          </div>
+                          <div className="order_costumer-info text-sub-text-color flex flex-col gap-[10px]">
+                            <p className="order_costumer-name">Alexander Silencehide</p>
+                            <p className="order_costumer-email">Silencehide@mail.com</p>
+                            <p className="order_costumer-phone">(480) 555-0103</p>
+                            <p className="order_costumer-address">
+                              4517 Washington Ave. Manchester, Kentucky 39495
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="order-history_wrapper flex flex-col gap-[10px]">
+                    <h2 className="order-history_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
+                      order history (2)
+                    </h2>
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_history_inner-wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                          <p className="order_date text-placeholder-text-color">
+                            12.07.2019, 14:13
+                          </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/cancel-disable.svg"}
+                              alt={"cancel"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                              Cancelled
+                            </p>
+                          </div>
+                        </div>
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                            $280
+                          </p>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div
+                        onClick={() => {
+                          isHistoryOrderOpen(!historyOrderOpen);
+                        }}
+                        className="order_history_inner-wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 cursor-pointer"
+                      >
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                          <p className="order_date text-placeholder-text-color">
+                            10.07.2019, 11:40
+                          </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/done-success.svg"}
+                              alt={"done"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                              Done
+                            </p>
+                          </div>
+                        </div>
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                            $1 090
+                          </p>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                              className={`${
+                                historyOrderOpen ? "rotate-180" : "rotate-0"
+                              } transition-all`}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className={`order_product-costumer_wrapper border-t mt-[10px] border-disable-color overflow-hidden flex lg:items-center lg:flex-row flex-col transition-all duration-300
+                      ${
+                        historyOrderOpen
+                          ? "lg:h-[322px] h-[617px] visible opacity-100 sm:py-10 py-5 mt-[10px]"
+                          : "h-0 invisible opacity-0 p-0 mt-0"
+                      }`}
+                      >
+                        <div className="order_product-info_wrapper 2xl:max-w-[600px] lg:max-w-[500px] w-full lg:border-r lg:border-b-0 border-b border-disable-color lg:pr-10 lg:pb-0 sm:pb-10 pb-6">
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  black table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    50 sm х 30 sm
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x2
+                                </p>
+                                <p className="order_product-price font-medium tracking-[1px] text-accent-color">
+                                  $2 000
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="order_product-info_divider 2xl:w-[560px] lg:w-[460px] w-full h-[1px] bg-disable-text-color my-10"></div>
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  combined table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x3
+                                </p>
+                                <div className="order_product-price_wrapper flex gap-3 sm:flex-col">
+                                  <p className="order_product-price font-medium tracking-[1px] text-red-hot">
+                                    $1 500
+                                  </p>
+                                  <p className="order_product-price font-medium tracking-[1px] line-through text-disable-color">
+                                    $2 000
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="order_costumer-info_wrapper lg:pl-10 lg:pt-0 sm:pt-10 pt-6 flex flex-col gap-6">
+                          <div className="order_checkout-info tracking-[2px] uppercase font-medium flex flex-col gap-4">
+                            <p className="order_checkout_delivery-info">Self pickup (free)</p>
+                            <p className="order_checkout_payment-info">Visa/mastercard</p>
+                          </div>
+                          <div className="order_costumer-info text-sub-text-color flex flex-col gap-[10px]">
+                            <p className="order_costumer-name">Alexander Silencehide</p>
+                            <p className="order_costumer-email">Silencehide@mail.com</p>
+                            <p className="order_costumer-phone">(480) 555-0103</p>
+                            <p className="order_costumer-address">
+                              4517 Washington Ave. Manchester, Kentucky 39495
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
