@@ -629,7 +629,11 @@ export default function Profile() {
                     isOrdersShow(false);
                     isPersonalInfoShow(true);
                   }}
-                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color selected-tab "
+                  className={`profile_tab-title w-fit uppercase tracking-[2px] border-b-2 transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color  ${
+                    personalInfoShow
+                      ? "text-main-text-color border-accent-color"
+                      : "text-secondary-text-color border-transparent"
+                  }`}
                 >
                   Personal
                 </p>
@@ -641,7 +645,11 @@ export default function Profile() {
                     isPersonalInfoShow(false);
                     isWishlistShow(true);
                   }}
-                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color"
+                  className={`profile_tab-title w-fit uppercase tracking-[2px] border-b-2 transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color  ${
+                    wishlistShow
+                      ? "text-main-text-color border-accent-color"
+                      : "text-secondary-text-color border-transparent"
+                  }`}
                 >
                   wishlist (4)
                 </p>
@@ -653,7 +661,11 @@ export default function Profile() {
                     isWishlistShow(false);
                     isOrdersShow(true);
                   }}
-                  className="profile_tab-title w-fit uppercase text-secondary-text-color tracking-[2px] border-b-2 border-transparent transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color"
+                  className={`profile_tab-title w-fit uppercase tracking-[2px] border-b-2 transition-all cursor-pointer hover:text-main-text-color hover:border-accent-color  ${
+                    ordersShow
+                      ? "text-main-text-color border-accent-color"
+                      : "text-secondary-text-color border-transparent"
+                  }`}
                 >
                   orders (2)
                 </p>
