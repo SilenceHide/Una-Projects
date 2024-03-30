@@ -630,70 +630,151 @@ export default function Profile() {
                     <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
                       Current orders (2)
                     </h2>
-                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
-                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                        <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
-                        <p className="order_date text-placeholder-text-color">12.07.2019, 14:13</p>
-                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                          <Image
-                            src={"/icons/Icon name=truck.svg"}
-                            alt={"truck"}
-                            width={18}
-                            height={18}
-                          />
-                          <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
-                            En route
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                          <p className="order_date text-placeholder-text-color">
+                            12.07.2019, 14:13
                           </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/Icon name=truck.svg"}
+                              alt={"truck"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                              En route
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                        <div className="order_total-price-wrapper">
-                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                            $1 000
-                          </p>
-                        </div>
-                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                          <Image
-                            src={"/icons/Icon name=small ch_down.svg"}
-                            alt={"arrow-down"}
-                            width={14}
-                            height={10}
-                          />
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <div className="order_total-price-wrapper">
+                            <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                              $1 000
+                            </p>
+                          </div>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
-                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                        <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
-                        <p className="order_date text-placeholder-text-color">10.07.2019, 11:40</p>
-                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                          <Image
-                            src={"/icons/Icon name=document.svg"}
-                            alt={"document"}
-                            width={18}
-                            height={18}
-                          />
-                          <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
-                            New order
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3  cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                          <p className="order_date text-placeholder-text-color">
+                            10.07.2019, 11:40
                           </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/Icon name=document.svg"}
+                              alt={"document"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-sub-text-color uppercase">
+                              New order
+                            </p>
+                          </div>
+                        </div>
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <div className="order_total-price-wrapper flex gap-2">
+                            <p className="order_total-price text-red-hot font-medium tracking-[1px]">
+                              $3 500
+                            </p>
+                            <p className="order_total-discount text-disable-color font-medium tracking-[1px] line-through">
+                              $4 000
+                            </p>
+                          </div>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
                         </div>
                       </div>
-                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                        <div className="order_total-price-wrapper flex gap-2">
-                          <p className="order_total-price text-red-hot font-medium tracking-[1px]">
-                            $3 500
-                          </p>
-                          <p className="order_total-discount text-disable-color font-medium tracking-[1px] line-through">
-                            $4 000
-                          </p>
+                      <div className="order_product-costumer_wrapper border-t mt-[10px] border-disable-color sm:py-10 py-5 flex lg:items-center lg:flex-row flex-col">
+                        <div className="order_product-info_wrapper 2xl:max-w-[600px] lg:max-w-[500px] w-full lg:border-r lg:border-b-0 border-b border-disable-color lg:pr-10 lg:pb-0 sm:pb-10 pb-6">
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  black table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    50 sm х 30 sm
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x2
+                                </p>
+                                <p className="order_product-price font-medium tracking-[1px] text-accent-color">
+                                  $2 000
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="order_product-info_divider 2xl:w-[560px] lg:w-[460px] w-full h-[1px] bg-disable-text-color my-10"></div>
+                          <div className="order_product-info_inner-wrapper flex items-center gap-[30px]">
+                            <div className="order_product_img w-[80px] h-[80px] min-w-[80px] bg-disable-text-color"></div>
+                            <div className="order_product_info-wrapper flex sm:items-center justify-between w-full sm:flex-row flex-col gap-4 sm:gap-0">
+                              <div className="order_product_info-left flex flex-col gap-[10px]">
+                                <p className="order_product-title uppercase tracking-[2px] font-medium">
+                                  combined table
+                                </p>
+                                <div className="order_product-wrapper">
+                                  <p className="order_product-info text-sm text-placeholder-text-color">
+                                    black
+                                  </p>
+                                </div>
+                              </div>
+                              <div className="order_product_info-right flex items-center gap-20">
+                                <p className="order_product-number font-medium text-disable-color">
+                                  x3
+                                </p>
+                                <div className="order_product-price_wrapper flex gap-3 sm:flex-col">
+                                  <p className="order_product-price font-medium tracking-[1px] text-red-hot">
+                                    $1 500
+                                  </p>
+                                  <p className="order_product-price font-medium tracking-[1px] line-through text-disable-color">
+                                    $2 000
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                          <Image
-                            src={"/icons/Icon name=small ch_down.svg"}
-                            alt={"arrow-down"}
-                            width={14}
-                            height={10}
-                          />
+                        <div className="order_costumer-info_wrapper lg:pl-10 lg:pt-0 sm:pt-10 pt-6 flex flex-col gap-6">
+                          <div className="order_checkout-info tracking-[2px] uppercase font-medium flex flex-col gap-4">
+                            <p className="order_checkout_delivery-info">Self pickup (free)</p>
+                            <p className="order_checkout_payment-info">Visa/mastercard</p>
+                          </div>
+                          <div className="order_costumer-info text-sub-text-color flex flex-col gap-[10px]">
+                            <p className="order_costumer-name">Alexander Silencehide</p>
+                            <p className="order_costumer-email">Silencehide@mail.com</p>
+                            <p className="order_costumer-phone">(480) 555-0103</p>
+                            <p className="order_costumer-address">
+                              4517 Washington Ave. Manchester, Kentucky 39495
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -702,63 +783,71 @@ export default function Profile() {
                     <h2 className="order-current_title uppercase tracking-[2px] font-medium border-b border-disable-color pb-[30px]">
                       order history (2)
                     </h2>
-                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
-                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                        <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
-                        <p className="order_date text-placeholder-text-color">12.07.2019, 14:13</p>
-                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                          <Image
-                            src={"/icons/cancel-disable.svg"}
-                            alt={"cancel"}
-                            width={18}
-                            height={18}
-                          />
-                          <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
-                            Cancelled
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2245</p>
+                          <p className="order_date text-placeholder-text-color">
+                            12.07.2019, 14:13
                           </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/cancel-disable.svg"}
+                              alt={"cancel"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                              Cancelled
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                        <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                          $280
-                        </p>
-                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                          <Image
-                            src={"/icons/Icon name=small ch_down.svg"}
-                            alt={"arrow-down"}
-                            width={14}
-                            height={10}
-                          />
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                            $280
+                          </p>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
-                    <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 border-b border-disable-color pb-[10px] cursor-pointer">
-                      <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
-                        <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
-                        <p className="order_date text-placeholder-text-color">10.07.2019, 11:40</p>
-                        <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
-                          <Image
-                            src={"/icons/done-success.svg"}
-                            alt={"done"}
-                            width={18}
-                            height={18}
-                          />
-                          <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
-                            Done
+                    <div className="order_main-wrapper border-b border-disable-color pb-[10px]">
+                      <div className="order_wrapper flex lg:flex-row flex-col lg:items-center justify-between lg:gap-0 gap-3 pb-[10px] cursor-pointer">
+                        <div className="order_left-wrapper flex items-center md:gap-10 lg:justify-normal justify-between sm:flex-nowrap flex-wrap">
+                          <p className="order_number uppercase font-medium tracking-[2px]">#2234</p>
+                          <p className="order_date text-placeholder-text-color">
+                            10.07.2019, 11:40
                           </p>
+                          <div className="order_status-wrapper flex items-center gap-2 bg-main-bg-color px-[14px] py-[6px]">
+                            <Image
+                              src={"/icons/done-success.svg"}
+                              alt={"done"}
+                              width={18}
+                              height={18}
+                            />
+                            <p className="order_status text-sm font-medium tracking-[1px] text-disable-color uppercase">
+                              Done
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                      <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
-                        <p className="order_total-price text-accent-color font-medium tracking-[1px]">
-                          $1 090
-                        </p>
-                        <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
-                          <Image
-                            src={"/icons/Icon name=small ch_down.svg"}
-                            alt={"arrow-down"}
-                            width={14}
-                            height={10}
-                          />
+                        <div className="order_right-wrapper flex items-center gap-[30px] lg:justify-normal justify-between">
+                          <p className="order_total-price text-accent-color font-medium tracking-[1px]">
+                            $1 090
+                          </p>
+                          <div className="order_show-btn h-[46px] w-[46px] rounded-full border border-disable-color flex items-center justify-center">
+                            <Image
+                              src={"/icons/Icon name=small ch_down.svg"}
+                              alt={"arrow-down"}
+                              width={14}
+                              height={10}
+                            />
+                          </div>
                         </div>
                       </div>
                     </div>
