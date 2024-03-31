@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 
-export default function Cart() {
+export default function PostPage() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
