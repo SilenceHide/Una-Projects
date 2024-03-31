@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
+import awardIcon from "../../public/about-logo/award-icon.svg";
 
 export default function About() {
   const [navOpen, isNavOpen] = useState(false);
@@ -588,11 +589,11 @@ export default function About() {
         </div>
       </header>
 
-      <main className="main-post-page lg:pt-10 pt-24 pb-[100px] bg-main-bg-color">
+      <main className="main-about lg:pt-10 pt-24 pb-[100px] bg-main-bg-color ">
         <div className="container">
-          <div className="post-page_wrapper flex flex-col">
-            <div className="post-page_breadcrumbs flex items-center gap-2">
-              <p className="post-page_breadcrumb text-secondary-text-color font-medium text-[13px]">
+          <div className="about_wrapper flex flex-col">
+            <div className="about_breadcrumbs flex items-center gap-2">
+              <p className="about_breadcrumb text-secondary-text-color font-medium text-[13px]">
                 Home
               </p>
               <Image
@@ -601,58 +602,65 @@ export default function About() {
                 width={7}
                 height={10}
               />
-              <p className="post-page_breadcrumb text-secondary-text-color font-medium text-[13px] selected-breadcrumb">
-                Conservationists oppose plans to modernize a wind
+              <p className="about_breadcrumb text-secondary-text-color font-medium text-[13px] selected-breadcrumb">
+                About
               </p>
             </div>
-            <div className="post-page_main-wrapper bg-white w-full pb-[100px] mt-[60px] flex flex-col items-center">
-              <div className="post-page_header-img_wrapper max-w-[1640px] w-full md:h-[600px] h-[280px] bg-disable-text-color border-[10px] border-white"></div>
-              <div className="post-page_header-title_wrapper mt-[40px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
-                <div className="post-page_header-divider w-10 h-[2px] bg-accent-color"></div>
-                <h1 className="post-page_header-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
-                  Conservationists oppose plans to modernise a wind
+            <div className="about_title-wrapper flex flex-col gap-[14px] mt-[54px]">
+              <h1 className="about_title lg:text-3xl text-2xl font-medium tracking-[3px] uppercase">
+                About
+              </h1>
+            </div>
+            <div className="about_main-wrapper w-full pb-[100px] mt-[60px] flex flex-col items-center">
+              <div className="about_header-img_wrapper max-w-[1640px] w-full md:h-[600px] h-[280px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about_header_journal-wrapper flex justify-between mt-[100px]">
+                <h1 className="about_header_journal-title flex basis-[30%] tracking-[3px] uppercase font-medium text-3xl">
+                  Focus on Canada An introduction to Canada in intermediate-level English
                 </h1>
-                <p className="post-page_header-date text-disable-color">August 24, 2013</p>
-                <p className="post-page_header-blog mt-[60px] text-justify text-lg text-sub-text-color">
+                <p className="about_header_journal-desc flex basis-[30%] text-lg text-sub-text-color text-justify">
                   There is something else promised as well. The blessing was not only for Abraham.
                   It says that “all peoples on earth will be blessed through you” (through Abraham).
                   We should pay attention because you and I are part of ‘all peoples on earth’ – no
                   matter what our religion, color, background, nationality, social status, or what
-                  language we speak. This promise for a blessing includes everybody alive today!
-                  How? When? What kind of blessing? This is not clearly stated here but since we
-                  know that the first parts of this promise have come true, we can have confidence
-                  that this last part will also come true. We find the key to unlock this mystery by
-                  continuing to follow the journey of Abraham in our next article.
+                  language we speak.
                 </p>
-                <h2 className="post-page_small-heading-title font-medium text-xl uppercase tracking-[2px] mt-[40px] text-center">
-                  The Journey that still shakes the World
-                </h2>
-                <p className="post-page_header-blog mt-[20px] text-justify text-lg text-sub-text-color">
-                  The Jews who descended from Abraham were never really the nation we associate with
-                  greatness. They did not conquer and build a great empire like the Romans did or
-                  build large monuments like the Egyptians did with the pyramids. Their fame comes
-                  from the Law and Book which they wrote; from some remarkable individuals that were
-                  Jewish; and that they have survived as a somewhat different people group for
-                  thousands of years. Their greatness is not because of anything they did, but
-                  rather what was done to and through them. The promise says repeatedly “I will …” –
-                  that would be the power behind the promise. Their unique greatness happened
-                  because God made it happen rather than some ability, conquest or power of their
-                  own.
-                </p>
-                <p className="post-page_header-blog mt-[20px] text-justify text-lg text-sub-text-color">
-                  The Jews who descended from Abraham were never really the nation we associate with
-                  greatness. They did not conquer and build a great empire like the Romans did or
-                  build large monuments like the Egyptians did with the pyramids. Their fame comes
-                  from the Law and Book which they wrote; from some remarkable individuals that were
-                  Jewish; and that they have survived as a somewhat different people group for
-                  thousands of years. Their greatness is not because of anything they did, but
-                  rather what was done to and through them. The promise says repeatedly “I will …” –
-                  that would be the power behind the promise. Their unique greatness happened
-                  because God made it happen rather than some ability, conquest or power of their
-                  own.
+                <p className="about_header_journal-desc flex basis-[30%] text-lg text-sub-text-color text-justify">
+                  Why? A look at Israel’s history in the book of Genesis in the Bible reveals that
+                  4000 years ago a man, who is now very well known, went on a camping trip in that
+                  part of the world. The Bible says that his story affects our future. This ancient
+                  man is Abraham (also known as Abram). We can take his story seriously because the
+                  places and cities he visited are mentioned in other old writings.
                 </p>
               </div>
-              <div className="blog_swiper-wrapper mt-20 w-full">
+              <div className="about_feature-wrapper mt-[100px] flex flex-col items-center">
+                <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
+                <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+                  why you should choose us
+                </h2>
+                <div className="about_feature_inner-wrapper">
+                  <Image
+                    src={awardIcon}
+                    alt={"award-icon"}
+                    width={140}
+                    height={120}
+                    className="about_feature-logo"
+                  />
+                </div>
+              </div>
+              <div className="about_middle-title_wrapper mt-[100px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
+                <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
+                <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+                  Conservationists oppose plans to modernise a wind
+                </h2>
+                <p className="about_middle-blog mt-[40px] text-lg text-sub-text-color text-center">
+                  There is something else promised as well. The blessing was not only for Abraham.
+                  It says that “all peoples on earth will be blessed through you” (through Abraham).
+                  We should pay attention because you and I are part of ‘all peoples on earth’ – no
+                  matter what our religion, color, background, nationality, social status, or what
+                  language we speak.
+                </p>
+              </div>
+              <div className="about_swiper-wrapper mt-20 w-full">
                 <Swiper
                   slidesPerView={1}
                   spaceBetween={30}
@@ -680,46 +688,31 @@ export default function About() {
                   }}
                   modules={[Navigation]}
                   navigation={{
-                    prevEl: ".blog_left-btn",
-                    nextEl: ".blog_right-btn",
+                    prevEl: ".about_left-btn",
+                    nextEl: ".about_right-btn",
                   }}
                   onSlideChange={() => console.log("slide change")}
                   onSwiper={(swiper) => console.log(swiper)}
-                  className="blog_items_swiper"
+                  className="about_items_swiper"
                 >
-                  <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 max-w-[520px]">
+                  <SwiperSlide className="about_item lg:w-[520px] min-w-[343px] max-w-[520px]">
                     <a href="#">
-                      <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
-                      <div className="blog_item-content flex flex-col lg:w-[520px] mt-7">
-                        <p className="blog_item-date text-transparent group-hover/blog_item:text-placeholder-text-color text-center transition-all duration-300">
-                          Abraham were never really the nation we associate with greatness
-                        </p>
-                      </div>
+                      <div className="about_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
                     </a>
                   </SwiperSlide>
-                  <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 max-w-[520px]">
+                  <SwiperSlide className="about_item lg:w-[520px] min-w-[343px] max-w-[520px]">
                     <a href="#">
-                      <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
-                      <div className="blog_item-content flex flex-col lg:w-[520px] mt-7">
-                        <p className="blog_item-date text-transparent group-hover/blog_item:text-placeholder-text-color text-center transition-all duration-300">
-                          Abraham were never really the nation we associate with greatness
-                        </p>
-                      </div>
+                      <div className="about_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
                     </a>
                   </SwiperSlide>
-                  <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 max-w-[520px]">
+                  <SwiperSlide className="about_item lg:w-[520px] min-w-[343px] max-w-[520px]">
                     <a href="#">
-                      <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
-                      <div className="blog_item-content flex flex-col lg:w-[520px] mt-7">
-                        <p className="blog_item-date text-transparent group-hover/blog_item:text-placeholder-text-color text-center transition-all duration-300">
-                          Abraham were never really the nation we associate with greatness
-                        </p>
-                      </div>
+                      <div className="about_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color"></div>
                     </a>
                   </SwiperSlide>
                 </Swiper>
-                <div className="blog_nav-btn-wrapper flex items-center justify-center gap-5 2xl:mt-10 mt-[20px]">
-                  <div className="blog_left-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                <div className="about_nav-btn-wrapper flex items-center justify-center gap-5 2xl:mt-10 mt-[20px]">
+                  <div className="about_left-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
                     <Image
                       src={"/icons/Icon name=prev arrow.svg"}
                       alt={"left-btn"}
@@ -727,7 +720,7 @@ export default function About() {
                       height={24}
                     />
                   </div>
-                  <div className="blog_right-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
+                  <div className="about_right-btn w-[60px] h-[60px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
                     <Image
                       src={"/icons/Icon name=next arrow.svg"}
                       alt={"right-btn"}
@@ -737,117 +730,176 @@ export default function About() {
                   </div>
                 </div>
               </div>
-              <div className="post-page_footer-title_wrapper mt-[40px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
-                <h2 className="post-page_footer-title font-medium text-xl uppercase tracking-[2px] 2xl:mt-[40px] lg:mt-[20px] mt-0 text-center">
-                  The Sign of the Branch: The Dead
-                </h2>
-                <p className="post-page_footer-blog mt-[20px] text-justify text-lg text-sub-text-color">
-                  The Jews who descended from Abraham were never really the nation we associate with
-                  greatness. They did not conquer and build a great empire like the Romans did or
-                  build large monuments like the Egyptians did with the pyramids. Their fame comes
-                  from the Law and Book which they wrote; from some remarkable individuals that were
-                  Jewish; and that they have survived as a somewhat different people group for
-                  thousands of years. Their greatness is not because of anything they did, but
-                  rather what was done to and through them. The promise says repeatedly “I will …” –
-                  that would be the power behind the promise. Their unique greatness happened
-                  because God made it happen rather than some ability, conquest or power of their
-                  own.
-                </p>
-                <div className="post-page_footer-desc_wrapper border-t border-disable-color w-full lg:mt-14 mt-10 sm:pt-7 pt-4 flex sm:items-center justify-between sm:flex-row flex-col sm:gap-0 gap-4">
-                  <div className="post-page_footer-media_wrapper flex items-center gap-5">
-                    <p className="post-page_footer_media-title uppercase font-medium tracking-[2px] text-sub-text-color">
-                      Share post
-                    </p>
-                    <div className="post-page_footer_media_icons flex items-center gap-2">
-                      <a href="#">
-                        <Image
-                          src={"/icons/Icon name=Facebook.svg"}
-                          alt={"left-btn"}
-                          width={24}
-                          height={24}
-                        />
-                      </a>
-                      <a href="#">
-                        <Image
-                          src={"/icons/Icon name=telegram.svg"}
-                          alt={"left-btn"}
-                          width={24}
-                          height={24}
-                        />
-                      </a>
-                      <a href="#">
-                        <Image
-                          src={"/icons/Icon name=twitter.svg"}
-                          alt={"left-btn"}
-                          width={24}
-                          height={24}
-                        />
-                      </a>
-                    </div>
+            </div>
+          </div>
+        </div>
+        <div className="about_instagram bg-main-bg-color md:pt-0 pt-[60px] pb-5 flex flex-col justify-center items-center md:px-8 px-4">
+          <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
+          <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+            INSTAGRAM INSPIRATION
+          </h2>
+          <div className="about-instagram_item-wrapper mt-14 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
+            <div className="about-instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
+                <a
+                  href="#"
+                  className="about-instagram_item-tag text-secondary-text-color hidden md:block"
+                >
+                  @decorinsta
+                </a>
+                <div className="about-instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="about-instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
                   </div>
-                  <div className="post-page_footer-author_wrapper flex items-center gap-2">
-                    <p className="post-page_footer-author_title uppercase font-medium tracking-[2px] text-sub-text-color">
-                      Author:{" "}
-                    </p>
-                    <p className="post-page_footer-author_name uppercase tracking-[2px] text-accent-color">
-                      Jane foster
-                    </p>
-                    <p></p>
+                  <div className="about-instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="post-page_also-like_title-wrapper flex flex-col gap-[14px] mt-[100px] items-center">
-              <h2 className="post-page_also-like_title text-2xl font-medium tracking-[3px] uppercase">
-                You may also like
-              </h2>
+            <div className="about-instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
+                <a
+                  href="#"
+                  className="about-instagram_item-tag text-secondary-text-color hidden md:block"
+                >
+                  @decorinsta
+                </a>
+                <div className="about-instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="about-instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="about-instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="post-page_also-like_wrapper flex flex-col lg:flex-row lg::justify-between justify-center lg:mt-14 mt-8 xl:items-start items-center flex-wrap 3xl:gap-10 gap-10">
-              <a
-                href="#"
-                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
-              >
-                <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    UPDATING YOUR BEDROOM? IT’S EASIER THAN YOU THINK
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    May 2, 2022
-                  </p>
+            <div className="about-instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
+                <a
+                  href="#"
+                  className="about-instagram_item-tag text-secondary-text-color hidden md:block"
+                >
+                  @decorinsta
+                </a>
+                <div className="about-instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="about-instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="about-instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
-              >
-                <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    BACK ON THE MENU: HOSTING A POST-LOCKDOWN DINNER PARTY
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    May 1, 2022
-                  </p>
+              </div>
+            </div>
+            <div className="about-instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
+                <a
+                  href="#"
+                  className="about-instagram_item-tag text-secondary-text-color hidden md:block"
+                >
+                  @decorinsta
+                </a>
+                <div className="about-instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="about-instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="about-instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
                 </div>
-              </a>
-              <a
-                href="#"
-                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
-              >
-                <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    HOW TO REFRESH YOUR KITCHEN IN 5 EASY STEPS
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    February 27, 2022
-                  </p>
+              </div>
+            </div>
+            <div className="about-instagram_item md:max-w-[364px] max-w-[343px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
+              <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
+                <a href="#" className="about-instagram_item-tag text-secondary-text-color">
+                  @decorinsta
+                </a>
+                <div className="about-instagram_item-info flex gap-4 items-center justify-center">
+                  <div className="about-instagram_item-heart flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=like - gold.svg"}
+                      alt={"golden-heart"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>168</p>
+                  </div>
+                  <div className="about-instagram_item-comment flex gap-1 items-center justify-center">
+                    <Image
+                      src={"/icons/Icon name=comment - gold.svg"}
+                      alt={"golden-comment"}
+                      width={24}
+                      height={24}
+                      className="cursor-pointer"
+                    />
+                    <p>55</p>
+                  </div>
                 </div>
-              </a>
+              </div>
             </div>
           </div>
         </div>
