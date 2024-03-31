@@ -636,9 +636,9 @@ export default function About() {
                 <h2 className="about_middle-title mt-8 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
                   why you should choose us
                 </h2>
-                <div className="about_feature_inner-wrapper mt-10">
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all">
-                    <div className="about_feature_box-logo_wrapper transition-all visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                <div className="about_feature_inner-wrapper mt-10 flex items-center gap-3 flex-wrap justify-center">
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/award-icon.svg"}
                         alt={"award-icon"}
@@ -647,7 +647,7 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <div className="about_feature_box-logo_wrapper transition-all invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
                       <Image
                         src={"/about-logo/award-icon - gold.svg"}
                         alt={"award-icon"}
@@ -656,8 +656,146 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px]">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
                       Best furniture shop in 2021
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/love-icon.svg"}
+                        alt={"love-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/love-icon - gold.svg"}
+                        alt={"love-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      500+ happy clients
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/forniture-icon.svg"}
+                        alt={"forniture-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/forniture-icon - gold.svg"}
+                        alt={"forniture-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      rich assortment
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/wood-icon.svg"}
+                        alt={"wood-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/wood-icon - gold.svg"}
+                        alt={"wood-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      100% natural and quality
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/man-icon.svg"}
+                        alt={"man-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/man-icon - gold.svg"}
+                        alt={"man-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      10+ years of experience
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/design-icon.svg"}
+                        alt={"design-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/design-icon - gold.svg"}
+                        alt={"design-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      modern design
+                    </h3>
+                  </div>
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/price-icon.svg"}
+                        alt={"price-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all duration-300 invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/price-icon - gold.svg"}
+                        alt={"price-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                      profitable prices
                     </h3>
                   </div>
                 </div>
