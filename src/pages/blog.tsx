@@ -617,7 +617,10 @@ export default function Cart() {
               </h1>
             </div>
             <div className="blog_main-wrapper flex flex-col lg:flex-row lg::justify-between justify-center lg:mt-14 mt-8 xl:items-start items-center flex-wrap 3xl:gap-10 gap-10">
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
@@ -629,7 +632,10 @@ export default function Cart() {
                   </p>
                 </div>
               </a>
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
@@ -641,7 +647,10 @@ export default function Cart() {
                   </p>
                 </div>
               </a>
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
@@ -653,7 +662,10 @@ export default function Cart() {
                   </p>
                 </div>
               </a>
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
@@ -665,7 +677,10 @@ export default function Cart() {
                   </p>
                 </div>
               </a>
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
@@ -677,7 +692,10 @@ export default function Cart() {
                   </p>
                 </div>
               </a>
-              <a className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4">
+              <a
+                href="#"
+                className="blog_item lg:min-w-[415px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] flex flex-col 3xl:basis-[30%] basis-1/4"
+              >
                 <div className="blog_item-img lg:max-w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
                 <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 xl:px-[60px] 2xl:px-[80px] sm:px-[40px] px-4 transition-all duration-300 group-hover/blog_item:bg-white">
                   <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>

@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import nextArrowSvg from "../../public/icons/Icon name=next arrow - white.svg";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
 
@@ -840,7 +839,7 @@ export default function Home() {
               >
                 <p className="product-section_button-title">SEE MORE PRODUCTS</p>
                 <Image
-                  src={nextArrowSvg}
+                  src={"icons/Icon name=next arrow - white.svg"}
                   alt={"next arrow"}
                   width={24}
                   height={16}
@@ -1283,7 +1282,7 @@ export default function Home() {
             >
               <p className="blog-section_button-title">READ MORE ARTICLES</p>
               <Image
-                src={nextArrowSvg}
+                src={"icons/Icon name=next arrow - white.svg"}
                 alt={"next arrow"}
                 width={24}
                 height={16}
