@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
-import awardIcon from "../../public/about-logo/award-icon.svg";
 
 export default function About() {
   const [navOpen, isNavOpen] = useState(false);
@@ -634,17 +633,33 @@ export default function About() {
               </div>
               <div className="about_feature-wrapper mt-[100px] flex flex-col items-center">
                 <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
-                <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+                <h2 className="about_middle-title mt-8 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
                   why you should choose us
                 </h2>
-                <div className="about_feature_inner-wrapper">
-                  <Image
-                    src={awardIcon}
-                    alt={"award-icon"}
-                    width={140}
-                    height={120}
-                    className="about_feature-logo"
-                  />
+                <div className="about_feature_inner-wrapper mt-10">
+                  <div className="about_feature_box bg-white flex items-center max-w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all">
+                    <div className="about_feature_box-logo_wrapper transition-all visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
+                      <Image
+                        src={"/about-logo/award-icon.svg"}
+                        alt={"award-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <div className="about_feature_box-logo_wrapper transition-all invisible min-w-0 w-0 mr-0 group-hover/about_feature:min-w-[140px] group-hover/about_feature:visible group-hover/about_feature:mr-5 group-hover/about_feature:w-[140px]">
+                      <Image
+                        src={"/about-logo/award-icon - gold.svg"}
+                        alt={"award-icon"}
+                        width={140}
+                        height={120}
+                        className="about_feature-logo "
+                      />
+                    </div>
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px]">
+                      Best furniture shop in 2021
+                    </h3>
+                  </div>
                 </div>
               </div>
               <div className="about_middle-title_wrapper mt-[100px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
