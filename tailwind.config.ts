@@ -29,7 +29,6 @@ const config: Config = {
       },
       fontFamily: {
         Prompt: ["Prompt", "Arial", "sans-serif"],
-        PromptMed: ["Prompt Medium", "Arial", "sans-serif"],
       },
       colors: {
         "main-bg-color": "#F9F6F5",
