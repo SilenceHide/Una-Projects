@@ -588,7 +588,7 @@ export default function About() {
         </div>
       </header>
 
-      <main className="main-about lg:pt-10 pt-24 pb-[100px] bg-main-bg-color ">
+      <main className="main-about lg:pt-10 pt-24 lg:pb-[100px] pb-10 bg-main-bg-color ">
         <div className="container">
           <div className="about_wrapper flex flex-col">
             <div className="about_breadcrumbs flex items-center gap-2">
@@ -610,10 +610,10 @@ export default function About() {
                 About
               </h1>
             </div>
-            <div className="about_main-wrapper w-full pb-[100px] mt-[60px] flex flex-col items-center">
-              <div className="about_header-img_wrapper max-w-[1640px] w-full md:h-[600px] h-[280px] bg-disable-text-color border-[10px] border-white"></div>
-              <div className="about_header_journal-wrapper flex justify-between mt-[100px]">
-                <h1 className="about_header_journal-title flex basis-[30%] tracking-[3px] uppercase font-medium text-3xl">
+            <div className="about_main-wrapper w-full lg:pb-[100px] pb-14 lg:mt-[60px] mt-10 flex flex-col items-center">
+              <div className="about_header-img_wrapper max-w-[1640px] w-full md:h-[740px] h-[280px] bg-disable-text-color border-[10px] border-white"></div>
+              <div className="about_header_journal-wrapper flex lg:flex-row flex-col justify-between lg:mt-[100px] mt-[40px] lg:gap-0 gap-8">
+                <h1 className="about_header_journal-title flex basis-[30%] tracking-[3px] uppercase font-medium lg:text-3xl text-xl">
                   Focus on Canada An introduction to Canada in intermediate-level English
                 </h1>
                 <p className="about_header_journal-desc flex basis-[30%] text-lg text-sub-text-color text-justify">
@@ -631,13 +631,13 @@ export default function About() {
                   places and cities he visited are mentioned in other old writings.
                 </p>
               </div>
-              <div className="about_feature-wrapper mt-[100px] flex flex-col items-center">
+              <div className="about_feature-wrapper lg:mt-[100px] mt-[40px] flex flex-col items-center">
                 <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
-                <h2 className="about_middle-title mt-8 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+                <h2 className="about_feature-title mt-8 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] lg:text-center">
                   why you should choose us
                 </h2>
                 <div className="about_feature_inner-wrapper mt-10 flex items-center gap-3 flex-wrap justify-center">
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/award-icon.svg"}
@@ -656,11 +656,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       Best furniture shop in 2021
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/love-icon.svg"}
@@ -679,11 +679,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       500+ happy clients
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/forniture-icon.svg"}
@@ -702,11 +702,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       rich assortment
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/wood-icon.svg"}
@@ -725,11 +725,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       100% natural and quality
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/man-icon.svg"}
@@ -748,11 +748,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       10+ years of experience
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/design-icon.svg"}
@@ -771,11 +771,11 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       modern design
                     </h3>
                   </div>
-                  <div className="about_feature_box bg-white flex items-center max-w-[400px] w-[400px] h-[140px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
+                  <div className="about_feature_box bg-white flex items-center xs:max-w-[400px] max-w-[343px] xs:w-[400px] w-[343px] xs:h-[140px] h-[120px] p-[10px] group/about_feature hover:shadow-main-box-shadow transition-all duration-300">
                     <div className="about_feature_box-logo_wrapper transition-all duration-300 visible min-w-[140px] w-[140px] mr-5 group-hover/about_feature:min-w-0 group-hover/about_feature:visible group-hover/about_feature:mr-0 group-hover/about_feature:w-0">
                       <Image
                         src={"/about-logo/price-icon.svg"}
@@ -794,18 +794,18 @@ export default function About() {
                         className="about_feature-logo "
                       />
                     </div>
-                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] text-xl">
+                    <h3 className="about_feature uppercase tracking-[2px] font-medium pr-[10px] xs:text-xl">
                       profitable prices
                     </h3>
                   </div>
                 </div>
               </div>
-              <div className="about_middle-title_wrapper mt-[100px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
+              <div className="about_middle-title_wrapper lg:mt-[100px] mt-[60px] flex flex-col items-center 2xl:px-[280px] lg:px-[140px] sm:px-[30px] px-4">
                 <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
-                <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
+                <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] lg:text-center">
                   Conservationists oppose plans to modernise a wind
                 </h2>
-                <p className="about_middle-blog mt-[40px] text-lg text-sub-text-color text-center">
+                <p className="about_middle-blog lg:mt-10 mt-[20px] text-lg text-sub-text-color lg:text-center text-justify">
                   There is something else promised as well. The blessing was not only for Abraham.
                   It says that “all peoples on earth will be blessed through you” (through Abraham).
                   We should pay attention because you and I are part of ‘all peoples on earth’ – no
@@ -886,12 +886,12 @@ export default function About() {
             </div>
           </div>
         </div>
-        <div className="about_instagram bg-main-bg-color md:pt-0 pt-[60px] pb-5 flex flex-col justify-center items-center md:px-8 px-4">
+        <div className="about_instagram bg-main-bg-color pb-5 flex flex-col justify-center items-center md:px-8 px-4">
           <div className="about_divider w-10 h-[2px] bg-accent-color"></div>
           <h2 className="about_middle-title mt-8 mb-4 md:text-3xl text-xl font-medium tracking-[3px] uppercase max-w-[660px] text-center">
             INSTAGRAM INSPIRATION
           </h2>
-          <div className="about-instagram_item-wrapper mt-14 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
+          <div className="about-instagram_item-wrapper lg:mt-14 mt-10 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
             <div className="about-instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/about-instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
               <div className="about-instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
               <div className="about-instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/about-instagram_item:visible group-hover/about-instagram_item:opacity-100 transition-all duration-300">
