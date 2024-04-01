@@ -607,9 +607,9 @@ export default function Contacts() {
                 Contacts
               </h1>
             </div>
-            <div className="contacts_main-wrapper w-full lg:p-[80px] pb-14 lg:mt-[60px] mt-10 flex justify-between bg-white">
-              <div className="contacts_left-wrapper flex flex-col min-w-[520px] border-r border-disable-color">
-                <div className="contacts_wrapper flex gap-7">
+            <div className="contacts_main-wrapper w-full xl:p-[80px] md:p-[40px] py-10 px-4 lg:mt-[60px] mt-10 flex xl:flex-row flex-col xl:gap-20 gap-10 bg-white">
+              <div className="contacts_left-wrapper flex lg:gap-0 md::gap-28 gap-10 xl:flex-col md:flex-row flex-col xl:min-w-[520px] md:min-w-[480px] xl:border-r xl:border-b-0 border-b xl:pb-0 pb-10 border-disable-color">
+                <div className="contacts_wrapper flex gap-7 xl:basis-0 md:basis-[50%]">
                   <div className="contacts_img-wrapper">
                     <Image
                       src={"/icons/Icon name=email gold.svg"}
@@ -618,7 +618,7 @@ export default function Contacts() {
                       height={48}
                     />
                   </div>
-                  <div className="contacts_info-wrapper flex flex-col gap-3 max-w-[231px]">
+                  <div className="contacts_info-wrapper flex flex-col gap-3 xl:max-w-[231px] ">
                     <p className="contacts_info-title tracking-[2px] uppercase font-medium text-xl">
                       Let’s be in touch
                     </p>
@@ -632,8 +632,8 @@ export default function Contacts() {
                     </div>
                   </div>
                 </div>
-                <div className="contacts_divider max-w-[440px] w-full h-[1px] bg-disable-color my-10"></div>
-                <div className="contacts_wrapper flex gap-7">
+                <div className="contacts_divider xl:max-w-[440px] w-full h-[1px] bg-disable-color xl:my-10 xl:block md:hidden block"></div>
+                <div className="contacts_wrapper flex gap-7 xl:basis-0 md:basis-[50%]">
                   <div className="contacts_img-wrapper">
                     <Image
                       src={"/icons/Icon name=calendar gold.svg"}
@@ -642,7 +642,7 @@ export default function Contacts() {
                       height={48}
                     />
                   </div>
-                  <div className="contacts_info-wrapper flex flex-col gap-3 max-w-[231px]">
+                  <div className="contacts_info-wrapper flex flex-col gap-3 xl:max-w-[231px] ">
                     <p className="contacts_info-title tracking-[2px] uppercase font-medium text-xl">
                       Work Schedule
                     </p>
@@ -659,20 +659,40 @@ export default function Contacts() {
                   </div>
                 </div>
               </div>
-              <div className="contacts_right-wrapper">
-                <form action="#" className="contact-us_form">
-                  <p className="contact-us_form-title"></p>
-                  <div className="contact-us_inputs-wrapper">
-                    <div className="contact-us_input-wrapper">
-                      <label htmlFor="contact-us_name-input"></label>
-                      <input type="text" name="contact-us_name-input" id="contact-us_name-input" />
+              <div className="contacts_right-wrapper w-full max-w-[790px]">
+                <form action="#" className="contact-us_form flex flex-col gap-10">
+                  <p className="contact-us_form-title tracking-[2.5px] font-medium uppercase text-xl">
+                    Have any questions? – Write us
+                  </p>
+                  <div className="contact-us_inputs-wrapper flex justify-between gap-7 sm:flex-row flex-col">
+                    <div className="contact-us_input-wrapper w-full max-w-[380px] flex flex-col gap-[10px] ">
+                      <label
+                        htmlFor="contact-us_name-input"
+                        className="contact-us_name-label text-xs uppercase tracking-[1px] font-semibold text-placeholder-text-color"
+                      >
+                        name *
+                      </label>
+                      <input
+                        type="text"
+                        name="contact-us_name-input"
+                        id="contact-us_name-input"
+                        className="contact-us_name-input outline-none border border-disable-color px-[15px] h-[46px]  w-full text-secondary-text-color caret-secondary-text-color"
+                        placeholder="Alex Browning"
+                      />
                     </div>
-                    <div className="contact-us_input-wrapper">
-                      <label htmlFor="contact-us_email-input"></label>
+                    <div className="contact-us_input-wrapper w-full max-w-[380px] flex flex-col gap-[10px]">
+                      <label
+                        htmlFor="contact-us_email-input"
+                        className="contact-us_email-label text-xs uppercase tracking-[1px] font-semibold text-placeholder-text-color"
+                      >
+                        email *
+                      </label>
                       <input
                         type="email"
                         name="contact-us_email-input"
                         id="contact-us_email-input"
+                        className="contact-us_email-input outline-none border border-disable-color px-[15px] h-[46px]  w-full text-secondary-text-color caret-secondary-text-color"
+                        placeholder="alexbrown@gmail.com"
                       />
                     </div>
                   </div>
@@ -681,8 +701,23 @@ export default function Contacts() {
                     id="contact-us_text"
                     cols={30}
                     rows={10}
+                    className="contact-us_message resize-none max-w-[790px] h-[90px] w-full outline-none border border-disable-color p-[15px] text-secondary-text-color caret-secondary-text-color mt-2"
+                    placeholder="Message"
                   ></textarea>
-                  <button type="submit"></button>
+                  <button
+                    type="submit"
+                    className="contact-us_send-btn sm:w-[334px] h-[60px] bg-disable-color flex items-center justify-center gap-[14px]"
+                  >
+                    <p className="contact-us_send-btn_title uppercase text-white tracking-[2px] font-semibold text-lg">
+                      send message
+                    </p>
+                    <Image
+                      src={"/icons/Icon name=next arrow - white.svg"}
+                      alt={"menu-close-btn"}
+                      width={24}
+                      height={16}
+                    />
+                  </button>
                 </form>
               </div>
             </div>
