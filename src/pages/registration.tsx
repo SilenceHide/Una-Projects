@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export default function Login() {
+export default function Registration() {
   const [navOpen, isNavOpen] = useState(false);
   const [searchBoxOpen, isSearchBoxOpen] = useState(false);
   const [cartOpen, isCartOpen] = useState(false);
@@ -599,7 +599,7 @@ export default function Login() {
                 height={10}
               />
               <p className="login_breadcrumb text-secondary-text-color font-medium text-[13px] selected-breadcrumb">
-                login
+                Registration
               </p>
             </div>
             <div className="login_main-wrapper max-w-[600px] w-full m-auto lg:mt-[60px] mt-10 flex flex-col gap-[30px]">
@@ -608,8 +608,22 @@ export default function Login() {
                 className="login_form bg-white w-full sm:px-[80px] sm:py-[60px] px-4 py-10 flex flex-col items-center gap-[30px]"
               >
                 <h1 className="login_form-title text-3xl font-medium tracking-[3px] uppercase">
-                  Login
+                  Registration
                 </h1>
+                <div className="login_form-input_wrapper flex flex-col gap-[10px] w-full mt-[10px]">
+                  <label
+                    htmlFor="login_form_name-input"
+                    className="login_form_name-label text-xs uppercase font-semibold text-placeholder-text-color tracking-[1px]"
+                  >
+                    name
+                  </label>
+                  <input
+                    type="text"
+                    name="login_form_name-input"
+                    id="login_form_name-input"
+                    className="login_form_name-input caret-secondary-text-color text-secondary-text-color outline-none border border-disable-color max-w-[440px] w-full px-[15px] h-[46px]"
+                  />
+                </div>
                 <div className="login_form-input_wrapper flex flex-col gap-[10px] w-full mt-[10px]">
                   <label
                     htmlFor="login_form_email-input"
@@ -638,12 +652,33 @@ export default function Login() {
                     className="login_form_password-input caret-secondary-text-color text-secondary-text-color outline-none border border-disable-color max-w-[440px] w-full px-[15px] h-[46px]"
                   />
                 </div>
+                <div className="login_form-input_wrapper flex flex-col gap-[10px] w-full relative">
+                  <label
+                    htmlFor="login_form_repeat-password-input"
+                    className="login_form_repeat-password-label text-xs uppercase font-semibold text-placeholder-text-color tracking-[1px]"
+                  >
+                    Repeat password
+                  </label>
+                  <input
+                    type="password"
+                    name="login_form_repeat-password-input"
+                    id="login_form_repeat-password-input"
+                    className="login_form_repeat-password-input caret-secondary-text-color text-secondary-text-color outline-none border border-disable-color max-w-[440px] w-full px-[15px] h-[46px]"
+                  />
+                  <Image
+                    src={"/icons/Icon name=validated.svg"}
+                    alt={"chevron_right"}
+                    width={18}
+                    height={18}
+                    className="absolute top-[40px] right-[15px]"
+                  />
+                </div>
                 <button
                   type="submit"
                   className="login_btn w-full h-[60px] bg-disable-color flex items-center justify-center gap-[14px] mt-[10px]"
                 >
                   <p className="login_btn-title uppercase text-white tracking-[2px] font-semibold text-xl">
-                    login
+                    register
                   </p>
                   <Image
                     src={"/icons/Icon name=next arrow - white.svg"}
@@ -654,14 +689,11 @@ export default function Login() {
                 </button>
                 <div className="login_account-desc flex flex-col items-center gap-5 mt-[10px]">
                   <p className="login_create-account text-sub-text-color text-center">
-                    Haven’t an account yet? –{" "}
+                    Have an account already? –{" "}
                     <a href="#" className="text-secondary-text-color">
-                      Create an account
+                      Login
                     </a>
                   </p>
-                  <a href="#" className="login_forgot-password text-secondary-text-color">
-                    Forgot password?
-                  </a>
                 </div>
               </form>
               <div className="login_social-media bg-white w-full sm:px-[60px] sm:py-[30px] px-4 py-6 flex sm:flex-row flex-col justify-between items-center sm:gap-0 gap-4">
