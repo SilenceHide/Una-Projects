@@ -1,0 +1,7 @@
+<svg width="38" height="37" viewBox="0 0 38 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="btn">
+<rect x="1" y="0.5" width="36" height="36" rx="18" fill="white"/>
+<rect x="1" y="0.5" width="36" height="36" rx="18" stroke="#D1BCB2" stroke-linejoin="bevel"/>
+<path id="reduce" d="M24.2812 17.5938C24.4271 17.5938 24.5 17.6667 24.5 17.8125V18.6875C24.5 18.8333 24.4271 18.9062 24.2812 18.9062H14.2188C14.0729 18.9062 14 18.8333 14 18.6875V17.8125C14 17.6667 14.0729 17.5938 14.2188 17.5938H24.2812Z" fill="#D1BCB2"/>
+</g>
+</svg>
