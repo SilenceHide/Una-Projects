@@ -332,3 +332,17 @@
   opacity: 1 !important;
   visibility: visible !important;
 }
+
+.product_img-slider_wrapper .swiper {
+  overflow: visible;
+}
+
+.product_img-slider_wrapper .swiper-pagination-bullet {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.product_img-slider_wrapper .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: -30px !important;
+}
