@@ -219,6 +219,12 @@
     background-color: #ede4e0;
   }
 
+  .product_slide-selected,
+  .product_filter_color-selected {
+    box-shadow: 0 10px 20px 0px rgba(209, 188, 178, 0.25);
+    border-color: #fff;
+  }
+
   input#material-checkbox-white::before,
   input#material-checkbox-white:checked:before {
     background-color: #fff;

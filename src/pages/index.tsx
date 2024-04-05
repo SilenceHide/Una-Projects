@@ -831,13 +831,12 @@ export default function Home() {
                     </p>
                   </div>
                 </a>
-                {/* lg:w-[240px] lg:h-[240px] */}
               </div>
               <a
                 href="#"
-                className="product-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto"
+                className="product-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto h-[60px]"
               >
-                <p className="product-section_button-title">SEE MORE PRODUCTS</p>
+                <p className="product-section_button-title tracking-[2px]">SEE MORE PRODUCTS</p>
                 <Image
                   src={"icons/Icon name=next arrow - white.svg"}
                   alt={"next arrow"}
@@ -1278,9 +1277,9 @@ export default function Home() {
             </div>
             <a
               href="#"
-              className="blog-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] sm:mt-14 mt-10 bg-disable-color py-3 m-auto"
+              className="blog-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] sm:mt-14 mt-10 bg-disable-color py-3 m-auto h-[60px]"
             >
-              <p className="blog-section_button-title">READ MORE ARTICLES</p>
+              <p className="blog-section_button-title tracking-[2px]">READ MORE ARTICLES</p>
               <Image
                 src={"icons/Icon name=next arrow - white.svg"}
                 alt={"next arrow"}
