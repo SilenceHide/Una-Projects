@@ -348,7 +348,12 @@
   visibility: visible !important;
 }
 
-.product_img-slider_wrapper .swiper-horizontal > .swiper-pagination-bullets,
+.product_img-slider_wrapper > .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: -30px !important;
+}
+
+.catalog_product-swiper > .swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px !important;
 }
