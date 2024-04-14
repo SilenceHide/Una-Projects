@@ -1,0 +1,244 @@
+@font-face {
+  font-family: 'una-icon';
+  src:  url('fonts/una-icon.eot?2dszfa');
+  src:  url('fonts/una-icon.eot?2dszfa#iefix') format('embedded-opentype'),
+    url('fonts/una-icon.ttf?2dszfa') format('truetype'),
+    url('fonts/una-icon.woff?2dszfa') format('woff'),
+    url('fonts/una-icon.svg?2dszfa#una-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'una-icon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-brown-Star:before {
+  content: "\e900";
+  color: #d1bcb2;
+}
+.icon-cancel-disable:before {
+  content: "\e901";
+  color: #d1bcb2;
+}
+.icon-done-success:before {
+  content: "\e902";
+  color: #d1bcb2;
+}
+.icon-empty-Star:before {
+  content: "\e903";
+}
+.icon-Icon-nameburger-menu:before {
+  content: "\e904";
+}
+.icon-Icon-namecalendar-gold:before {
+  content: "\e905";
+  color: #dba514;
+}
+.icon-Icon-namecancel:before {
+  content: "\e906";
+  color: #ad8775;
+}
+.icon-Icon-namecart:before {
+  content: "\e907";
+  color: #ad8775;
+}
+.icon-Icon-namechevron_down:before {
+  content: "\e908";
+  color: #ad8775;
+}
+.icon-Icon-namechevron_left:before {
+  content: "\e909";
+  color: #ad8775;
+}
+.icon-Icon-namechevron_right:before {
+  content: "\e90a";
+  color: #ad8775;
+}
+.icon-Icon-namechevron_up:before {
+  content: "\e90b";
+  color: #ad8775;
+}
+.icon-Icon-nameclose---white:before {
+  content: "\e90c";
+  color: #fff;
+}
+.icon-Icon-nameclose:before {
+  content: "\e90d";
+  color: #ad8775;
+}
+.icon-Icon-namecomment---gold:before {
+  content: "\e90e";
+  color: #dba514;
+}
+.icon-Icon-namecomment:before {
+  content: "\e90f";
+  color: #ad8775;
+}
+.icon-Icon-namedocument:before {
+  content: "\e910";
+}
+.icon-Icon-namedown-arrow---white:before {
+  content: "\e911";
+  color: #fff;
+}
+.icon-Icon-namedown-arrow:before {
+  content: "\e912";
+  color: #ad8775;
+}
+.icon-Icon-nameemail-gold:before {
+  content: "\e913";
+  color: #dba514;
+}
+.icon-Icon-nameFacebook:before {
+  content: "\e914";
+  color: #1877f2;
+}
+.icon-Icon-namegoogle .path1:before {
+  content: "\e915";
+  color: rgb(251, 187, 0);
+}
+.icon-Icon-namegoogle .path2:before {
+  content: "\e916";
+  margin-left: -1em;
+  color: rgb(81, 142, 248);
+}
+.icon-Icon-namegoogle .path3:before {
+  content: "\e917";
+  margin-left: -1em;
+  color: rgb(40, 180, 70);
+}
+.icon-Icon-namegoogle .path4:before {
+  content: "\e918";
+  margin-left: -1em;
+  color: rgb(241, 67, 54);
+}
+.icon-Icon-namelike---gold:before {
+  content: "\e919";
+  color: #dba514;
+}
+.icon-Icon-namelike:before {
+  content: "\e91a";
+  color: #ad8775;
+}
+.icon-Icon-nameminus:before {
+  content: "\e91b";
+  color: #ad8775;
+}
+.icon-Icon-namenext-arrow---white:before {
+  content: "\e91c";
+  color: #fff;
+}
+.icon-Icon-namenext-arrow:before {
+  content: "\e91d";
+  color: #ad8775;
+}
+.icon-Icon-namenot-valid:before {
+  content: "\e91e";
+  color: #f66;
+}
+.icon-Icon-nameplus:before {
+  content: "\e91f";
+  color: #ad8775;
+}
+.icon-Icon-nameprev-arrow:before {
+  content: "\e920";
+  color: #ad8775;
+}
+.icon-Icon-namesearch:before {
+  content: "\e921";
+  color: #ad8775;
+}
+.icon-Icon-namesmall-ch_down:before {
+  content: "\e922";
+  color: #ad8775;
+}
+.icon-Icon-namesmall-ch_up:before {
+  content: "\e923";
+  color: #ad8775;
+}
+.icon-Icon-namesmall-close:before {
+  content: "\e924";
+  color: #ad8775;
+}
+.icon-Icon-nametrash:before {
+  content: "\e925";
+  color: #ad8775;
+}
+.icon-Icon-nametruck:before {
+  content: "\e926";
+  color: #ad8775;
+}
+.icon-Icon-nametwitter .path1:before {
+  content: "\e927";
+  color: rgb(45, 170, 225);
+}
+.icon-Icon-nametwitter .path2:before {
+  content: "\e928";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
+}
+.icon-Icon-nameup-arrow:before {
+  content: "\e929";
+  color: #ad8775;
+}
+.icon-Icon-nameuser:before {
+  content: "\e92a";
+  color: #ad8775;
+}
+.icon-Icon-namevalidated:before {
+  content: "\e92b";
+  color: #ad8775;
+}
+.icon-minus-btn .path1:before {
+  content: "\e92c";
+  color: rgb(255, 255, 255);
+}
+.icon-minus-btn .path2:before {
+  content: "\e92d";
+  margin-left: -1em;
+  color: none;
+}
+.icon-minus-btn .path3:before {
+  content: "\e92e";
+  margin-left: -1em;
+  color: rgb(209, 188, 178);
+}
+.icon-next-btn:before {
+  content: "\e92f";
+  color: #fff;
+}
+.icon-plus-btn .path1:before {
+  content: "\e930";
+  color: rgb(255, 255, 255);
+}
+.icon-plus-btn .path2:before {
+  content: "\e931";
+  margin-left: -1em;
+  color: none;
+}
+.icon-plus-btn .path3:before {
+  content: "\e932";
+  margin-left: -1em;
+  color: rgb(209, 188, 178);
+}
+.icon-prev-btn:before {
+  content: "\e933";
+  color: #fff;
+}
+.icon-truck-Icon:before {
+  content: "\e934";
+  color: #dba514;
+}
