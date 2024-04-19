@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'una-icon';
-  src:  url('fonts/una-icon.eot?2dszfa');
-  src:  url('fonts/una-icon.eot?2dszfa#iefix') format('embedded-opentype'),
-    url('fonts/una-icon.ttf?2dszfa') format('truetype'),
-    url('fonts/una-icon.woff?2dszfa') format('woff'),
-    url('fonts/una-icon.svg?2dszfa#una-icon') format('svg');
+  src:  url('fonts/una-icon.eot?plg3yr');
+  src:  url('fonts/una-icon.eot?plg3yr#iefix') format('embedded-opentype'),
+    url('fonts/una-icon.ttf?plg3yr') format('truetype'),
+    url('fonts/una-icon.woff?plg3yr') format('woff'),
+    url('fonts/una-icon.svg?plg3yr#una-icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,16 +25,36 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-brown-Star:before {
+.icon-award-icon:before {
   content: "\e900";
   color: #d1bcb2;
 }
-.icon-cancel-disable:before {
+.icon-design-icon:before {
   content: "\e901";
   color: #d1bcb2;
 }
-.icon-done-success:before {
+.icon-forniture-icon:before {
   content: "\e902";
+  color: #d1bcb2;
+}
+.icon-love-icon:before {
+  content: "\e90c";
+  color: #d1bcb2;
+}
+.icon-man-icon:before {
+  content: "\e911";
+  color: #d1bcb2;
+}
+.icon-price-icon:before {
+  content: "\e91c";
+  color: #d1bcb2;
+}
+.icon-wood-icon:before {
+  content: "\e921";
+  color: #d1bcb2;
+}
+.icon-brown-Star:before {
+  content: "\e922";
   color: #d1bcb2;
 }
 .icon-empty-Star:before {
@@ -42,14 +62,6 @@ i {
 }
 .icon-Icon-nameburger-menu:before {
   content: "\e904";
-}
-.icon-Icon-namecalendar-gold:before {
-  content: "\e905";
-  color: #dba514;
-}
-.icon-Icon-namecancel:before {
-  content: "\e906";
-  color: #ad8775;
 }
 .icon-Icon-namecart:before {
   content: "\e907";
@@ -71,10 +83,6 @@ i {
   content: "\e90b";
   color: #ad8775;
 }
-.icon-Icon-nameclose---white:before {
-  content: "\e90c";
-  color: #fff;
-}
 .icon-Icon-nameclose:before {
   content: "\e90d";
   color: #ad8775;
@@ -90,17 +98,14 @@ i {
 .icon-Icon-namedocument:before {
   content: "\e910";
 }
-.icon-Icon-namedown-arrow---white:before {
-  content: "\e911";
-  color: #fff;
+.icon-Icon-nametwitter .path1:before {
+  content: "\e927";
+  color: rgb(45, 170, 225);
 }
-.icon-Icon-namedown-arrow:before {
-  content: "\e912";
-  color: #ad8775;
-}
-.icon-Icon-nameemail-gold:before {
-  content: "\e913";
-  color: #dba514;
+.icon-Icon-nametwitter .path2:before {
+  content: "\e928";
+  margin-left: -1em;
+  color: rgb(255, 255, 255);
 }
 .icon-Icon-nameFacebook:before {
   content: "\e914";
@@ -125,6 +130,25 @@ i {
   margin-left: -1em;
   color: rgb(241, 67, 54);
 }
+.icon-tlg .path1:before {
+  content: "\e923";
+  color: rgb(0, 0, 0);
+}
+.icon-tlg .path2:before {
+  content: "\e935";
+  margin-left: -1em;
+  color: rgb(200, 218, 234);
+}
+.icon-tlg .path3:before {
+  content: "\e936";
+  margin-left: -1em;
+  color: rgb(169, 201, 221);
+}
+.icon-tlg .path4:before {
+  content: "\e937";
+  margin-left: -1em;
+  color: rgb(0, 0, 0);
+}
 .icon-Icon-namelike---gold:before {
   content: "\e919";
   color: #dba514;
@@ -137,70 +161,57 @@ i {
   content: "\e91b";
   color: #ad8775;
 }
-.icon-Icon-namenext-arrow---white:before {
-  content: "\e91c";
-  color: #fff;
-}
-.icon-Icon-namenext-arrow:before {
-  content: "\e91d";
-  color: #ad8775;
-}
-.icon-Icon-namenot-valid:before {
-  content: "\e91e";
-  color: #f66;
-}
 .icon-Icon-nameplus:before {
   content: "\e91f";
+  color: #ad8775;
+}
+.icon-Icon-namedown-arrow:before {
+  content: "\e912";
   color: #ad8775;
 }
 .icon-Icon-nameprev-arrow:before {
   content: "\e920";
   color: #ad8775;
 }
-.icon-Icon-namesearch:before {
-  content: "\e921";
+.icon-Icon-namenext-arrow:before {
+  content: "\e91d";
   color: #ad8775;
 }
-.icon-Icon-namesmall-ch_down:before {
-  content: "\e922";
-  color: #ad8775;
-}
-.icon-Icon-namesmall-ch_up:before {
-  content: "\e923";
-  color: #ad8775;
-}
-.icon-Icon-namesmall-close:before {
-  content: "\e924";
+.icon-Icon-nameup-arrow:before {
+  content: "\e929";
   color: #ad8775;
 }
 .icon-Icon-nametrash:before {
   content: "\e925";
   color: #ad8775;
 }
-.icon-Icon-nametruck:before {
-  content: "\e926";
-  color: #ad8775;
-}
-.icon-Icon-nametwitter .path1:before {
-  content: "\e927";
-  color: rgb(45, 170, 225);
-}
-.icon-Icon-nametwitter .path2:before {
-  content: "\e928";
-  margin-left: -1em;
-  color: rgb(255, 255, 255);
-}
-.icon-Icon-nameup-arrow:before {
-  content: "\e929";
-  color: #ad8775;
-}
 .icon-Icon-nameuser:before {
   content: "\e92a";
+  color: #ad8775;
+}
+.icon-Icon-namesmall-close:before {
+  content: "\e924";
+  color: #ad8775;
+}
+.icon-Icon-namecancel:before {
+  content: "\e906";
   color: #ad8775;
 }
 .icon-Icon-namevalidated:before {
   content: "\e92b";
   color: #ad8775;
+}
+.icon-Icon-namenot-valid:before {
+  content: "\e91e";
+  color: #f66;
+}
+.icon-next-btn:before {
+  content: "\e92f";
+  color: #fff;
+}
+.icon-prev-btn:before {
+  content: "\e933";
+  color: #fff;
 }
 .icon-minus-btn .path1:before {
   content: "\e92c";
@@ -216,10 +227,6 @@ i {
   margin-left: -1em;
   color: rgb(209, 188, 178);
 }
-.icon-next-btn:before {
-  content: "\e92f";
-  color: #fff;
-}
 .icon-plus-btn .path1:before {
   content: "\e930";
   color: rgb(255, 255, 255);
@@ -234,11 +241,19 @@ i {
   margin-left: -1em;
   color: rgb(209, 188, 178);
 }
-.icon-prev-btn:before {
-  content: "\e933";
-  color: #fff;
+.icon-Icon-nametruck:before {
+  content: "\e926";
+  color: #ad8775;
 }
 .icon-truck-Icon:before {
   content: "\e934";
+  color: #dba514;
+}
+.icon-Icon-namecalendar-gold:before {
+  content: "\e905";
+  color: #dba514;
+}
+.icon-Icon-nameemail-gold:before {
+  content: "\e913";
   color: #dba514;
 }
