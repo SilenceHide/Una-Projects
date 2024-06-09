@@ -782,7 +782,7 @@ export default function Home() {
                 prevEl: ".banner_nav-left-btn_wrapper",
                 nextEl: ".banner_nav-right-btn_wrapper",
               }}
-              className="banner_detail-img-swiper text-secondary-text-color flex lg:max-w-[300px] w-full justify-between"
+              className="banner_detail-img-swiper text-secondary-text-color flex lg:max-w-[300px] max-w-[150px] w-full justify-between"
             >
               <SwiperSlide className="banner_detail-img-wrapper">
                 <div className="banner_detail-img-wrapper flex items-center justify-center">
