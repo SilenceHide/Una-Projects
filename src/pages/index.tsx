@@ -615,26 +615,210 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden"></div>
+            <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden">
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                loop={true}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".banner_nav-left-btn_wrapper",
+                  nextEl: ".banner_nav-right-btn_wrapper",
+                }}
+                className="banner_img-swiper text-secondary-text-color flex max-w-[400px] max-h-[260px] items-center justify-center "
+              >
+                <SwiperSlide className="banner_img-wrapper">
+                  <div className="banner_img-wrapper flex items-center justify-center">
+                    <Image
+                      alt="img"
+                      src={"/images/Banner/Chandelir1.webp"}
+                      width={600}
+                      height={600}
+                      className="w-full bg-center bg-cover object-cover "
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="banner_img-wrapper">
+                  <div className="banner_img-wrapper flex items-center justify-center">
+                    <Image
+                      alt="img"
+                      src={"/images/Banner/Consool3.webp"}
+                      width={600}
+                      height={600}
+                      className="w-full bg-center bg-cover object-cover "
+                    />
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="banner_img-wrapper">
+                  <div className="banner_img-wrapper flex items-center justify-center">
+                    <Image
+                      alt="img"
+                      src={"/images/Banner/DinnerTable1.webp"}
+                      width={600}
+                      height={600}
+                      className="w-full bg-center bg-cover object-cover "
+                    />
+                  </div>
+                </SwiperSlide>
+              </Swiper>
+            </div>
             <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
-              <div className="banner_product-info_wrapper flex flex-col">
-                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
-                  HOT
-                </p>
-                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  PENNY PENDANT LAMP SHADE, MUTED GREY
-                </h2>
-                <div className="banner_product-price_wrapper flex gap-3 text-xl">
-                  <p className="banner_product-price text-red-hot font-medium">$300</p>
-                  <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
-                    $390
-                  </p>
-                </div>
-              </div>
+              <Swiper
+                spaceBetween={10}
+                slidesPerView={1}
+                loop={true}
+                modules={[Navigation]}
+                navigation={{
+                  prevEl: ".banner_nav-left-btn_wrapper",
+                  nextEl: ".banner_nav-right-btn_wrapper",
+                }}
+                className="banner_product-info-swiper text-secondary-text-color flex lg:max-w-[600px] w-full justify-between"
+              >
+                <SwiperSlide className="banner_product-info_wrapper">
+                  <div className="banner_product-info_wrapper flex flex-col">
+                    <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
+                      HOT
+                    </p>
+                    <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
+                      PENNY PENDANT LAMP SHADE, MUTED GREY
+                    </h2>
+                    <div className="banner_product-price_wrapper flex gap-3 text-xl">
+                      <p className="banner_product-price text-red-hot font-medium">$300</p>
+                      <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
+                        $390
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="banner_product-info_wrapper">
+                  <div className="banner_product-info_wrapper flex flex-col">
+                    <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
+                      HOT
+                    </p>
+                    <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
+                      PENNY PENDANT LAMP SHADE, MUTED GREY
+                    </h2>
+                    <div className="banner_product-price_wrapper flex gap-3 text-xl">
+                      <p className="banner_product-price text-red-hot font-medium">$300</p>
+                      <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
+                        $390
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+                <SwiperSlide className="banner_product-info_wrapper">
+                  <div className="banner_product-info_wrapper flex flex-col">
+                    <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
+                      HOT
+                    </p>
+                    <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
+                      PENNY PENDANT LAMP SHADE, MUTED GREY
+                    </h2>
+                    <div className="banner_product-price_wrapper flex gap-3 text-xl">
+                      <p className="banner_product-price text-red-hot font-medium">$300</p>
+                      <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
+                        $390
+                      </p>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              </Swiper>
             </div>
           </div>
-          <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden"></div>
-          <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px]"></div>
+          <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden overflow-hidden">
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={1}
+              loop={true}
+              modules={[Navigation]}
+              navigation={{
+                prevEl: ".banner_nav-left-btn_wrapper",
+                nextEl: ".banner_nav-right-btn_wrapper",
+              }}
+              className="banner_img-swiper text-secondary-text-color flex max-w-[1035px] max-h-[958px] items-center justify-center "
+            >
+              <SwiperSlide className="banner_img-wrapper">
+                <div className="banner_img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/Chandelir1.webp"}
+                    width={600}
+                    height={600}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner_img-wrapper">
+                <div className="banner_img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/Consool3.webp"}
+                    width={600}
+                    height={600}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner_img-wrapper">
+                <div className="banner_img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/DinnerTable1.webp"}
+                    width={600}
+                    height={600}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
+          <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px] z-10 flex items-center justify-center overflow-hidden">
+            <Swiper
+              spaceBetween={10}
+              slidesPerView={1}
+              loop={true}
+              modules={[Navigation]}
+              navigation={{
+                prevEl: ".banner_nav-left-btn_wrapper",
+                nextEl: ".banner_nav-right-btn_wrapper",
+              }}
+              className="banner_detail-img-swiper text-secondary-text-color flex lg:max-w-[300px] w-full justify-between"
+            >
+              <SwiperSlide className="banner_detail-img-wrapper">
+                <div className="banner_detail-img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/Chandelir2.webp"}
+                    width={450}
+                    height={450}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner_detail-img-wrapper">
+                <div className="banner_detail-img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/Consool2.webp"}
+                    width={450}
+                    height={450}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner_detail-img-wrapper">
+                <div className="banner_detail-img-wrapper flex items-center justify-center">
+                  <Image
+                    alt="img"
+                    src={"/images/Banner/DinnerTable2.webp"}
+                    width={450}
+                    height={450}
+                    className="w-full bg-center bg-cover object-cover "
+                  />
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </div>
         </section>
 
         <section className="product-section bg-main-bg-color mt-[10px] md:pt-[110px] pt-[80px] pb-5">
