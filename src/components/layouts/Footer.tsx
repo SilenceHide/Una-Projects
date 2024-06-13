@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import Logo from "../common/ui/Logo";
 
 export default function Footer() {
   return (
@@ -7,14 +8,8 @@ export default function Footer() {
       <div className="container">
         <div className="footer_wrapper flex flex-col">
           <div className="footer_links-and-logo flex flex-col items-center border-b border-disable-color w-full lg:pb-[78px] pb-[60px] gap-8">
-            <Image
-              src={"/logo/logo-default.svg"}
-              alt={"logo-default"}
-              width={82}
-              height={80}
-              priority
-              className="footer_logo"
-            />
+            <Logo className={"footer_logo"} width={82} height={80} />
+
             <div className="footer_links flex md:flex-row flex-col items-center gap-[30px] text-secondary-text-color tracking-[2px]">
               <a
                 href="#"

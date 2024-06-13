@@ -1,5 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
+import Logo from "../common/ui/Logo";
+import SearchForm from "./SearchForm";
 
 export default function Header() {
   const [navOpen, isNavOpen] = useState(false);
@@ -36,14 +38,8 @@ export default function Header() {
                 />
               )}
             </div>
-            <Image
-              src={"/logo/logo-small.svg"}
-              alt={"logo-default"}
-              width={72}
-              height={60}
-              priority
-              className="header_logo"
-            />
+            <Logo className={"header_logo"} />
+
             <nav
               className={`menu text-secondary-text-color right-0 top-[70px] lg:p-0 lg:overflow-hidden md:overflow-visible overflow-scroll transition-all duration-300 px-4 md:py-0 py-10 lg:h-[100px] md:h-fit h-[90vh] md:shadow-main-box-shadow lg:shadow-none ${
                 navOpen
@@ -336,54 +332,14 @@ export default function Header() {
             </a>
             <div className="header_icon-wrapper flex items-center justify-between gap-3 lg:h-[100px] h-[70px] ">
               <div className="header_search-wrapper cursor-pointer flex sm:overflow-hidden relative">
-                <div
-                  onClick={() => {
-                    isSearchBoxOpen(true);
-                    isCartOpen(false);
-                    isNavOpen(false);
-                  }}
-                  className={`header_search-inner-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-[1.5px] transition-all duration-300 ${
-                    searchBoxOpen ? "border-accent-color" : "border-disable-text-color"
-                  }`}
-                >
-                  <Image
-                    src={"/icons/Icon name=search.svg"}
-                    alt={"search-icon"}
-                    width={22}
-                    height={22}
-                  />
-                </div>
-                <div
-                  className={`"header_search-input_wrapper flex items-center justify-between sm:ml-[14px] transition-all sm:duration-500 duration-300 sm:static fixed top-[70px] right-0 left-0 sm:p-0 px-5 xs:px-24 py-2  ${
-                    searchBoxOpen
-                      ? "shadow-main-box-shadow sm:shadow-none visible xl:w-[330px] sm:w-[240px] sm:mr-0 bg-white z-50"
-                      : "shadow-none invisible sm:mr-[-14px] bg-transparent z-0 sm:w-0"
-                  }`}
-                >
-                  <input
-                    type="text"
-                    className={`header_search-input outline-none text-secondary-text-color transition-all duration-300 placeholder:text-placeholder-text-color ${
-                      searchBoxOpen
-                        ? "visible opacity-100 xl:w-[200px] sm:w-[180px]"
-                        : "w-0 invisible opacity-0"
-                    }`}
-                    placeholder="Search Request..."
-                  />
-                  <div
-                    onClick={() => isSearchBoxOpen(false)}
-                    className={`header_search-close-btn w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] transition-all duration-300 ${
-                      searchBoxOpen ? "visible opacity-100" : "invisible opacity-0"
-                    }`}
-                  >
-                    <Image
-                      src={"/icons/Icon name=close.svg"}
-                      alt={"search-icon"}
-                      width={20}
-                      height={20}
-                    />
-                  </div>
-                </div>
+                <SearchForm
+                  searchBoxOpen={searchBoxOpen}
+                  isSearchBoxOpen={isSearchBoxOpen}
+                  isNavOpen={isNavOpen}
+                  isCartOpen={isCartOpen}
+                />
               </div>
+
               <div className="header_profile-wrapper w-[46px] h-[46px] flex items-center justify-center rounded-full border-disable-text-color border-[1.5px] cursor-pointer transition-all ">
                 <Image src={"/icons/Icon name=user.svg"} alt={"user-icon"} width={22} height={22} />
               </div>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Navigation } from "swiper/modules";
+import Icon from "@/components/common/ui/Icon";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
           </div>
           <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden">
             <Swiper
+              cssMode={true}
               spaceBetween={10}
               slidesPerView={1}
               loop={true}
@@ -82,6 +84,7 @@ export default function Home() {
           </div>
           <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
             <Swiper
+              cssMode={true}
               spaceBetween={10}
               slidesPerView={1}
               loop={true}
@@ -97,7 +100,7 @@ export default function Home() {
                   <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
                     HOT
                   </p>
-                  <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
+                  <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px] uppercase">
                     PENNY PENDANT LAMP SHADE, MUTED GREY
                   </h2>
                   <div className="banner_product-price_wrapper flex gap-3 text-xl">
@@ -145,6 +148,7 @@ export default function Home() {
         </div>
         <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden overflow-hidden">
           <Swiper
+            cssMode={true}
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
@@ -190,8 +194,9 @@ export default function Home() {
             </SwiperSlide>
           </Swiper>
         </div>
-        <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px] z-10 flex items-center justify-center overflow-hidden">
+        <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px] z-[5] flex items-center justify-center overflow-hidden">
           <Swiper
+            cssMode={true}
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
@@ -252,8 +257,6 @@ export default function Home() {
                     slidesPerView: 4,
                   },
                 }}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
                 className="product_tab-swiper text-secondary-text-color flex lg:max-w-[600px] justify-between"
               >
                 <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">

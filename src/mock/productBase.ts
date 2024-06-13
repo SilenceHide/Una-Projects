@@ -1,0 +1,76 @@
+export const bannerTopItems = [
+  {
+    title: "HARU SMALL SOFA BED",
+    image: "/images/Products/1/Bed3.webp",
+    price: 1800,
+    label: "",
+  },
+  {
+    title: "KALEIDO BLANCKET",
+    image: "/images/Products/2/Blancket2.webp",
+    price: 99,
+    label: "new",
+  },
+  {
+    title: "HARU SOFA BEF",
+    image: "/images/Products/3/Canape5.webp",
+    price: 1670,
+    label: "popular",
+  },
+  {
+    title: "TIRADO CHAIR",
+    image: "/images/Products/4/Chair1.webp",
+    price: 366,
+    label: "popular",
+  },
+  {
+    title: "PENNY PENDANT LAMP SHADE",
+    image: "/images/Products/5/Chandelir2.webp",
+    price: 390,
+    sale_price: 300,
+    label: "hot",
+  },
+  {
+    title: "EBRO BEDSIDE TABLE",
+    image: "/images/Products/6/Consool2.webp",
+    price: 466,
+    sale_price: 389,
+    label: "hot",
+  },
+  {
+    title: "EBRO BEDSIDE TABLE",
+    image: "/images/Products/7/Cuff1.webp",
+    price: 188,
+    label: "",
+  },
+  {
+    title: "DAMIEN DINNER TABLE",
+    image: "/images/Products/8/DinnerTable2.webp",
+    price: 1260,
+    sale_price: 1052,
+    label: "hot",
+  },
+  {
+    title: "KALEIDO BEDSIDE TABLE",
+    image: "/images/Products/9/Drawer1.webp",
+    price: 244,
+    label: "new",
+  },
+  {
+    title: "DAMIEN LIBRARY",
+    image: "/images/Products/10/Library1.webp",
+    price: 270,
+    label: "popular",
+  },
+  {
+    title: "TIRADO LONG CHAIR",
+    image: "/images/Products/11/Puff1.webp",
+    price: 166,
+  },
+  {
+    title: "AULA COFFEE TABLE",
+    image: "/images/Products/12/Table2.webp",
+    price: 189,
+    label: "popular",
+  },
+];
