@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 import Icon from "@/components/common/ui/Icon";
 
 export default function Home() {
@@ -36,11 +36,15 @@ export default function Home() {
           </div>
           <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden">
             <Swiper
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               cssMode={true}
               spaceBetween={10}
               slidesPerView={1}
               loop={true}
-              modules={[Navigation]}
+              modules={[Autoplay, Navigation]}
               navigation={{
                 prevEl: ".banner_nav-left-btn_wrapper",
                 nextEl: ".banner_nav-right-btn_wrapper",
@@ -84,11 +88,15 @@ export default function Home() {
           </div>
           <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
             <Swiper
+              autoplay={{
+                delay: 2500,
+                disableOnInteraction: false,
+              }}
               cssMode={true}
               spaceBetween={10}
               slidesPerView={1}
               loop={true}
-              modules={[Navigation]}
+              modules={[Autoplay, Navigation]}
               navigation={{
                 prevEl: ".banner_nav-left-btn_wrapper",
                 nextEl: ".banner_nav-right-btn_wrapper",
@@ -148,11 +156,15 @@ export default function Home() {
         </div>
         <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden overflow-hidden">
           <Swiper
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             cssMode={true}
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
-            modules={[Navigation]}
+            modules={[Autoplay, Navigation]}
             navigation={{
               prevEl: ".banner_nav-left-btn_wrapper",
               nextEl: ".banner_nav-right-btn_wrapper",
@@ -196,11 +208,15 @@ export default function Home() {
         </div>
         <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[535px] sm:top-[500px] z-[5] flex items-center justify-center overflow-hidden">
           <Swiper
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
             cssMode={true}
             spaceBetween={10}
             slidesPerView={1}
             loop={true}
-            modules={[Navigation]}
+            modules={[Autoplay, Navigation]}
             navigation={{
               prevEl: ".banner_nav-left-btn_wrapper",
               nextEl: ".banner_nav-right-btn_wrapper",
