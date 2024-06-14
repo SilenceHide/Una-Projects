@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { Autoplay, Navigation } from "swiper/modules";
-import Icon from "@/components/common/ui/Icon";
 
 export default function Home() {
   return (

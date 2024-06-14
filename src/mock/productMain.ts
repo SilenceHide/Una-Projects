@@ -1,5 +1,6 @@
 export const productMainMock = [
   {
+    id: 1,
     title: "HARU SMALL SOFA BED",
     image: [
       "/images/Products/1/Bed1.webp",
@@ -14,6 +15,7 @@ export const productMainMock = [
     color: ["#795548", "#212121", "#F5F5F5"],
   },
   {
+    id: 2,
     title: "KALEIDO BLANCKET",
     image: [
       "/images/Products/2/Blancket1.webp",
@@ -28,6 +30,7 @@ export const productMainMock = [
     color: ["#B0BEC5", "#C62828", "#4FC3F7"],
   },
   {
+    id: 3,
     title: "HARU SOFA BEF",
     image: [
       "/images/Products/3/Canape1.webp",
@@ -44,6 +47,7 @@ export const productMainMock = [
     color: ["#6D4C41", "#212121", "#004D40"],
   },
   {
+    id: 4,
     title: "TIRADO CHAIR",
     image: [
       "/images/Products/4/Chair1.webp",
@@ -61,6 +65,7 @@ export const productMainMock = [
     color: ["#212121", "#EEEEEE"],
   },
   {
+    id: 5,
     title: "PENNY PENDANT LAMP SHADE",
     image: [
       "/images/Products/5/Chandelir1.webp",
@@ -77,6 +82,7 @@ export const productMainMock = [
     color: ["#212121"],
   },
   {
+    id: 6,
     title: "EBRO BEDSIDE TABLE",
     image: [
       "/images/Products/6/Consool1.webp",
@@ -92,6 +98,7 @@ export const productMainMock = [
     color: ["#3E2723"],
   },
   {
+    id: 7,
     title: "EBRO LONG CHAIR",
     image: ["/images/Products/7/Cuff1.webp", "/images/Products/7/Cuff2.webp"],
     price: 188,
@@ -102,6 +109,7 @@ export const productMainMock = [
     color: ["#847545"],
   },
   {
+    id: 8,
     title: "DAMIEN DINNER TABLE",
     image: [
       "/images/Products/8/DinnerTable1.webp",
@@ -117,6 +125,7 @@ export const productMainMock = [
     color: ["#3E2723"],
   },
   {
+    id: 9,
     title: "KALEIDO BEDSIDE TABLE",
     image: ["/images/Products/9/Drawer1.webp", "/images/Products/9/Drawer2.webp"],
     price: 244,
@@ -127,6 +136,7 @@ export const productMainMock = [
     color: ["#F5F5F5"],
   },
   {
+    id: 10,
     title: "DAMIEN LIBRARY",
     image: ["/images/Products/10/Library1.webp", "/images/Products/10/Library2.webp"],
     price: 270,
@@ -137,6 +147,7 @@ export const productMainMock = [
     color: ["#F5F5F5"],
   },
   {
+    id: 11,
     title: "TIRADO LONG CHAIR",
     image: ["/images/Products/11/Puff1.webp", "/images/Products/11/Puff2.webp"],
     price: 166,
@@ -146,6 +157,7 @@ export const productMainMock = [
     color: ["#00695C"],
   },
   {
+    id: 12,
     title: "AULA COFFEE TABLE",
     image: ["/images/Products/12/Table2.webp", "/images/Products/12/Table2.webp"],
     price: 189,
