@@ -1,4 +1,4 @@
-export const bannerTopItems = [
+export const productBaseMock = [
   {
     title: "HARU SMALL SOFA BED",
     image: "/images/Products/1/Bed3.webp",
@@ -38,7 +38,7 @@ export const bannerTopItems = [
     label: "hot",
   },
   {
-    title: "EBRO BEDSIDE TABLE",
+    title: "EBRO LONG CHAIR",
     image: "/images/Products/7/Cuff1.webp",
     price: 188,
     label: "",

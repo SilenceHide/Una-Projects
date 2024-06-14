@@ -1,4 +1,4 @@
-export const bannerTopItems = [
+export const bannerTopItemsMock = [
   {
     title: "PENNY PENDANT LAMP SHADE",
     image: "/images/Banner/Chandelir1.webp",
