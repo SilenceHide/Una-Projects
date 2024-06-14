@@ -4,3 +4,4 @@ export * from "./Layout";
 export * from "./Menu";
 export * from "./SearchForm";
 export * from "./Section";
+export * from "./SubMenu";
