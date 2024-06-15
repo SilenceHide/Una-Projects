@@ -1,4 +1,4 @@
-export const bannerTopItemsMock = [
+export const bannerOffersMock = [
   {
     id: 5,
     title: "PENNY PENDANT LAMP SHADE",
