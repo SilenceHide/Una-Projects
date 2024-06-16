@@ -4,6 +4,7 @@ export const productBaseMock = [
     title: "HARU SMALL SOFA BED",
     image: "/images/Products/1/Bed3.webp",
     price: 1800,
+    sale_price: 0,
     label: "",
   },
   {
@@ -11,6 +12,7 @@ export const productBaseMock = [
     title: "KALEIDO BLANCKET",
     image: "/images/Products/2/Blancket2.webp",
     price: 99,
+    sale_price: 0,
     label: "new",
   },
   {
@@ -18,6 +20,7 @@ export const productBaseMock = [
     title: "HARU SOFA BEF",
     image: "/images/Products/3/Canape5.webp",
     price: 1670,
+    sale_price: 0,
     label: "popular",
   },
   {
@@ -25,6 +28,7 @@ export const productBaseMock = [
     title: "TIRADO CHAIR",
     image: "/images/Products/4/Chair1.webp",
     price: 366,
+    sale_price: 0,
     label: "popular",
   },
   {
@@ -48,6 +52,7 @@ export const productBaseMock = [
     title: "EBRO LONG CHAIR",
     image: "/images/Products/7/Cuff1.webp",
     price: 188,
+    sale_price: 0,
     label: "",
   },
   {
@@ -63,6 +68,7 @@ export const productBaseMock = [
     title: "KALEIDO BEDSIDE TABLE",
     image: "/images/Products/9/Drawer1.webp",
     price: 244,
+    sale_price: 0,
     label: "new",
   },
   {
@@ -70,6 +76,7 @@ export const productBaseMock = [
     title: "DAMIEN LIBRARY",
     image: "/images/Products/10/Library1.webp",
     price: 270,
+    sale_price: 0,
     label: "popular",
   },
   {
@@ -77,12 +84,15 @@ export const productBaseMock = [
     title: "TIRADO LONG CHAIR",
     image: "/images/Products/11/Puff1.webp",
     price: 166,
+    sale_price: 0,
+    label: "",
   },
   {
     id: 12,
     title: "AULA COFFEE TABLE",
     image: "/images/Products/12/Table2.webp",
     price: 189,
+    sale_price: 0,
     label: "popular",
   },
 ];

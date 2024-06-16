@@ -177,6 +177,10 @@ i {
   content: "\e91d";
   color: #ad8775;
 }
+.i-nextarrow-icon-white:before {
+  content: "\e91d";
+  color: #ffffff;
+}
 .i-uparrow-icon:before {
   content: "\e929";
   color: #ad8775;

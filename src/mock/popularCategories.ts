@@ -21,7 +21,7 @@ export const popularCategoriesMock = [
   },
   {
     title: "garden",
-    image: "/images/Category/garden.png",
+    image: "/images/Category/garden.jpg",
     link: "#",
   },
   {

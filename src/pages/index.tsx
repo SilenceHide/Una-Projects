@@ -6,6 +6,10 @@ import { Autoplay, Navigation } from "swiper/modules";
 import Section from "@/components/layouts/Section";
 import BannerOffers from "@/components/common/ui/BannerOffers";
 import Link from "next/link";
+import { productBaseMock } from "@/mock/productBase";
+import SimpleCard from "@/components/common/cards/SimpleCard";
+import Icon from "@/components/common/ui/Icon";
+import PopularCategories from "@/components/pages/home/PopularCategories";
 
 export default function Home() {
   return (
@@ -32,12 +36,12 @@ export default function Home() {
               className="product_tab-swiper text-secondary-text-color flex lg:max-w-[600px] justify-between"
             >
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
                   ALL
                 </a>
               </SwiperSlide>
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
+                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ">
                   POPULAR
                 </a>
               </SwiperSlide>
@@ -54,171 +58,20 @@ export default function Home() {
             </Swiper>
           </div>
           <div className="products_wrapper grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-10 lg:mt-14 mt-10 justify-center justify-items-center">
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12 "
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  EBRO BESIDE TABLE
-                </p>
-                <div className="product_img-price_wrapper flex gap-2">
-                  <p className="product_img-price text-red-hot font-medium tracking-[1px]">$250</p>
-                  <p className="product_img-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
-                    $310
-                  </p>
-                </div>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  TIRADO CHAIR
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $280
-                </p>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  CALEIDO LAMP
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $355
-                </p>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  EMMI SET
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $240
-                </p>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  ILLARIA FLOOR LAMP
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $380
-                </p>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  CALEIDO CHAIR
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $355
-                </p>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  SCOTT ANGLE SOFA
-                </p>
-                <div className="product_img-price_wrapper flex gap-2">
-                  <p className="product_img-price text-red-hot font-medium tracking-[1px]">
-                    $4 900
-                  </p>
-                  <p className="product_img-price text-disable-color line-through decoration-[0.5px] tracking-[1px]">
-                    $5 400
-                  </p>
-                </div>
-              </div>
-            </a>
-            <a
-              href="#"
-              className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12"
-            >
-              <div className="product_img bg-disable-text-color max-w-[380px] w-full lg:h-[380px] h-[343px] border-[10px] border-white "></div>
-              <p className="product_img-tag tracking-[1px] absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-                POPULAR
-              </p>
-              <div className="product_img-desc flex flex-col items-center gap-3">
-                <div className="product_img-rectangle bg-disable-color w-[30px] h-[1px] mb-[10px]"></div>
-                <p className="product_img-title text-main-text-color font-medium tracking-[2px]">
-                  HAINESS WIDE SIDEBOARD
-                </p>
-                <p className="product_img-price text-accent-color font-medium tracking-[1px]">
-                  $1 750
-                </p>
-              </div>
-            </a>
+            {productBaseMock &&
+              productBaseMock.map((productBaseData, index) => {
+                if (index < 8) {
+                  return <SimpleCard data={productBaseData} key={index} />;
+                }
+              })}
           </div>
           <Link
-            href="#"
+            href="/category"
+            target="_blank"
             className="product-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] mt-14 bg-disable-color py-3 m-auto h-[60px]"
           >
             <p className="product-section_button-title tracking-[2px]">SEE MORE PRODUCTS</p>
-            <Image
-              src={"icons/Icon name=next arrow - white.svg"}
-              alt={"next arrow"}
-              width={24}
-              height={16}
-              className="fill-white text-white"
-            />
+            <Icon iconName="i-nextarrow-icon-white" size="text-[24px]" />
           </Link>
         </div>
       </Section>
@@ -231,143 +84,16 @@ export default function Home() {
             </h2>
             <div className="popular-categories_nav-btn-wrapper flex items-center justify-center gap-5">
               <div className="popular-categories_left-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
-                <Image
-                  src={"/icons/Icon name=chevron_left.svg"}
-                  alt={"left-btn"}
-                  width={10}
-                  height={14}
-                />
+                <Icon iconName="i-chevronleft-icon" size="text-[14px]" />
               </div>
               <div className="popular-categories_right-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
-                <Image
-                  src={"/icons/Icon name=chevron_right.svg"}
-                  alt={"right-btn"}
-                  width={10}
-                  height={14}
-                />
+                <Icon iconName="i-chevronright-icon" size="text-[14px]" />
               </div>
             </div>
           </div>
+
           <div className="popular-categories mt-14">
-            <Swiper
-              slidesPerView={1}
-              spaceBetween={20}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 20,
-                },
-                1280: {
-                  slidesPerView: 3,
-                  spaceBetween: 20,
-                },
-                1640: {
-                  slidesPerView: 4,
-                  spaceBetween: 20,
-                },
-              }}
-              modules={[Navigation]}
-              navigation={{
-                prevEl: ".popular-categories_left-btn",
-                nextEl: ".popular-categories_right-btn",
-              }}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
-              className="popular-categories_swiper"
-            >
-              <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">SOFAS</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">BEDS</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">LIGHTING</p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">CHAIRS</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">GARDEN</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">TEXTILES</p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">TABLE</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">PET BEDS</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">DECOR</p>
-                </a>
-              </SwiperSlide>
-              <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px] ">STORAGE</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">DRINKWARE</p>
-                </a>
-                <a
-                  href="#"
-                  className="popular-category bg-white p-[10px] flex items-center gap-5 text-xl font-medium border-t-[3px] border-transparent hover:border-t-accent-color hover:shadow-main-box-shadow transition-all mb-3"
-                >
-                  <div className="popular-category_img-wrapper w-[160px] h-[120px] bg-disable-text-color"></div>
-                  <p className="popular-category_title tracking-[2px]">KITCHEN</p>
-                </a>
-              </SwiperSlide>
-            </Swiper>
+            <PopularCategories />
           </div>
         </div>
       </Section>

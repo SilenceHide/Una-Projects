@@ -97,7 +97,7 @@ export default function BannerOffers() {
                   HOT
                 </p>
                 <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px] uppercase">
-                  PENNY PENDANT LAMP SHADE, MUTED GREY
+                  PENNY PENDANT LAMP SHADE
                 </h2>
                 <div className="banner_product-price_wrapper flex gap-3 text-xl">
                   <p className="banner_product-price text-red-hot font-medium">$300</p>
@@ -113,7 +113,7 @@ export default function BannerOffers() {
                   HOT
                 </p>
                 <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  PENNY PENDANT LAMP SHADE, MUTED GREY
+                  EBRO BEDSIDE TABLE
                 </h2>
                 <div className="banner_product-price_wrapper flex gap-3 text-xl">
                   <p className="banner_product-price text-red-hot font-medium">$300</p>
@@ -129,7 +129,7 @@ export default function BannerOffers() {
                   HOT
                 </p>
                 <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  PENNY PENDANT LAMP SHADE, MUTED GREY
+                  DAMIEN DINNER TABLE
                 </h2>
                 <div className="banner_product-price_wrapper flex gap-3 text-xl">
                   <p className="banner_product-price text-red-hot font-medium">$300</p>
@@ -197,7 +197,7 @@ export default function BannerOffers() {
       <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden overflow-hidden">
         <Swiper
           autoplay={{
-            delay: 2450,
+            delay: 2500,
             disableOnInteraction: false,
           }}
           cssMode={true}
