@@ -1,8 +1,5 @@
-import Image from "next/image";
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { Autoplay, Navigation } from "swiper/modules";
 import Section from "@/components/layouts/Section";
 import BannerOffers from "@/components/common/ui/BannerOffers";
 import Link from "next/link";
@@ -10,6 +7,9 @@ import { productBaseMock } from "@/mock/productBase";
 import SimpleCard from "@/components/common/cards/SimpleCard";
 import Icon from "@/components/common/ui/Icon";
 import PopularCategories from "@/components/pages/home/PopularCategories";
+import { instagramPostsMock } from "@/mock/instagramPosts";
+import InstagramCard from "@/components/common/cards/InstagramCard";
+import InterestingBlogs from "@/components/pages/home/InterestingBlogs";
 
 export default function Home() {
   return (
@@ -36,24 +36,24 @@ export default function Home() {
               className="product_tab-swiper text-secondary-text-color flex lg:max-w-[600px] justify-between"
             >
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
+                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
                   ALL
-                </a>
+                </p>
               </SwiperSlide>
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ">
+                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ">
                   POPULAR
-                </a>
+                </p>
               </SwiperSlide>
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
                   HOT
-                </a>
+                </p>
               </SwiperSlide>
               <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <a className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
                   NEW
-                </a>
+                </p>
               </SwiperSlide>
             </Swiper>
           </div>
@@ -107,156 +107,9 @@ export default function Home() {
           INSTAGRAM INSPIRATION
         </h2>
         <div className="instagram_item-wrapper mt-14 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
-          <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
-            <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
-            <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-              <a href="#" className="instagram_item-tag text-secondary-text-color hidden md:block">
-                @decorinsta
-              </a>
-              <div className="instagram_item-info flex gap-4 items-center justify-center">
-                <div className="instagram_item-heart flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=like - gold.svg"}
-                    alt={"golden-heart"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>168</p>
-                </div>
-                <div className="instagram_item-comment flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=comment - gold.svg"}
-                    alt={"golden-comment"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>55</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
-            <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
-            <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-              <a href="#" className="instagram_item-tag text-secondary-text-color hidden md:block">
-                @decorinsta
-              </a>
-              <div className="instagram_item-info flex gap-4 items-center justify-center">
-                <div className="instagram_item-heart flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=like - gold.svg"}
-                    alt={"golden-heart"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>168</p>
-                </div>
-                <div className="instagram_item-comment flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=comment - gold.svg"}
-                    alt={"golden-comment"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>55</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
-            <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
-            <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-              <a href="#" className="instagram_item-tag text-secondary-text-color hidden md:block">
-                @decorinsta
-              </a>
-              <div className="instagram_item-info flex gap-4 items-center justify-center">
-                <div className="instagram_item-heart flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=like - gold.svg"}
-                    alt={"golden-heart"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>168</p>
-                </div>
-                <div className="instagram_item-comment flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=comment - gold.svg"}
-                    alt={"golden-comment"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>55</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="instagram_item md:max-w-[364px] max-w-[167px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
-            <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white"></div>
-            <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-              <a href="#" className="instagram_item-tag text-secondary-text-color hidden md:block">
-                @decorinsta
-              </a>
-              <div className="instagram_item-info flex gap-4 items-center justify-center">
-                <div className="instagram_item-heart flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=like - gold.svg"}
-                    alt={"golden-heart"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>168</p>
-                </div>
-                <div className="instagram_item-comment flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=comment - gold.svg"}
-                    alt={"golden-comment"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>55</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="instagram_item md:max-w-[364px] max-w-[343px] flex flex-col group/instagram_item transition-all duration-300 hover:shadow-main-box-shadow md:mb-0 mb-[-45px] md:static relative hover:z-10">
-            <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-            <div className="instagram_item-content bg-white flex items-center justify-between py-3 px-6 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
-              <a href="#" className="instagram_item-tag text-secondary-text-color">
-                @decorinsta
-              </a>
-              <div className="instagram_item-info flex gap-4 items-center justify-center">
-                <div className="instagram_item-heart flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=like - gold.svg"}
-                    alt={"golden-heart"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>168</p>
-                </div>
-                <div className="instagram_item-comment flex gap-1 items-center justify-center">
-                  <Image
-                    src={"/icons/Icon name=comment - gold.svg"}
-                    alt={"golden-comment"}
-                    width={24}
-                    height={24}
-                    className="cursor-pointer"
-                  />
-                  <p>55</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          {instagramPostsMock.map((instagramPostData, index) => {
+            return <InstagramCard data={instagramPostData} key={index} />;
+          })}
         </div>
       </Section>
 
@@ -267,115 +120,25 @@ export default function Home() {
           </h2>
           <div className="blog_nav-btn-wrapper flex items-center justify-center gap-5">
             <div className="blog_left-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
-              <Image
-                src={"/icons/Icon name=chevron_left.svg"}
-                alt={"left-btn"}
-                width={10}
-                height={14}
-              />
+              <Icon iconName="i-chevronleft-icon" size="text-[14px]" />
             </div>
             <div className="blog_right-btn w-[46px] h-[46px] bg-white border border-disable-color rounded-full flex justify-center items-center cursor-pointer">
-              <Image
-                src={"/icons/Icon name=chevron_right.svg"}
-                alt={"right-btn"}
-                width={10}
-                height={14}
-              />
+              <Icon iconName="i-chevronright-icon" size="text-[14px]" />
             </div>
           </div>
         </div>
+
         <div className="blog_items-wrapper mt-14">
-          <Swiper
-            slidesPerView={1}
-            spaceBetween={30}
-            breakpoints={{
-              640: {
-                slidesPerView: 1.5,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 1.8,
-                spaceBetween: 20,
-              },
-              1280: {
-                slidesPerView: 2.3,
-                spaceBetween: 40,
-              },
-              1450: {
-                slidesPerView: 2.6,
-                spaceBetween: 20,
-              },
-              1640: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-            }}
-            modules={[Navigation]}
-            navigation={{
-              prevEl: ".blog_left-btn",
-              nextEl: ".blog_right-btn",
-            }}
-            onSlideChange={() => console.log("slide change")}
-            onSwiper={(swiper) => console.log(swiper)}
-            className="blog_items_swiper"
-          >
-            <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] ">
-              <a href="#">
-                <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    UPDATING YOUR BEDROOM? IT’S EASIER THAN YOU THINK
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    May 2, 2022
-                  </p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px]">
-              <a href="#">
-                <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    BACK ON THE MENU: HOSTING A POST-LOCKDOWN DINNER PARTY
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    May 1, 2022
-                  </p>
-                </div>
-              </a>
-            </SwiperSlide>
-            <SwiperSlide className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px]">
-              <a href="#">
-                <div className="blog_item-img lg:w-[520px] lg:h-[380px] min-w-[343px] h-[343px] bg-disable-text-color border-[10px] border-white"></div>
-                <div className="blog_item-content flex flex-col items-center justify-center pt-5 pb-7 md:px-[60px] lg:px-[100px] px-3 transition-all duration-300 group-hover/blog_item:bg-white lg:w-[520px]">
-                  <div className="blog_divider w-[30px] h-[1px] bg-disable-color transition-all duration-300 group-hover/blog_item:opacity-0"></div>
-                  <h3 className="blog_item-title font-medium tracking-[2px] text-center mt-5 mb-3 text-sub-text-color transition-all duration-300 group-hover/blog_item:text-main-text-color group-hover/blog_item:mt-4">
-                    HOW TO REFRESH YOUR KITCHEN IN 5 EASY STEPS
-                  </h3>
-                  <p className="blog_item-date font-medium text-disable-color group-hover/blog_item:text-accent-color transition-all duration-300">
-                    February 27, 2022
-                  </p>
-                </div>
-              </a>
-            </SwiperSlide>
-          </Swiper>
+          <InterestingBlogs />
         </div>
-        <a
-          href="#"
+
+        <Link
+          href="/blog"
           className="blog-section_button flex items-center text-white justify-center gap-3 lg:max-w-[300px] max-w-[343px] sm:mt-14 mt-10 bg-disable-color py-3 m-auto h-[60px]"
         >
           <p className="blog-section_button-title tracking-[2px]">READ MORE ARTICLES</p>
-          <Image
-            src={"icons/Icon name=next arrow - white.svg"}
-            alt={"next arrow"}
-            width={24}
-            height={16}
-            className="fill-white text-white"
-          />
-        </a>
+          <Icon iconName="i-nextarrow-icon-white" size="text-[24px]" />
+        </Link>
       </Section>
     </main>
   );

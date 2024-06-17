@@ -11,14 +11,19 @@ interface Props {
     price: number;
     sale_price?: number;
   };
+  inMenu?: true;
 }
 
-export default function SimpleCard({ data }: Props) {
+export default function SimpleCard({ data, inMenu }: Props) {
   return (
     <Link
       href="/product"
       target="_blank"
-      className="product relative flex flex-col lg:gap-[30px] gap-7 lg:w-[380px] w-[343px] bg-white pb-12 "
+      className={`product relative flex flex-col   bg-white pb-12  ${
+        inMenu
+          ? "w-[343px] h-[343px] lg:w-[240px] lg:gap-3 gap-7 shadow-main-box-shadow"
+          : "lg:w-[380px] w-[343px] lg:gap-[30px] gap-7"
+      } `}
     >
       <div className="product_img max-w-[380px] w-full lg:h-[380px] h-[343px]  border-[10px] border-white ">
         <Picture src={data.image} alt="product-img" width={370} height={370} />
