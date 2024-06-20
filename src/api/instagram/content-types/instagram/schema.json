@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "instagrams",
+  "info": {
+    "singularName": "instagram",
+    "pluralName": "instagrams",
+    "displayName": "instagram",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "like": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    },
+    "comment": {
+      "type": "integer",
+      "required": true,
+      "min": 0
+    }
+  }
+}
