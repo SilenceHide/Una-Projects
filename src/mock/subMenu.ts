@@ -1,6 +1,6 @@
 export const subMenuMock = [
   {
-    title: "TABLEWARE",
+    title: "Tableware",
     subCategories: [
       {
         title: "Dinnerware",
@@ -25,7 +25,7 @@ export const subMenuMock = [
     ],
   },
   {
-    title: "DRINKWARE",
+    title: "Drinkware",
     subCategories: [
       {
         title: "Glassware",
@@ -62,7 +62,7 @@ export const subMenuMock = [
     ],
   },
   {
-    title: "COOK&BAKE WARE",
+    title: "Cook&Bake Ware",
     subCategories: [
       {
         title: "Pots & Pans",
@@ -83,7 +83,7 @@ export const subMenuMock = [
     ],
   },
   {
-    title: "KITCHEN ACCESSORIES",
+    title: "Kitchen Accessories",
     subCategories: [
       {
         title: "Utensils",

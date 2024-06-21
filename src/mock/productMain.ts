@@ -1,7 +1,7 @@
 export const productMainMock = [
   {
     id: 1,
-    title: "HARU SMALL SOFA BED",
+    title: "Haru Small Sofa Bed",
     image: [
       "/images/Products/1/Bed1.webp",
       "/images/Products/1/Bed2.webp",
@@ -16,7 +16,7 @@ export const productMainMock = [
   },
   {
     id: 2,
-    title: "KALEIDO BLANCKET",
+    title: "Kaleido Blancket",
     image: [
       "/images/Products/2/Blancket1.webp",
       "/images/Products/2/Blancket2.webp",
@@ -31,7 +31,7 @@ export const productMainMock = [
   },
   {
     id: 3,
-    title: "HARU SOFA BEF",
+    title: "Haru Sofa Bef",
     image: [
       "/images/Products/3/Canape1.webp",
       "/images/Products/3/Canape2.webp",
@@ -48,7 +48,7 @@ export const productMainMock = [
   },
   {
     id: 4,
-    title: "TIRADO CHAIR",
+    title: "Tirado Chair",
     image: [
       "/images/Products/4/Chair1.webp",
       "/images/Products/4/Chair2.webp",
@@ -66,7 +66,7 @@ export const productMainMock = [
   },
   {
     id: 5,
-    title: "PENNY PENDANT LAMP SHADE",
+    title: "Penny Pendant Lamp Shade",
     image: [
       "/images/Products/5/Chandelir1.webp",
       "/images/Products/5/Chandelir2.webp",
@@ -83,7 +83,7 @@ export const productMainMock = [
   },
   {
     id: 6,
-    title: "EBRO BEDSIDE TABLE",
+    title: "Ebro Bedside Table",
     image: [
       "/images/Products/6/Consool1.webp",
       "/images/Products/6/Consool2.webp",
@@ -99,7 +99,7 @@ export const productMainMock = [
   },
   {
     id: 7,
-    title: "EBRO LONG CHAIR",
+    title: "Ebro Long Chair",
     image: ["/images/Products/7/Cuff1.webp", "/images/Products/7/Cuff2.webp"],
     price: 188,
     label: "",
@@ -110,7 +110,7 @@ export const productMainMock = [
   },
   {
     id: 8,
-    title: "DAMIEN DINNER TABLE",
+    title: "Damien Dinner Table",
     image: [
       "/images/Products/8/DinnerTable1.webp",
       "/images/Products/8/DinnerTable2.webp",
@@ -126,7 +126,7 @@ export const productMainMock = [
   },
   {
     id: 9,
-    title: "KALEIDO BEDSIDE TABLE",
+    title: "Kaleido Bedside Table",
     image: ["/images/Products/9/Drawer1.webp", "/images/Products/9/Drawer2.webp"],
     price: 244,
     label: "new",
@@ -137,7 +137,7 @@ export const productMainMock = [
   },
   {
     id: 10,
-    title: "DAMIEN LIBRARY",
+    title: "Damien Library",
     image: ["/images/Products/10/Library1.webp", "/images/Products/10/Library2.webp"],
     price: 270,
     label: "popular",
@@ -148,7 +148,7 @@ export const productMainMock = [
   },
   {
     id: 11,
-    title: "TIRADO LONG CHAIR",
+    title: "Tirado Long Chair",
     image: ["/images/Products/11/Puff1.webp", "/images/Products/11/Puff2.webp"],
     price: 166,
     rate: 1,
@@ -158,7 +158,7 @@ export const productMainMock = [
   },
   {
     id: 12,
-    title: "AULA COFFEE TABLE",
+    title: "Aula Coffee Table",
     image: ["/images/Products/12/Table2.webp", "/images/Products/12/Table2.webp"],
     price: 189,
     label: "popular",
