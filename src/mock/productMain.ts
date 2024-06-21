@@ -83,7 +83,7 @@ export const productMainMock = [
   },
   {
     id: 6,
-    title: "Ebro Bedside Table",
+    title: "Ebro Side Table",
     image: [
       "/images/Products/6/Consool1.webp",
       "/images/Products/6/Consool2.webp",

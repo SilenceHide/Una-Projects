@@ -1,7 +1,7 @@
 export const bannerOffersMock = [
   {
     id: 5,
-    title: "PENNY PENDANT LAMP SHADE",
+    title: "Penny Pendant Lamp Shade",
     image: "/images/Banner/Chandelir1.webp",
     centerImage: "/images/Banner/Chandelir2.webp",
     price: 390,
@@ -10,7 +10,7 @@ export const bannerOffersMock = [
   },
   {
     id: 6,
-    title: "EBRO BEDSIDE TABLE",
+    title: "Ebro Side Table",
     image: "/images/Banner/Consool3.webp",
     centerImage: "/images/Banner/Consool2.webp",
     price: 466,
@@ -19,7 +19,7 @@ export const bannerOffersMock = [
   },
   {
     id: 8,
-    title: "DAMIEN DINNER TABLE",
+    title: "Damien Dinner Table",
     image: "/images/Banner/DinnerTable1.webp",
     centerImage: "/images/Banner/DinnerTable2.webp",
     price: 1260,

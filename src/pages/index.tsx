@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <main className="main mt-[70px] lg:mt-0">
       <Section
-        className="banner-section flex gap-1 justify-center items-center md:items-stretch"
+        className="banner-section flex gap-1 justify-center items-center md:items-stretch md:flex-row flex-col"
         noContainer={true}
       >
         <BannerOffers />
