@@ -113,7 +113,7 @@ export default function BannerOffers() {
                   HOT
                 </p>
                 <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  EBRO BEDSIDE TABLE
+                  EBRO SIDE TABLE
                 </h2>
                 <div className="banner_product-price_wrapper flex gap-3 text-xl">
                   <p className="banner_product-price text-red-hot font-medium">$300</p>

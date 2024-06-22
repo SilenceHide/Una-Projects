@@ -2,12 +2,20 @@ import { menuMock } from "@/mock/menu";
 import React from "react";
 import Icon from "../common/ui/Icon";
 import SubMenu from "./SubMenu";
+import { useQuery } from "@tanstack/react-query";
+import { getMenuApiCall, getSubmenuApiCall } from "@/api/Menu";
 
 interface Props {
   navOpen: boolean;
 }
 
 export default function Menu({ navOpen }: Props) {
+  const { data: menuData } = useQuery({
+    queryKey: [getMenuApiCall.name],
+    queryFn: () => getMenuApiCall(),
+  });
+  console.log(menuData);
+
   return (
     <ul
       className={`menu-list flex lg:gap-5 gap-8 flex-col md:items-center md:flex-row md:h-full tracking-[2px] md:tracking-[0px] xl:tracking-[2px]  ${

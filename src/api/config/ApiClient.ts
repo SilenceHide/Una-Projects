@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const apiClient = axios.create({
-  baseURL: "https://czigzag.navaxcollege.com",
+  baseURL: "http://localhost:1337/api",
   timeout: 120000,
 });
 
