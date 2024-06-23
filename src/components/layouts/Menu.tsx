@@ -1,9 +1,9 @@
-import { menuMock } from "@/mock/menu";
 import React from "react";
 import Icon from "../common/ui/Icon";
 import SubMenu from "./SubMenu";
 import { useQuery } from "@tanstack/react-query";
 import { getMenuApiCall, getSubmenuApiCall } from "@/api/Menu";
+import { EntityType, MenuItemType } from "@/types";
 
 interface Props {
   navOpen: boolean;
@@ -14,7 +14,6 @@ export default function Menu({ navOpen }: Props) {
     queryKey: [getMenuApiCall.name],
     queryFn: () => getMenuApiCall(),
   });
-  console.log(menuData);
 
   return (
     <ul
@@ -22,27 +21,33 @@ export default function Menu({ navOpen }: Props) {
         navOpen ? "justify-between" : "justify-start"
       }`}
     >
-      {menuMock.map((menuItem, index) => {
-        return (
-          <li
-            className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10"
-            key={index}
-          >
-            <div className="menu-item_wrapper flex items-center gap-1 ">
-              <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 uppercase">
-                {menuItem.title}
-              </p>
-              <Icon
-                iconName="i-chevrondown-icon"
-                size="text-[12px]"
-                className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
-              />
-            </div>
+      {menuData &&
+        menuData.data.map((menuItemData, index) => {
+          const subMenuData: Array<EntityType<MenuItemType>> = [];
+          menuItemData.attributes.submenus.data.map((item) => {
+            return subMenuData.push(item);
+          });
 
-            <SubMenu />
-          </li>
-        );
-      })}
+          return (
+            <li
+              className="menu-item group/menu-item flex lg:items-center cursor-pointer hover:border-b-accent-color flex-col lg:flex-row h-full lg:p-0 md:py-10"
+              key={index}
+            >
+              <div className="menu-item_wrapper flex items-center gap-1 ">
+                <p className="menu-item_title border-b-2 border-transparent group-hover/menu-item:border-b-accent-color group-hover/menu-item:text-main-text-color transition-all duration-300 uppercase">
+                  {menuItemData.attributes.title}
+                </p>
+                <Icon
+                  iconName="i-chevrondown-icon"
+                  size="text-[12px]"
+                  className="menu-item_icon group-hover/menu-item:rotate-180 transition-all duration-300"
+                />
+              </div>
+
+              <SubMenu subMenuData={subMenuData} />
+            </li>
+          );
+        })}
     </ul>
   );
 }
