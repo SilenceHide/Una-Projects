@@ -4,14 +4,14 @@ import React from "react";
 import SimpleCard from "../common/cards/SimpleCard";
 import { useQuery } from "@tanstack/react-query";
 import { getSubmenuApiCall } from "@/api/Menu";
-import { EntityType, MenuItemType } from "@/types";
+import { ApiResponseType, EntityType, MenuItemType } from "@/types";
 
 interface Props {
   subMenuData: Array<EntityType<MenuItemType>>;
 }
 
 export default function SubMenu({ subMenuData }: Props) {
-  const { data: submenuData } = useQuery({
+  const { data: submenuData } = useQuery<ApiResponseType<MenuItemType>>({
     queryKey: [getSubmenuApiCall.name],
     queryFn: () => getSubmenuApiCall(),
   });

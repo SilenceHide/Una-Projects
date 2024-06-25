@@ -1,10 +1,17 @@
+import { getHomePageCategoriesApiCall } from "@/api/Category";
 import CategoryCard from "@/components/common/cards/CategoryCard";
-import { popularCategoriesMock } from "@/mock/popularCategories";
+import { CategoryType, EntityType } from "@/types";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function PopularCategories() {
+  const { data: homePageCategories } = useQuery({
+    queryKey: [getHomePageCategoriesApiCall.name],
+    queryFn: () => getHomePageCategoriesApiCall(),
+  });
+
   return (
     <Swiper
       slidesPerView={1}
@@ -34,32 +41,36 @@ export default function PopularCategories() {
       className="popular-categories_swiper"
     >
       <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-        {popularCategoriesMock.map((popularCategoryData, index) => {
-          if (index <= 2) {
-            return <CategoryCard data={popularCategoryData} key={index} />;
-          }
-        })}
+        {homePageCategories &&
+          homePageCategories.data.map((homePageCategoryData: EntityType<CategoryType>, index) => {
+            if (index <= 2) {
+              return <CategoryCard data={homePageCategoryData} key={index} />;
+            }
+          })}
       </SwiperSlide>
       <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-        {popularCategoriesMock.map((popularCategoryData, index) => {
-          if (index > 2 && index <= 5) {
-            return <CategoryCard data={popularCategoryData} key={index} />;
-          }
-        })}
+        {homePageCategories &&
+          homePageCategories.data.map((homePageCategoryData: EntityType<CategoryType>, index) => {
+            if (index > 2 && index <= 5) {
+              return <CategoryCard data={homePageCategoryData} key={index} />;
+            }
+          })}
       </SwiperSlide>
       <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-        {popularCategoriesMock.map((popularCategoryData, index) => {
-          if (index > 5 && index <= 8) {
-            return <CategoryCard data={popularCategoryData} key={index} />;
-          }
-        })}
+        {homePageCategories &&
+          homePageCategories.data.map((homePageCategoryData: EntityType<CategoryType>, index) => {
+            if (index > 5 && index <= 8) {
+              return <CategoryCard data={homePageCategoryData} key={index} />;
+            }
+          })}
       </SwiperSlide>
       <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
-        {popularCategoriesMock.map((popularCategoryData, index) => {
-          if (index > 8 && index <= 11) {
-            return <CategoryCard data={popularCategoryData} key={index} />;
-          }
-        })}
+        {homePageCategories &&
+          homePageCategories.data.map((homePageCategoryData: EntityType<CategoryType>, index) => {
+            if (index > 8 && index <= 11) {
+              return <CategoryCard data={homePageCategoryData} key={index} />;
+            }
+          })}
       </SwiperSlide>
     </Swiper>
   );

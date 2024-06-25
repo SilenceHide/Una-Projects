@@ -3,14 +3,14 @@ import Icon from "../common/ui/Icon";
 import SubMenu from "./SubMenu";
 import { useQuery } from "@tanstack/react-query";
 import { getMenuApiCall } from "@/api/Menu";
-import { EntityType, MenuItemType } from "@/types";
+import { ApiResponseType, EntityType, MenuItemType, MenuType } from "@/types";
 
 interface Props {
   navOpen: boolean;
 }
 
 export default function Menu({ navOpen }: Props) {
-  const { data: menuData } = useQuery({
+  const { data: menuData } = useQuery<ApiResponseType<MenuType>>({
     queryKey: [getMenuApiCall.name],
     queryFn: () => getMenuApiCall(),
   });
