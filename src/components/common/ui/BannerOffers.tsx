@@ -1,4 +1,3 @@
-import Image from "next/image";
 import React from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,12 +11,6 @@ export default function BannerOffers() {
   const { data: offersData } = useQuery<ApiResponseType<OfferType>>({
     queryKey: [getOffersApiCall.name],
     queryFn: () => getOffersApiCall(),
-  });
-
-  const offerData = offersData?.data.map((offer) => {
-    console.log(offer);
-
-    return offer;
   });
 
   return (
