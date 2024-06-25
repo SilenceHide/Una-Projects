@@ -2,7 +2,7 @@ import React from "react";
 import Icon from "../common/ui/Icon";
 import SubMenu from "./SubMenu";
 import { useQuery } from "@tanstack/react-query";
-import { getMenuApiCall, getSubmenuApiCall } from "@/api/Menu";
+import { getMenuApiCall } from "@/api/Menu";
 import { EntityType, MenuItemType } from "@/types";
 
 interface Props {

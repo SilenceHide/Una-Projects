@@ -1,13 +1,3 @@
-// export interface Root {
-//   data: Daum[];
-//   meta: Meta;
-// }
-
-// export interface Daum {
-//   id: number;
-//   attributes: Attributes;
-// }
-
 export interface MenuItemType {
   createdAt: string;
   updatedAt: string;

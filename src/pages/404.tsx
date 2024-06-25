@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function NotFound404() {
   return (
@@ -25,8 +26,8 @@ export default function NotFound404() {
             <p className="404_desc mt-4 text-lg text-sub-text-color max-w-[500px] text-center">
               Sorry, something went wrong and page not found. Check the link or try later
             </p>
-            <a
-              href="#"
+            <Link
+              href="/"
               className="product-section_button flex items-center text-white justify-center gap-3 sm:w-[334px] w-[300px] h-[60px] mt-10 bg-disable-color py-3 sm:mx-auto"
             >
               <p className="product-section_button-title tracking-[2px] uppercase font-semibold text-lg">
@@ -39,7 +40,7 @@ export default function NotFound404() {
                 height={16}
                 className="fill-white text-white"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </main>
