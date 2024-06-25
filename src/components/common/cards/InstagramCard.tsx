@@ -2,15 +2,10 @@ import Link from "next/link";
 import React from "react";
 import Icon from "../ui/Icon";
 import Picture from "../picture/Picture";
+import { EntityType, InstagramType } from "@/types";
 
 interface Props {
-  data: {
-    user: string;
-    image: string;
-    like: number;
-    comment: number;
-    link: string;
-  };
+  data: EntityType<InstagramType>;
 }
 
 export default function InstagramCard({ data }: Props) {
@@ -19,7 +14,7 @@ export default function InstagramCard({ data }: Props) {
       <div className="instagram_item-img md:w-[364px] md:h-[364px] w-[167px] h-[167px] bg-disable-text-color border-[10px] border-white overflow-hidden">
         <Picture
           alt="insta-post"
-          src={data.image}
+          src={data.attributes.image.data?.attributes.url ?? ""}
           width={364}
           height={364}
           className="min-h-full"
@@ -27,16 +22,16 @@ export default function InstagramCard({ data }: Props) {
       </div>
       <div className="instagram_item-content bg-white flex items-center justify-between md:py-3 py-2 md:px-6 px-3 invisible opacity-0 group-hover/instagram_item:visible group-hover/instagram_item:opacity-100 transition-all duration-300">
         <Link href="/blog" className="instagram_item-tag text-secondary-text-color hidden md:block">
-          @{data.user}
+          @{data.attributes.user}
         </Link>
         <div className="instagram_item-info flex md:gap-4 gap-1 items-center md:w-fit w-full justify-between">
           <div className="instagram_item-heart flex gap-1 items-center justify-center">
             <Icon iconName="i-likegold-icon" />
-            <p>{data.like}</p>
+            <p>{data.attributes.like}</p>
           </div>
           <div className="instagram_item-comment flex gap-1 items-center justify-center">
             <Icon iconName="i-commentgold-icon" />
-            <p>{data.comment}</p>
+            <p>{data.attributes.comment}</p>
           </div>
         </div>
       </div>

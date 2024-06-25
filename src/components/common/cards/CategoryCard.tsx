@@ -8,8 +8,6 @@ interface Props {
 }
 
 export default function CategoryCard({ data }: Props) {
-  console.log(data.attributes.image.data?.attributes.url);
-
   return (
     <>
       <Link

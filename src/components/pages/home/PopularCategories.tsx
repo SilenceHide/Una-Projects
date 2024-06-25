@@ -1,13 +1,13 @@
 import { getHomePageCategoriesApiCall } from "@/api/Category";
 import CategoryCard from "@/components/common/cards/CategoryCard";
-import { CategoryType, EntityType } from "@/types";
+import { ApiResponseType, CategoryType, EntityType } from "@/types";
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function PopularCategories() {
-  const { data: homePageCategories } = useQuery({
+  const { data: homePageCategories } = useQuery<ApiResponseType<CategoryType>>({
     queryKey: [getHomePageCategoriesApiCall.name],
     queryFn: () => getHomePageCategoriesApiCall(),
   });

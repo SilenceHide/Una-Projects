@@ -3,8 +3,23 @@ import React from "react";
 import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Icon from "./Icon";
+import { useQuery } from "@tanstack/react-query";
+import { ApiResponseType, OfferType } from "@/types";
+import { getOffersApiCall } from "@/api/Offers";
+import Picture from "../picture/Picture";
 
 export default function BannerOffers() {
+  const { data: offersData } = useQuery<ApiResponseType<OfferType>>({
+    queryKey: [getOffersApiCall.name],
+    queryFn: () => getOffersApiCall(),
+  });
+
+  const offerData = offersData?.data.map((offer) => {
+    console.log(offer);
+
+    return offer;
+  });
+
   return (
     <>
       <div className="banner_heading-wrapper xl:min-w-[660px] lg:min-w-[450px] max-w-[400px] flex flex-col gap-3 shadow-white-box-shadow-plus relative">
@@ -22,6 +37,7 @@ export default function BannerOffers() {
             </div>
           </div>
         </div>
+
         <div className="banner_inner-img-wrapper bg-disable-text-color shadow-white-box-shadow min-h-[260px] w-full md:hidden">
           <Swiper
             autoplay={{
@@ -39,41 +55,25 @@ export default function BannerOffers() {
             }}
             className="banner_img-swiper text-secondary-text-color flex max-w-[400px] max-h-[260px] items-center justify-center "
           >
-            <SwiperSlide className="banner_img-wrapper">
-              <div className="banner_img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/Chandelir1.webp"}
-                  width={600}
-                  height={600}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_img-wrapper">
-              <div className="banner_img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/Consool3.webp"}
-                  width={600}
-                  height={600}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_img-wrapper">
-              <div className="banner_img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/DinnerTable1.webp"}
-                  width={600}
-                  height={600}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
+            {offersData &&
+              offersData.data.map((item, index) => {
+                return (
+                  <SwiperSlide className="banner_img-wrapper" key={index}>
+                    <div className="banner_img-wrapper flex items-center justify-center">
+                      <Picture
+                        alt="img"
+                        src={item.attributes.image.data?.attributes.url ?? ""}
+                        width={600}
+                        height={600}
+                        className="w-full bg-center bg-cover object-cover "
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
         </div>
+
         <div className="banner_product-info bg-main-bg-color xl:px-[140px] lg:px-[70px] lg:py-[130px] px-4 pt-[110px] pb-[60px]">
           <Swiper
             autoplay={{
@@ -91,56 +91,32 @@ export default function BannerOffers() {
             }}
             className="banner_product-info-swiper text-secondary-text-color flex lg:max-w-[600px] w-full justify-between"
           >
-            <SwiperSlide className="banner_product-info_wrapper">
-              <div className="banner_product-info_wrapper flex flex-col">
-                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
-                  HOT
-                </p>
-                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px] uppercase">
-                  PENNY PENDANT LAMP SHADE
-                </h2>
-                <div className="banner_product-price_wrapper flex gap-3 text-xl">
-                  <p className="banner_product-price text-red-hot font-medium">$300</p>
-                  <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
-                    $390
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_product-info_wrapper">
-              <div className="banner_product-info_wrapper flex flex-col">
-                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
-                  HOT
-                </p>
-                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  EBRO SIDE TABLE
-                </h2>
-                <div className="banner_product-price_wrapper flex gap-3 text-xl">
-                  <p className="banner_product-price text-red-hot font-medium">$300</p>
-                  <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
-                    $390
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_product-info_wrapper">
-              <div className="banner_product-info_wrapper flex flex-col">
-                <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
-                  HOT
-                </p>
-                <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px]">
-                  DAMIEN DINNER TABLE
-                </h2>
-                <div className="banner_product-price_wrapper flex gap-3 text-xl">
-                  <p className="banner_product-price text-red-hot font-medium">$300</p>
-                  <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
-                    $390
-                  </p>
-                </div>
-              </div>
-            </SwiperSlide>
+            {offersData &&
+              offersData.data.map((item, index) => {
+                return (
+                  <SwiperSlide className="banner_product-info_wrapper" key={index}>
+                    <div className="banner_product-info_wrapper flex flex-col">
+                      <p className="banner_product-tag text-white text-sm bg-red-hot py-1 px-4 w-[65px] tracking-[1px]">
+                        {item.attributes.label}
+                      </p>
+                      <h2 className="banner_product-title font-medium text-2xl max-w-[340px] mt-[30px] mb-4 tracking-[3px] uppercase">
+                        {item.attributes.title}
+                      </h2>
+                      <div className="banner_product-price_wrapper flex gap-3 text-xl">
+                        <p className="banner_product-price text-red-hot font-medium">
+                          ${item.attributes.sale_price}
+                        </p>
+                        <p className="banner_product-price text-disable-color line-through decoration-[0.5px]">
+                          ${item.attributes.price}
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
         </div>
+
         <div className="banner_detail-img-wrapper bg-white absolute xl:w-[460px] lg:w-[400px] md:w-[280px] w-[200px] xl:h-[460px] lg:h-[400px] md:h-[280px] h-[200px] rounded-full xl:left-[425px] lg:left-[255px] md:left-[190px] left-[50%] xl:top-[265px] lg:top-[330px] md:top-[225px] top-[580px] sm:top-[550px] z-[5] flex items-center justify-center overflow-hidden ">
           <Swiper
             autoplay={{
@@ -158,42 +134,26 @@ export default function BannerOffers() {
             }}
             className="banner_detail-img-swiper text-secondary-text-color flex lg:max-w-[300px] max-w-[150px] w-full justify-between"
           >
-            <SwiperSlide className="banner_detail-img-wrapper">
-              <div className="banner_detail-img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/Chandelir2.webp"}
-                  width={450}
-                  height={450}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_detail-img-wrapper">
-              <div className="banner_detail-img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/Consool2.webp"}
-                  width={450}
-                  height={450}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="banner_detail-img-wrapper">
-              <div className="banner_detail-img-wrapper flex items-center justify-center">
-                <Image
-                  alt="img"
-                  src={"/images/Banner/DinnerTable2.webp"}
-                  width={450}
-                  height={450}
-                  className="w-full bg-center bg-cover object-cover "
-                />
-              </div>
-            </SwiperSlide>
+            {offersData &&
+              offersData.data.map((item, index) => {
+                return (
+                  <SwiperSlide className="banner_detail-img-wrapper" key={index}>
+                    <div className="banner_detail-img-wrapper flex items-center justify-center">
+                      <Picture
+                        alt="img"
+                        src={item.attributes.center_image.data?.attributes.url ?? ""}
+                        width={450}
+                        height={450}
+                        className="w-full bg-center bg-cover object-cover "
+                      />
+                    </div>
+                  </SwiperSlide>
+                );
+              })}
           </Swiper>
         </div>
       </div>
+
       <div className="banner_img-wrapper bg-disable-text-color min-h-full w-full md:block hidden overflow-hidden">
         <Swiper
           autoplay={{
@@ -211,39 +171,22 @@ export default function BannerOffers() {
           }}
           className="banner_img-swiper text-secondary-text-color flex max-w-[1035px] max-h-[958px] items-center justify-center "
         >
-          <SwiperSlide className="banner_img-wrapper">
-            <div className="banner_img-wrapper flex items-center justify-center">
-              <Image
-                alt="img"
-                src={"/images/Banner/Chandelir1.webp"}
-                width={600}
-                height={600}
-                className="w-full bg-center bg-cover object-cover "
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="banner_img-wrapper">
-            <div className="banner_img-wrapper flex items-center justify-center">
-              <Image
-                alt="img"
-                src={"/images/Banner/Consool3.webp"}
-                width={600}
-                height={600}
-                className="w-full bg-center bg-cover object-cover "
-              />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className="banner_img-wrapper">
-            <div className="banner_img-wrapper flex items-center justify-center">
-              <Image
-                alt="img"
-                src={"/images/Banner/DinnerTable1.webp"}
-                width={600}
-                height={600}
-                className="w-full bg-center bg-cover object-cover "
-              />
-            </div>
-          </SwiperSlide>
+          {offersData &&
+            offersData.data.map((item, index) => {
+              return (
+                <SwiperSlide className="banner_img-wrapper" key={index}>
+                  <div className="banner_img-wrapper flex items-center justify-center">
+                    <Picture
+                      alt="img"
+                      src={item.attributes.image.data?.attributes.url ?? ""}
+                      width={600}
+                      height={600}
+                      className="w-full bg-center bg-cover object-cover "
+                    />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
         </Swiper>
       </div>
     </>

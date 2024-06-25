@@ -1,10 +1,18 @@
+import { getBlogsApiCall } from "@/api/Blog";
 import BlogCard from "@/components/common/cards/BlogCard";
 import { blogPostsMock } from "@/mock/blogPosts";
+import { ApiResponseType, BlogType } from "@/types";
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function InterestingBlogs() {
+  const { data: blogsData } = useQuery<ApiResponseType<BlogType>>({
+    queryKey: [getBlogsApiCall.name],
+    queryFn: () => getBlogsApiCall(),
+  });
+
   return (
     <Swiper
       slidesPerView={1}
@@ -41,16 +49,17 @@ export default function InterestingBlogs() {
       onSwiper={(swiper) => console.log(swiper)}
       className="blog_items_swiper"
     >
-      {blogPostsMock.map((blogPostData, index) => {
-        return (
-          <SwiperSlide
-            className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] "
-            key={index}
-          >
-            <BlogCard data={blogPostData} />
-          </SwiperSlide>
-        );
-      })}
+      {blogsData &&
+        blogsData.data.map((blogPostData, index) => {
+          return (
+            <SwiperSlide
+              className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] "
+              key={index}
+            >
+              <BlogCard data={blogPostData} />
+            </SwiperSlide>
+          );
+        })}
     </Swiper>
   );
 }

@@ -10,8 +10,22 @@ import PopularCategories from "@/components/pages/home/PopularCategories";
 import { instagramPostsMock } from "@/mock/instagramPosts";
 import InstagramCard from "@/components/common/cards/InstagramCard";
 import InterestingBlogs from "@/components/pages/home/InterestingBlogs";
+import { useQuery } from "@tanstack/react-query";
+import { getProductsApiCall } from "@/api/Product";
+import { ApiResponseType, InstagramType, ProductType } from "@/types";
+import { getInstagramApiCall } from "@/api/Instagram";
 
 export default function Home() {
+  const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
+    queryKey: [getProductsApiCall.name],
+    queryFn: () => getProductsApiCall(),
+  });
+
+  const { data: instagramData } = useQuery<ApiResponseType<InstagramType>>({
+    queryKey: [getInstagramApiCall.name],
+    queryFn: () => getInstagramApiCall(),
+  });
+
   return (
     <main className="main mt-[70px] lg:mt-0">
       <Section
@@ -58,10 +72,10 @@ export default function Home() {
             </Swiper>
           </div>
           <div className="products_wrapper grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-10 lg:mt-14 mt-10 justify-center justify-items-center">
-            {productBaseMock &&
-              productBaseMock.map((productBaseData, index) => {
+            {productsData &&
+              productsData.data.map((productData, index) => {
                 if (index < 8) {
-                  return <SimpleCard data={productBaseData} key={index} />;
+                  return <SimpleCard data={productData} key={index} />;
                 }
               })}
           </div>
@@ -107,9 +121,10 @@ export default function Home() {
           INSTAGRAM INSPIRATION
         </h2>
         <div className="instagram_item-wrapper mt-14 flex md:gap-[10px] gap-[8px] items-center justify-center flex-wrap">
-          {instagramPostsMock.map((instagramPostData, index) => {
-            return <InstagramCard data={instagramPostData} key={index} />;
-          })}
+          {instagramData &&
+            instagramData.data.map((instagramPostData, index) => {
+              return <InstagramCard data={instagramPostData} key={index} />;
+            })}
         </div>
       </Section>
 
