@@ -15,7 +15,7 @@ export default function Picture({ src, alt, width, height, className = "", prior
     ? src.startsWith("/uploads")
       ? "http://localhost:1337" + src
       : src
-    : "/images/logo/logo-default.svg";
+    : "/logo/logo-default.svg";
 
   return (
     <Image

@@ -3,19 +3,20 @@ import "swiper/css";
 import Section from "@/components/layouts/Section";
 import BannerOffers from "@/components/common/ui/BannerOffers";
 import Link from "next/link";
-import { productBaseMock } from "@/mock/productBase";
 import SimpleCard from "@/components/common/cards/SimpleCard";
 import Icon from "@/components/common/ui/Icon";
 import PopularCategories from "@/components/pages/home/PopularCategories";
-import { instagramPostsMock } from "@/mock/instagramPosts";
 import InstagramCard from "@/components/common/cards/InstagramCard";
 import InterestingBlogs from "@/components/pages/home/InterestingBlogs";
 import { useQuery } from "@tanstack/react-query";
 import { getProductsApiCall } from "@/api/Product";
 import { ApiResponseType, InstagramType, ProductType } from "@/types";
 import { getInstagramApiCall } from "@/api/Instagram";
+import { useState } from "react";
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState<null | "popular" | "hot" | "new">(null);
+
   const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
     queryKey: [getProductsApiCall.name],
     queryFn: () => getProductsApiCall(),
@@ -49,23 +50,51 @@ export default function Home() {
               }}
               className="product_tab-swiper text-secondary-text-color flex lg:max-w-[600px] justify-between"
             >
-              <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all active-tab">
+              <SwiperSlide
+                onClick={() => setActiveTab(null)}
+                className="product_tab cursor-pointer flex justify-center items-center "
+              >
+                <p
+                  className={`product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ${
+                    activeTab === null ? "active-tab" : ""
+                  } `}
+                >
                   ALL
                 </p>
               </SwiperSlide>
-              <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ">
+              <SwiperSlide
+                onClick={() => setActiveTab("popular")}
+                className="product_tab cursor-pointer flex justify-center items-center "
+              >
+                <p
+                  className={`product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ${
+                    activeTab === "popular" ? "active-tab" : ""
+                  } `}
+                >
                   POPULAR
                 </p>
               </SwiperSlide>
-              <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+              <SwiperSlide
+                onClick={() => setActiveTab("hot")}
+                className="product_tab cursor-pointer flex justify-center items-center "
+              >
+                <p
+                  className={`product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ${
+                    activeTab === "hot" ? "active-tab" : ""
+                  } `}
+                >
                   HOT
                 </p>
               </SwiperSlide>
-              <SwiperSlide className="product_tab cursor-pointer flex justify-center items-center ">
-                <p className="product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all">
+              <SwiperSlide
+                onClick={() => setActiveTab("new")}
+                className="product_tab cursor-pointer flex justify-center items-center "
+              >
+                <p
+                  className={`product_tab-title font-medium lg:text-3xl text-2xl tracking-[3px] text-center hover:text-main-text-color border-b-[3px] border-transparent hover:border-accent-color transition-all ${
+                    activeTab === "new" ? "active-tab" : ""
+                  } `}
+                >
                   NEW
                 </p>
               </SwiperSlide>
@@ -74,8 +103,12 @@ export default function Home() {
           <div className="products_wrapper grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-10 lg:mt-14 mt-10 justify-center justify-items-center">
             {productsData &&
               productsData.data.map((productData, index) => {
-                if (index < 8) {
+                if (activeTab && productData.attributes.label === activeTab) {
                   return <SimpleCard data={productData} key={index} />;
+                } else if (!activeTab) {
+                  if (index < 8) {
+                    return <SimpleCard data={productData} key={index} />;
+                  }
                 }
               })}
           </div>

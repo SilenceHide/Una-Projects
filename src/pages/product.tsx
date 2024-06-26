@@ -378,8 +378,6 @@ export default function Product() {
                   prevEl: ".product_also-like_left-btn",
                   nextEl: ".product_also-like_right-btn",
                 }}
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
                 className="popular-categories_swiper"
               >
                 <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">

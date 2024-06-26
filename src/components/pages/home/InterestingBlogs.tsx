@@ -53,7 +53,7 @@ export default function InterestingBlogs() {
         blogsData.data.map((blogPostData, index) => {
           return (
             <SwiperSlide
-              className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-300 hover:shadow-main-box-shadow max-w-[520px] "
+              className="blog_item lg:w-[520px] min-w-[343px] group/blog_item transition-all duration-1000 hover:shadow-main-box-shadow max-w-[520px] "
               key={index}
             >
               <BlogCard data={blogPostData} />
