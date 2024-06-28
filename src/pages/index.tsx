@@ -15,11 +15,13 @@ import { getInstagramApiCall } from "@/api/Instagram";
 import { useState } from "react";
 
 export default function Home() {
+  const maxItem = 8;
+
   const [activeTab, setActiveTab] = useState<null | "popular" | "hot" | "new">(null);
 
   const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
-    queryKey: [getProductsApiCall.name],
-    queryFn: () => getProductsApiCall(),
+    queryKey: [getProductsApiCall.name, activeTab],
+    queryFn: () => getProductsApiCall({ filters: { label: { $eq: activeTab } } }),
   });
 
   const { data: instagramData } = useQuery<ApiResponseType<InstagramType>>({
@@ -103,12 +105,8 @@ export default function Home() {
           <div className="products_wrapper grid 3xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-10 lg:mt-14 mt-10 justify-center justify-items-center">
             {productsData &&
               productsData.data.map((productData, index) => {
-                if (activeTab && productData.attributes.label === activeTab) {
+                if (index < maxItem) {
                   return <SimpleCard data={productData} key={index} />;
-                } else if (!activeTab) {
-                  if (index < 8) {
-                    return <SimpleCard data={productData} key={index} />;
-                  }
                 }
               })}
           </div>

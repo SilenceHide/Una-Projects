@@ -1,10 +1,8 @@
 import Image from "next/image";
 import { useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Pagination, Navigation } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
 import { ApiResponseType, ProductType } from "@/types";
 import { getProductsApiCall } from "@/api/Product";
@@ -15,7 +13,7 @@ export default function Category() {
 
   const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
     queryKey: [getProductsApiCall.name],
-    queryFn: () => getProductsApiCall(),
+    queryFn: () => getProductsApiCall({ filters: { label: { $eq: null } } }),
   });
 
   return (

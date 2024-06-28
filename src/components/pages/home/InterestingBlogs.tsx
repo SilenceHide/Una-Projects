@@ -45,8 +45,6 @@ export default function InterestingBlogs() {
         prevEl: ".blog_left-btn",
         nextEl: ".blog_right-btn",
       }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
       className="blog_items_swiper"
     >
       {blogsData &&

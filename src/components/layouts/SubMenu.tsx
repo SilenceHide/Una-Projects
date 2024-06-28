@@ -1,10 +1,10 @@
-import { productBaseMock } from "@/mock/productBase";
 import Link from "next/link";
 import React from "react";
 import SimpleCard from "../common/cards/SimpleCard";
 import { useQuery } from "@tanstack/react-query";
 import { getSubmenuApiCall } from "@/api/Menu";
-import { ApiResponseType, EntityType, MenuItemType } from "@/types";
+import { ApiResponseType, EntityType, MenuItemType, ProductType } from "@/types";
+import { getProductsApiCall } from "@/api/Product";
 
 interface Props {
   subMenuData: Array<EntityType<MenuItemType>>;
@@ -14,6 +14,11 @@ export default function SubMenu({ subMenuData }: Props) {
   const { data: submenuData } = useQuery<ApiResponseType<MenuItemType>>({
     queryKey: [getSubmenuApiCall.name],
     queryFn: () => getSubmenuApiCall(),
+  });
+
+  const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
+    queryKey: [getProductsApiCall.name],
+    queryFn: () => getProductsApiCall({ filters: { label: { $eq: "new" } } }),
   });
 
   return (
@@ -58,40 +63,9 @@ export default function SubMenu({ subMenuData }: Props) {
       </ul>
 
       <div className="mega-menu_right flex 2xl:gap-10 xl:gap-0 lg:gap-10 gap-14 flex-wrap justify-center lg:justify-between xl:justify-center flex-grow xl:flex-grow-0">
-        {productBaseMock.map((productData, index) => {
-          if (productData.label !== "" && index < 3) {
-            return <SimpleCard data={productData} key={index} inMenu={true} />;
-          }
+        {productsData?.data.map((productData, index) => {
+          return <SimpleCard data={productData} key={index} inMenu={true} />;
         })}
-        {/* <Link href="/product" className="mega-menu_left-img relative flex flex-col lg:gap-3 gap-7">
-          <div className="mega-menu_img bg-disable-text-color w-[343px] h-[343px] lg:w-[240px] lg:h-[240px] border-[10px] border-white "></div>
-          <p className="mega-menu_img-tag absolute text-white text-sm bg-orange-popular py-1 px-4 top-5 left-5">
-            POPULAR
-          </p>
-          <div className="mega-menu_img-desc flex flex-col items-center gap-3">
-            <div className="mega-menu_img-rectangle bg-disable-color w-[30px] h-[1px] mb-1"></div>
-            <p className="mega-menu_img-title text-main-text-color font-medium">CALEIDO LAMP</p>
-            <p className="mega-menu_img-price text-accent-color font-medium">$355</p>
-          </div>
-        </Link>
-        <Link href="/product" className="mega-menu_right-img relative flex flex-col lg:gap-3 gap-7">
-          <div className="mega-menu_img bg-disable-text-color w-[343px] h-[343px] lg:w-[240px] lg:h-[240px] border-[10px] border-white "></div>
-          <p className="mega-menu_img-tag absolute text-white text-sm bg-red-hot py-1 px-4 top-5 left-5">
-            HOT
-          </p>
-          <div className="mega-menu_img-desc flex flex-col items-center gap-3">
-            <div className="mega-menu_img-rectangle bg-disable-color w-[30px] h-[1px] mb-1"></div>
-            <p className="mega-menu_img-title text-main-text-color font-medium">
-              EBRO BESIDE TABLE
-            </p>
-            <div className="mega-menu_img-price_wrapper flex gap-2">
-              <p className="mega-menu_img-price text-red-hot font-medium">$250</p>
-              <p className="mega-menu_img-price text-disable-color line-through decoration-[0.5px]">
-                $310
-              </p>
-            </div>
-          </div>
-        </Link> */}
       </div>
     </div>
   );

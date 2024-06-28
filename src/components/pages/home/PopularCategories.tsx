@@ -36,8 +36,6 @@ export default function PopularCategories() {
         prevEl: ".popular-categories_left-btn",
         nextEl: ".popular-categories_right-btn",
       }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
       className="popular-categories_swiper"
     >
       <SwiperSlide className="popular-categories_col lg:w-[400px] w-[343px]">
