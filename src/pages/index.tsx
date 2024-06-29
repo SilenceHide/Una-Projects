@@ -8,11 +8,15 @@ import Icon from "@/components/common/ui/Icon";
 import PopularCategories from "@/components/pages/home/PopularCategories";
 import InstagramCard from "@/components/common/cards/InstagramCard";
 import InterestingBlogs from "@/components/pages/home/InterestingBlogs";
-import { useQuery } from "@tanstack/react-query";
-import { getProductsApiCall } from "@/api/Product";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { getFilteredProductsApiCall } from "@/api/Product";
 import { ApiResponseType, InstagramType, ProductType } from "@/types";
 import { getInstagramApiCall } from "@/api/Instagram";
 import { useState } from "react";
+import { getOffersApiCall } from "@/api/Offers";
+import { getHomePageCategoriesApiCall } from "@/api/Category";
+import { getBlogsApiCall } from "@/api/Blog";
+import { getMenuApiCall, getSubmenuApiCall } from "@/api/Menu";
 
 export default function Home() {
   const maxItem = 8;
@@ -20,8 +24,8 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState<null | "popular" | "hot" | "new">(null);
 
   const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
-    queryKey: [getProductsApiCall.name, activeTab],
-    queryFn: () => getProductsApiCall({ filters: { label: { $eq: activeTab } } }),
+    queryKey: [getFilteredProductsApiCall.name, activeTab],
+    queryFn: () => getFilteredProductsApiCall({ filters: { label: { $eq: activeTab } } }),
   });
 
   const { data: instagramData } = useQuery<ApiResponseType<InstagramType>>({
@@ -188,4 +192,44 @@ export default function Home() {
       </Section>
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: [getMenuApiCall.name],
+    queryFn: getMenuApiCall,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: [getSubmenuApiCall.name],
+    queryFn: getSubmenuApiCall,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: [getOffersApiCall.name],
+    queryFn: getOffersApiCall,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: [getHomePageCategoriesApiCall.name],
+    queryFn: getHomePageCategoriesApiCall,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: [getInstagramApiCall.name],
+    queryFn: getInstagramApiCall,
+  });
+
+  await queryClient.prefetchQuery({
+    queryKey: [getBlogsApiCall.name],
+    queryFn: getBlogsApiCall,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }

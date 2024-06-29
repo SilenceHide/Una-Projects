@@ -3,7 +3,7 @@ import { useState } from "react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { useQuery } from "@tanstack/react-query";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { ApiResponseType, ProductType } from "@/types";
 import { getProductsApiCall } from "@/api/Product";
 import SliderCard from "@/components/common/cards/SliderCard";
@@ -13,7 +13,7 @@ export default function Category() {
 
   const { data: productsData } = useQuery<ApiResponseType<ProductType>>({
     queryKey: [getProductsApiCall.name],
-    queryFn: () => getProductsApiCall({ filters: { label: { $eq: null } } }),
+    queryFn: () => getProductsApiCall(),
   });
 
   return (
@@ -576,4 +576,19 @@ export default function Category() {
       </div>
     </main>
   );
+}
+
+export async function getServerSideProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: [getProductsApiCall.name],
+    queryFn: getProductsApiCall,
+  });
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
 }
