@@ -91,7 +91,7 @@ export default function Header() {
               (704) 555-0127
             </a>
             <div className="header_icon-wrapper flex items-center justify-between gap-3 lg:h-[100px] h-[70px] ">
-              <div className="header_search-wrapper cursor-pointer flex sm:overflow-hidden relative">
+              <div className="header_search-wrapper cursor-pointer relative">
                 <SearchForm
                   searchBoxOpen={searchBoxOpen}
                   isSearchBoxOpen={isSearchBoxOpen}
